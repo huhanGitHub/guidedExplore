@@ -33,8 +33,10 @@ class PathPlanner:
         return in_degrees
 
     def set_visited(self, activity):
-        self.visited_map[activity] = True
-        self.visited_count += 1
+        for k, v in self.visited_map.items():
+            if activity in k:
+                self.visited_map[k] = True
+                self.visited_count += 1
 
     def get_visited_rate(self):
         return self.visited_count/self.total_activity
@@ -44,6 +46,7 @@ def rank_atg_weight(atg_json):
     with open(atg_json, 'r', encoding='utf8') as f:
         data = [i for i in json.load(f).items()]
         data = sorted(data, key=lambda d: len(d[1]), reverse=True)
+        data = [(i[0].replace('/', '.'), i[1]) for i in data]
         # print(data)
     return data
 
