@@ -8,6 +8,7 @@ class PathPlanner:
     visited_count = 0
     total_activity = 0
     visited_map = {}
+
     def __init__(self, atg_json):
         self.atg_list = rank_atg_weight(atg_json)
         self.total_activity = len(self.atg_list)
@@ -33,10 +34,26 @@ class PathPlanner:
         return in_degrees
 
     def set_visited(self, activity):
+        if activity is None:
+            return
         for k, v in self.visited_map.items():
             if activity in k:
                 self.visited_map[k] = True
                 self.visited_count += 1
+
+    def check_visit(self, activity):
+        visited = False
+        for k, v in self.visited_map.items():
+            if activity in k:
+                if v:
+                    visited = True
+                    return visited
+        return visited
+
+    def get_activity_full_path(self, activity):
+        for k, v in self.visited_map.items():
+            if activity in k:
+                return k
 
     def get_visited_rate(self):
         return self.visited_count/self.total_activity

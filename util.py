@@ -6,6 +6,7 @@ import requests
 import os
 from pyaxmlparser import APK
 import subprocess
+import xml.etree.ElementTree as ET
 
 
 def connectionAdaptor(phoneDevice, tabletDevice):
