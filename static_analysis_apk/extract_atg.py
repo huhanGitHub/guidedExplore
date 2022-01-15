@@ -6,6 +6,7 @@ import json
 import shutil
 
 
+
 def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'activity_match'):
     for folder in folders:
         activity_dict = {}
@@ -13,6 +14,7 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'acti
         os.chdir(folder_path)
         smali_folders = os.listdir()
         smali_folders = [x for x in smali_folders if 'smali' in x]
+
         count = 0
         print('@@@@@@@@@@@@@@@@@@@@@@   ' + folder + '   @@@@@@@@@@@@@@@@@@@@@@')
         # print(avaliable_activity_dict[folder])
@@ -20,7 +22,8 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'acti
             # print(smali_folder)
             smali_path = os.path.join(folder_path, smali_folder)
             os.chdir(smali_path)
-            for root, dirs, files in os.walk('..'):
+            print(os.listdir())
+            for root, dirs, files in os.walk('.'):
                 # print(dirs)
                 for file in files:
 
@@ -33,10 +36,13 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'acti
                     activity_lst = []
                     # class_path = fullpath[2:].replace('/', '.')
                     class_path = fullpath[2:][:-6]
+                    # print(fullpath)
                     try:
                         with open(fullpath, 'r') as f:
+                            print("!!!!!!!!!!!!!")
                             # print(file)
                             lines = f.readlines()
+                            # print(lines)
                             file_length = len(lines)
 
                             for line_index in range(file_length):
@@ -94,11 +100,11 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'acti
                                     activity_dict[class_path] = list(set(activity_dict[class_path]))
                                 activity_dict[class_path] = list(set(activity_lst))
                     except Exception as e:
-                        print(str(e))
+                        print(fullpath)
                         pass
             break
-        # for k,v in activity_dict.items():
-        #     print(k,v)
+        for k,v in activity_dict.items():
+            print(k,v)
 
         save_path = os.path.join(save_dir, folder + '.json')
         with open(save_path, 'a') as fp:
@@ -110,6 +116,9 @@ def activity_searching(folders, abs_path):
     count = 0
     activity_dict = {}
     activity_lst = []
+
+    print(folders)
+
     for folder in folders:
         # print(folder)
         folder_path = os.path.join(abs_path, folder)
@@ -144,7 +153,7 @@ def activity_searching(folders, abs_path):
         except Exception as e:
             print(str(e))
             print(folder)
-
+    # print(activity_dict)
     return activity_dict
 
 
@@ -152,7 +161,7 @@ def batch_extract(decompiled_apks, save_dir):
     # abs_path = '/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/data'
     folders = os.listdir(decompiled_apks)
     ignore = ['.idea', '.git', 'activity_match', 'README.md', '.DS_Store', '.ipynb_checkpoints', 'activity.py',
-              'smalianalysis.py', 'activity.py']
+              'smalianalysis.py', 'activity.py', 'extract_atg.py']
     folders = [x for x in folders if x not in ignore]
 
     available_activity_dict = activity_searching(folders, decompiled_apks)
@@ -264,4 +273,9 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
 if __name__ == '__main__':
     decompiled_apks = '/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
     save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/atgs'
+
+
+
+    # decompiled_apks = '/Users/ruiqidong/Desktop/chunyang/'
+    # save_dir = '/Users/ruiqidong/Desktop/test/'
     batch_extract(decompiled_apks=decompiled_apks, save_dir=save_dir)
