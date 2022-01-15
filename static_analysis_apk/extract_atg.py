@@ -22,7 +22,7 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'acti
             # print(smali_folder)
             smali_path = os.path.join(folder_path, smali_folder)
             os.chdir(smali_path)
-            print(os.listdir())
+            # print(os.listdir())
             for root, dirs, files in os.walk('.'):
                 # print(dirs)
                 for file in files:
@@ -100,7 +100,8 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'acti
                                     activity_dict[class_path] = list(set(activity_dict[class_path]))
                                 activity_dict[class_path] = list(set(activity_lst))
                     except Exception as e:
-                        print(fullpath)
+                        print(str(e))
+                        # print(fullpath)
                         pass
             break
         for k,v in activity_dict.items():
