@@ -6,6 +6,7 @@ except ImportError:
     import xml.etree.ElementTree as ET
 intent_smali_fileds = 'Landroid/content/Intent;->get'
 const_string = 'const-string'
+package_identifier = 'package="'
 
 
 # statistics intent paras
@@ -55,7 +56,9 @@ def smali_intent_para_extractor(path, save_path):
                 try:
                     tree = ET.parse(file_path)
                     root = tree.getroot()
-                    package = root.attrib.get('package')
+                    package = root.attrib.get('package', None)
+                    if package is None:
+                        continue
                     for node in root.iter('activity'):
                         name = node.attrib.get('{http://schemas.android.com/apk/res/android}name')
                         print('name ' + node.attrib.get('{http://schemas.android.com/apk/res/android}name'))
@@ -67,6 +70,10 @@ def smali_intent_para_extractor(path, save_path):
 
                 packages.append(package)
                 apps_activities[package] = activities
+
+    for app in apps:
+        if ('.DS_Store' in app) or ('R.smali' in app):
+            apps.remove(app)
 
     for subscript, app in enumerate(apps):
         app_path = os.path.join(path, app)
@@ -122,7 +129,7 @@ def smali_intent_para_extractor(path, save_path):
                                 intent_para[file] = cur_pairs
 
         apps_intent_para[package] = intent_para
-    save_json = json.dumps(apps_intent_para)
+    save_json = json.dumps(apps_intent_para, indent=4)
     with open(save_path, 'a+', encoding='utf8') as f2:
         f2.write(save_json)
 

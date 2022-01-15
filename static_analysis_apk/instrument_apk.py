@@ -53,6 +53,8 @@ if __name__ == '__main__':
     re_packaged_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks'
     apk_dir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/apks'
     save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.txt'
-    batch_inject(apk_dir, save_dir, re_packaged_dir, deeplinks_path)
-    batch_sign_apks(re_packaged_dir)
+    deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.json'
+    # batch_inject(apk_dir, save_dir, re_packaged_dir, deeplinks_path)
+    # batch_sign_apks(re_packaged_dir)
+    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/fluxi'
+    unit_inject(app_save_dir, re_packaged_dir + '/test.apk', deeplinks_path)

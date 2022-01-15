@@ -6,16 +6,20 @@ import json
 import os
 import sys
 
+
 def addLinkToDict(schemeName, activityName, linkCount, thisDict, pkName, action):
+    deeplinks = 'deeplinks'
+    params = 'params'
     if activityName in thisDict[pkName].keys():
-        thisDict[pkName][activityName].append(
+        thisDict[pkName][activityName].get(deeplinks).append(
             [schemeName + '://' + activityName + str(linkCount), action])
     else:
-        thisDict[pkName][activityName] = [
-            [schemeName + '://' + activityName + str(linkCount), action]]
+        item = {deeplinks: [[schemeName + '://' + activityName + str(linkCount), action]], params: []}
+        thisDict[pkName][activityName] = item
     return thisDict
 
-def injectApk(folderName, deeplinks=r'deeplinks2.json'):
+
+def injectApk(folderName, deeplinks=r'deeplinks.json'):
     # get packageName
     xmlDir = os.path.join(folderName, 'AndroidManifest.xml')
 
@@ -34,8 +38,8 @@ def injectApk(folderName, deeplinks=r'deeplinks2.json'):
                     # print(activity)
                     linkCount = 0
                     activity['@android:exported'] = True
-                    activityName = activity['@android:name'].split('.')[-1]
-
+                    # activityName = activity['@android:name'].split('.')[-1]
+                    activityName = activity['@android:name']
                     # start inject
                     if 'intent-filter' in activity.keys():
                         # print(activity['intent-filter'], activityName)
@@ -151,16 +155,35 @@ def injectApk(folderName, deeplinks=r'deeplinks2.json'):
     with open(xmlDir, 'w') as fd:
         fd.write(xmltodict.unparse(doc, pretty=True))
 
-    oldDict = json.load(open(deeplinks, 'r'))
-    newDict = {**oldDict, **thisDict}
-    with open(deeplinks, 'w') as fd:
+    if os.path.exists(deeplinks):
+        with open(deeplinks, 'r', encoding='utf8') as f:
+            oldDict = f.read()
+            if oldDict != '':
+                oldDict = json.loads(oldDict)
+                newDict = {**oldDict, **thisDict}
+            else:
+                newDict = thisDict
+    else:
+        newDict = thisDict
+    with open(deeplinks, 'w', encoding='utf8') as fd:
         json.dump(newDict, fd, indent=4)
+
+    # if os.path.exists(deeplinks):
+    #     with open(deeplinks, 'a+', encoding='utf8') as f:
+    #         oldDict = json.loads(f.read())
+    #         newDict = {**oldDict, **thisDict}
+    #     with open(deeplinks, 'a+', encoding='utf8') as fd:
+    #         json.dump(newDict, fd, indent=4)
+    # else:
+    #     with open(deeplinks, 'a+', encoding='utf8') as fd:
+    #         json.dump(thisDict, fd, indent=4)
 
 
 if __name__ == '__main__':
     # get sys args
     args = sys.argv
-    folderName = args[1]
+    # folderName = args[1]
+    folderName = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/data/ess_41_reflexis_one_v4.1..apk'
     # folderName = 'Amazon Prime Video by Amazon Mobile LLC - com.amazon.avod.thirdpartyclient'
-    deeplinks = r'deeplinks2.json'
+    deeplinks = r'../data/deeplinks.json'
     injectApk(folderName, deeplinks)

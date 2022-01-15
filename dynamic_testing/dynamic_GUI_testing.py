@@ -84,7 +84,7 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, test_time=300):
         cur_test_time = datetime.now()
         delta = (cur_test_time - test_start_time).total_seconds()
         if delta > test_time:
-            print('visited rate:%s in %s ' % (path_planner.get_visited_rate(), test_time))
+            print('visited rate:%s in %s seconds' % (path_planner.get_visited_rate(), test_time))
             return
 
 
