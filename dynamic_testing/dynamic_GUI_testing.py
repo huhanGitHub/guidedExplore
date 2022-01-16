@@ -7,9 +7,10 @@ from dynamic_testing.grantPermissonDetector import dialogSolver
 import subprocess
 from datetime import datetime
 from uiautomator2 import Direction
+from activity_launcher import launch_activity_by_deeplinks, launch_activity_by_deeplink
 
 
-def random_dfs_explore(d, path_planner, timeout=30):
+def random_dfs_explore(d, deviceId, path_planner, timeout=30):
     d_activity, d_package, isLauncher = getActivityPackage(d)
     start_time = datetime.now()
 
@@ -33,7 +34,10 @@ def random_dfs_explore(d, path_planner, timeout=30):
                 path_planner.set_visited(d2_activity)
                 # d.press('back')
                 full_cur_activity = path_planner.get_activity_full_path(d_activity)
-                d.app_start(d_package, full_cur_activity)
+                # d.app_start(d_package, full_cur_activity)
+                deeplinks, actions, params = path_planner.get_deeplinks_by_package_activity(d_package, full_cur_activity)
+                status = launch_activity_by_deeplinks(deviceId, deeplinks, actions, params)
+
 
         cur_time = datetime.now()
         delta = (cur_time - start_time).seconds
@@ -42,16 +46,18 @@ def random_dfs_explore(d, path_planner, timeout=30):
         else:
             next_activity = path_planner.pop_next_activity()
             if next_activity is not None:
-                d.app_start(d_package, next_activity)
-                # path_planner.set_visited(next_activity)
+                # d.app_start(d_package, next_activity)
+                deeplinks, actions, params = path_planner.get_deeplinks_by_package_activity(d_package, next_activity)
+                status = launch_activity_by_deeplinks(deviceId, deeplinks, actions, params)
+
                 d_activity, d_package, isLauncher = getActivityPackage(d)
             else:
                 print('no next activity, exit')
                 return
 
 
-def unit_dynamic_testing(deviceId, apk_path, atg_json, test_time=300):
-    installed1, packageName, mainActivity = installApk(apk_path, device=deviceId, reinstall=False)
+def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, test_time=1800):
+    installed1, packageName, mainActivity = installApk(apk_path, device=deviceId, reinstall=True)
     if installed1 != 0:
         print('install ' + apk_path + ' fail.')
         return
@@ -69,16 +75,16 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, test_time=300):
     dialogSolver(d)
     # d.swipe_ext(Direction.FORWARD)
     # d.swipe_ext(Direction.BACKWARD)
-    path_planner = PathPlanner(atg_json)
+    path_planner = PathPlanner(atg_json, deeplinks_json)
 
-    random_dfs_explore(d, path_planner, timeout=20)
+    random_dfs_explore(d, deviceId, path_planner, timeout=20)
 
     next_activity = path_planner.pop_next_activity()
     while next_activity is not None:
         d.app_start(packageName, next_activity)
         # d.swipe_ext(Direction.FORWARD)
         # d.swipe_ext(Direction.BACKWARD)
-        random_dfs_explore(d, path_planner, timeout=20)
+        random_dfs_explore(d, deviceId, path_planner, timeout=20)
         next_activity = path_planner.pop_next_activity()
         print('---------------------- visited rate: ', path_planner.get_visited_rate())
         cur_test_time = datetime.now()
@@ -90,6 +96,7 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, test_time=300):
 
 if __name__ == '__main__':
     deviceId = '192.168.57.101'
-    apk_path = r'/Users/hhuu0025/PycharmProjects/uiautomator2/googleplay/apks/BUSINESS/com.reflexisinc.dasess4110/ess_41_reflexis_one_v4.1..apk'
+    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks/test.apk'
     atg_json = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/ATG/activity_match/atg/ess_41_reflexis_one_v4.1..apk.json'
-    unit_dynamic_testing(deviceId, apk_path, atg_json)
+    deeplinks_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks_params.json'
+    unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json)

@@ -62,6 +62,7 @@ class PathPlanner:
 
     def get_deeplinks_by_package_activity(self, package, target_activity):
         deeplinks = []
+        actions = []
         params = []
         activity_full = None
         packages = self.deeplinks.keys()
@@ -69,15 +70,20 @@ class PathPlanner:
             activities = self.deeplinks.get(package)
             for activity in activities.keys():
                 if target_activity in activity:
-                    activity_full = activity
+                    activity_full = activities.get(activity)
                     break
 
             if activity_full is None:
                 return None
             else:
-                deeplinks = activity_full.get('deeplinks')
+                deeplinks_actions = activity_full.get('deeplinks')
+                for deeplink, action in deeplinks_actions:
+                    deeplinks.append(deeplink)
+                    actions.append(action)
+
                 params = activity_full.get('params')
 
+                return deeplinks, actions, params
         else:
             return None
 

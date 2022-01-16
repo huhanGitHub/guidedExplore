@@ -37,7 +37,7 @@ if __name__ == '__main__':
     deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.txt'
     # batch_decompile(apk_dir, save_dir, re_packaged_dir)
 
-    apk_path = r'/Users/hhuu0025/PycharmProjects/uiautomator2/googleplay/apks/BUSINESS/com.reflexisinc.dasess4110/ess_41_reflexis_one_v4.1..apk'
-    app_save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/fluxi'
+    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/apks/yelp_for_business_v21.42..apk'
+    app_save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/yelp'
     unit_decpmpile(apk_path, app_save_path)
 
