@@ -5,7 +5,6 @@ import json
 class PathPlanner:
     atg_list = []
     reverse_atg_dict = {}
-    visited_count = 0
     total_activity = 0
     visited_map = {}
     deeplinks = {}
@@ -25,7 +24,7 @@ class PathPlanner:
                 continue
             else:
                 self.visited_map[activity[0]] = True
-                self.visited_count += 1
+                # self.visited_count += 1
                 pop = activity[0]
                 break
 
@@ -41,7 +40,6 @@ class PathPlanner:
         for k, v in self.visited_map.items():
             if activity in k:
                 self.visited_map[k] = True
-                self.visited_count += 1
 
     def check_visit(self, activity):
         visited = False
@@ -58,7 +56,11 @@ class PathPlanner:
                 return k
 
     def get_visited_rate(self):
-        return self.visited_count/self.total_activity
+        count = 0
+        for k, v in self.visited_map.items():
+            if v:
+                count = count + 1
+        return count/self.total_activity
 
     def get_deeplinks_by_package_activity(self, package, target_activity):
         deeplinks = []
@@ -74,7 +76,7 @@ class PathPlanner:
                     break
 
             if activity_full is None:
-                return None
+                return None, None, None
             else:
                 deeplinks_actions = activity_full.get('deeplinks')
                 for deeplink, action in deeplinks_actions:
@@ -85,7 +87,7 @@ class PathPlanner:
 
                 return deeplinks, actions, params
         else:
-            return None
+            return None, None, None
 
 
 def rank_atg_weight(atg_json):

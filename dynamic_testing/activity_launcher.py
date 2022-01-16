@@ -33,6 +33,8 @@ def launch_activity_by_deeplink(deviceId, deeplink, action, params):
 
 def launch_activity_by_deeplinks(deviceId, deeplinks, actions, params):
     launch_status = False
+    if deeplinks is None or actions is None:
+        return launch_status
     for deeplink, action in zip(deeplinks, actions):
         status = launch_activity_by_deeplink(deviceId, deeplink, action, params)
         if status:
