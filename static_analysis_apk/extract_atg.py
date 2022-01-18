@@ -109,8 +109,8 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'acti
             print(k,v)
 
         save_path = os.path.join(save_dir, folder + '.json')
-        with open(save_path, 'a') as fp:
-            json.dump(activity_dict, fp)
+        with open(save_path, 'w') as fp:
+            json.dump(activity_dict, fp, indent=4)
             print('Count: ' + str(count))
 
 

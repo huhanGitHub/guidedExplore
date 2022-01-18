@@ -19,7 +19,7 @@ def launch_activity_by_deeplink(deviceId, deeplink, action, params):
         params_cmd = ' '.join(params)
         cmd = cmd + ' ' + params_cmd
     try:
-        p = subprocess.run(cmd, shell=True, timeout=8, capture_output=True).stdout
+        p = subprocess.run(cmd, shell=True, timeout=5, capture_output=True).stdout
 
         if intent_error_msg in str(p):
             print('intent fail')
