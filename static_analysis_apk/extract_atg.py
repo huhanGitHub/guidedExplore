@@ -102,7 +102,9 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'acti
                         print(str(e))
                         # print(fullpath)
                         pass
-            break
+                    
+            # Breaking for test
+            # break
         for k,v in activity_dict.items():
             print(k,v)
 
