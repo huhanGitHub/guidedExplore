@@ -107,7 +107,7 @@ class PathPlanner:
 
         if len(deeplinks) == 0:
             return None
-        sample = random.sample(deeplinks, 1)
+        sample = random.sample(deeplinks, 1)[0]
         return sample
 
     def log_visited_rate(self, rates, path= r'visited_rate.txt'):
