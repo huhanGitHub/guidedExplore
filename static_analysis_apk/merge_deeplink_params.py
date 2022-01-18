@@ -57,7 +57,7 @@ class ParamGenerator:
                     if params_list is not None:
                         activities.get(activity).get(params).extend(params_list)
 
-            with open(merged_path, 'a+', encoding='utf8') as save:
+            with open(merged_path, 'w', encoding='utf8') as save:
                 json.dump(deeplinks, save, indent=4)
 
 

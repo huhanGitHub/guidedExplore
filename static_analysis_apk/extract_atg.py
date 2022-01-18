@@ -6,7 +6,6 @@ import json
 import shutil
 
 
-
 def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'activity_match'):
     for folder in folders:
         activity_dict = {}
@@ -267,15 +266,13 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
 
     save_path = os.path.join(save_dir, folder + '.json')
     with open(save_path, 'a') as fp:
-        json.dump(activity_dict, fp)
+        json.dump(activity_dict, fp, indent=4)
         print('Count: ' + str(count))
 
 
 if __name__ == '__main__':
     decompiled_apks = '/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/atgs'
-
-
+    save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/activity_atg'
 
     # decompiled_apks = '/Users/ruiqidong/Desktop/chunyang/'
     # save_dir = '/Users/ruiqidong/Desktop/test/'

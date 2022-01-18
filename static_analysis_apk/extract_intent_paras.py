@@ -130,7 +130,7 @@ def smali_intent_para_extractor(path, save_path):
 
         apps_intent_para[package] = intent_para
     save_json = json.dumps(apps_intent_para, indent=4)
-    with open(save_path, 'a+', encoding='utf8') as f2:
+    with open(save_path, 'w', encoding='utf8') as f2:
         f2.write(save_json)
 
 

@@ -23,7 +23,6 @@ def batch_decompile(apk_dir, save_dir, re_packaged_dir):
 # /Users/hhuu0025/Downloads/SDK/build-tools/31.0.0/apksigner sign --ks /Users/hhuu0025/.android/debug.keystore --ks-pass pass:android --key-pass pass:android  /Users/h
 # huu0025/PycharmProjects/uiautomator2/activityMining/re_apks/youtube.apk
 
-
 def unit_decpmpile(apk_path, app_save_dir):
     print('Start apktool')
     cmd1 = 'apktool d ' + apk_path + ' -f -o ' + app_save_dir
@@ -37,7 +36,7 @@ if __name__ == '__main__':
     deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.txt'
     # batch_decompile(apk_dir, save_dir, re_packaged_dir)
 
-    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/apks/yelp_for_business_v21.42..apk'
-    app_save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/yelp'
+    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/apks/Autolist.apk'
+    app_save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/autolist'
     unit_decpmpile(apk_path, app_save_path)
 

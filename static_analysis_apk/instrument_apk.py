@@ -42,6 +42,9 @@ def unit_inject(app_save_dir, re_packaged_apk, deeplinks_path):
     cmd2 = 'apktool b ' + app_save_dir + ' --use-aapt2 -o ' + re_packaged_apk
     os.system(cmd2)
 
+    print('sign apk')
+    unit_sign_APK(re_packaged_apk)
+
 
 def unit_sign_APK(apk_path):
     print('sign ' + apk_path)
@@ -59,4 +62,4 @@ if __name__ == '__main__':
     app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/fluxi'
     unit_inject(app_save_dir, re_packaged_dir + '/test.apk', deeplinks_path)
 
-    unit_sign_APK(re_packaged_dir + '/test.apk')
+    # unit_sign_APK(re_packaged_dir + '/test.apk')
