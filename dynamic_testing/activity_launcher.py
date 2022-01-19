@@ -4,6 +4,7 @@ import json
 import time
 
 intent_error_msg = 'Error: Activity not started'
+intent_success_msg = 'Status: ok'
 
 
 def read_deeplinks(deeplink):
@@ -25,7 +26,9 @@ def launch_activity_by_deeplink(deviceId, deeplink, action, params):
             print('intent fail')
             return False
         else:
-            return True
+            if intent_success_msg in str(p):
+                return True
+            return False
     except subprocess.TimeoutExpired:
         print('cmd timeout')
         return False

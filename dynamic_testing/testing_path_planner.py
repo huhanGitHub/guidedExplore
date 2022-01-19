@@ -50,6 +50,14 @@ class PathPlanner:
                 print(k)
                 return
 
+    def set_popped(self, activity):
+        if activity is None:
+            return
+        for k, v in self.visited_map.items():
+            if activity in k:
+                self.visited_map[k][1] = True
+                return
+
     def check_visit(self, activity):
         visited = False
         for k, v in self.visited_map.items():
@@ -98,17 +106,17 @@ class PathPlanner:
         else:
             return None, None, None
 
-    def get_one_unvisited_activity_deeplinks(self):
-        deeplinks = []
+    def get_unvisited_activity_deeplinks(self):
+        bundles = []
         for activity, v in self.visited_map.items():
-            if not v[0]:
+            if not v[0] and not v[1]:
                 deeplinks, actions, params = self.get_deeplinks_by_package_activity(self.package, activity)
-                deeplinks.append([deeplinks, actions, params])
+                bundles.append([activity, deeplinks, actions, params])
 
-        if len(deeplinks) == 0:
+        if len(bundles) == 0:
             return None
-        sample = random.sample(deeplinks, 1)[0]
-        return sample
+        # sample = random.sample(deeplinks, 1)[0]
+        return bundles
 
     def log_visited_rate(self, rates, path= r'visited_rate.txt'):
         with open(path, 'a+', encoding='utf8') as f:

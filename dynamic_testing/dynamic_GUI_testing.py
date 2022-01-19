@@ -89,20 +89,28 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_
                 # d.app_start(d_package, next_activity)
                 deeplinks, actions, params = path_planner.get_deeplinks_by_package_activity(packageName,
                                                                                             next_activity)
+                status = launch_activity_by_deeplinks(deviceId, deeplinks, actions, params)
+                if status:
+                    path_planner.set_visited(next_activity)
+                    break
+
             else:
                 print('no next activity in ATG')
-                case = path_planner.get_one_unvisited_activity_deeplinks()
-                if case is None:
+                unvisited = path_planner.get_unvisited_activity_deeplinks()
+                if unvisited is None:
                     print('no activity, finish')
                     print('visited rate:%s' % (path_planner.get_visited_rate()))
                     visited_rate.append(path_planner.get_visited_rate())
                     path_planner.log_visited_rate(visited_rate, path=log_save_path)
                     return
                 else:
-                    deeplinks, actions, params = case
-            status = launch_activity_by_deeplinks(deviceId, deeplinks, actions, params)
-            if status:
-                break
+                    for i in unvisited:
+                        activity, deeplinks, actions, params = i
+                        status = launch_activity_by_deeplinks(deviceId, deeplinks, actions, params)
+                        path_planner.set_popped(activity)
+                        if status:
+                            path_planner.set_visited(activity)
+                            break
 
         cur_test_time = datetime.now()
         delta = (cur_test_time - test_start_time).total_seconds()
@@ -113,8 +121,8 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_
 
 
 if __name__ == '__main__':
-    # deviceId = '192.168.57.101'
-    deviceId = 'cb8c90f4'
+    deviceId = '192.168.57.101'
+    # deviceId = 'cb8c90f4'
     apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks/ez.apk'
     atg_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/activity_atg/ez.json'
     deeplinks_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks_params.json'
