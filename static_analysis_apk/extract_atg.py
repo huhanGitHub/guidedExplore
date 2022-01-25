@@ -69,8 +69,7 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir):
 
 
                             if activity_lst != [""] and len(activity_lst) != 0:
-                                # print(class_path)
-                                # print(activity_lst)
+
                                 if "$" in class_path:
                                     class_path = class_path.split("$")[0]
 
@@ -79,8 +78,7 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir):
                                     activity_dict[class_path] = list(set(activity_dict[class_path]))
                                 activity_dict[class_path] = list(set(activity_lst))
                     except Exception as e:
-                        # print(str(e))
-                        print(fullpath +"!!!!!")
+                        print(str(e))
                         pass
                     
             # Breaking for test
@@ -96,11 +94,9 @@ def activity_searching(folders, abs_path):
     activity_dict = {}
     activity_lst = []
     for folder in folders:
-        # print(folder)
+
         folder_path = os.path.join(abs_path, folder)
-        # os.chdir(folder_path)
-        #        destination = '/Users/ruiqidong/Desktop/same-launcher/'
-        #         print(folder)
+
         manifestval_path = os.path.join(folder_path, 'AndroidManifest.xml')
         # print('@@@@@@@@@@@@@@@@@@@@@@   ' + folder + '   @@@@@@@@@@@@@@@@@@@@@@')
         try:
@@ -118,8 +114,8 @@ def activity_searching(folders, abs_path):
                         activity_lst.append(activity)
                 activity_dict[folder] = list(set(activity_lst))
         except Exception as e:
-            # print(str(e))
-            # print(folder +"!!!!!!!!!")
+            print(str(e))
+
             pass
     # print(activity_dict)
     return activity_dict
@@ -191,7 +187,7 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
 
                             if 'const-class' in current_line:
                                 activity = current_line.split()[-1][:-1][1:].replace("/", ".")
-                                # print(activity)
+
                                 if '[' in activity:
                                     continue
                                 if activity == class_path:
@@ -216,7 +212,7 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
                                 activity_dict[class_path] = list(set(activity_dict[class_path]))
                             activity_dict[class_path] = list(set(activity_lst))
                 except Exception as e:
-                    # print(str(e))
+                    print(str(e))
                     # print(fullpath)
                     pass
         # break
