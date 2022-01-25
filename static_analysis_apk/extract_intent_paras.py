@@ -6,6 +6,7 @@ except ImportError:
     import xml.etree.ElementTree as ET
 intent_smali_fileds = 'Landroid/content/Intent;->get'
 const_string = 'const-string'
+package_identifier = 'package="'
 
 
 # statistics intent paras
@@ -38,7 +39,7 @@ def intent_field_extractor(path):
 def smali_intent_para_extractor(path, save_path):
     apps_intent_para = {}
     apps = [i for i in os.listdir(path)]
-
+    # print(apps)
     # find package names for each app. find all activity names
     packages = []
     apps_activities = {}
@@ -55,7 +56,9 @@ def smali_intent_para_extractor(path, save_path):
                 try:
                     tree = ET.parse(file_path)
                     root = tree.getroot()
-                    package = root.attrib.get('package')
+                    package = root.attrib.get('package', None)
+                    if package is None:
+                        continue
                     for node in root.iter('activity'):
                         name = node.attrib.get('{http://schemas.android.com/apk/res/android}name')
                         print('name ' + node.attrib.get('{http://schemas.android.com/apk/res/android}name'))
@@ -68,9 +71,15 @@ def smali_intent_para_extractor(path, save_path):
                 packages.append(package)
                 apps_activities[package] = activities
 
+    for app in apps:
+        if ('.DS_Store' in app) or ('R.smali' in app):
+            apps.remove(app)
+
     for subscript, app in enumerate(apps):
         app_path = os.path.join(path, app)
         intent_para = {}
+        print(subscript)
+        print(packages)
         package = packages[subscript]
         for root, dirs, files in os.walk(app_path):
             for file in files:
@@ -122,14 +131,14 @@ def smali_intent_para_extractor(path, save_path):
                                 intent_para[file] = cur_pairs
 
         apps_intent_para[package] = intent_para
-    save_json = json.dumps(apps_intent_para)
-    with open(save_path, 'a+', encoding='utf8') as f2:
+    save_json = json.dumps(apps_intent_para, indent=4)
+    with open(save_path, 'w', encoding='utf8') as f2:
         f2.write(save_json)
 
 
 if __name__ == '__main__':
     # path = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/recompile samples'
     # intent_field_extractor(path)
-    path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/intent_para.json'
+    path = r'/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/recompiled_apks'
+    save_path = r'/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/intent_para.json'
     smali_intent_para_extractor(path, save_path)

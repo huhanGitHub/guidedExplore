@@ -129,33 +129,6 @@ def xmlScreenSaver_single(saveDir, xml1, img1, activity1):
         img1.save(img1Path)
 
 
-def shorterFilename(saveDir):
-    index = 0
-    for root, dirs, files in os.walk(saveDir):
-        for file in files:
-            if str(file).endswith('.apk') or str(file).endswith('.xapk'):
-                filePath = os.path.join(root, file)
-                fields = file.split('.')
-                extention = fields[-1]
-                name = '.'.join(fields[:-1])
-                if len(name) > 25:
-                    name = name[:25]
-                name = name.replace(' ', '_')
-                name = name.replace('\\', '')
-                newFile = name + '.' + extention
-                newFilePath = os.path.join(root, newFile)
-                try:
-                    os.rename(filePath, newFilePath)
-                except FileExistsError:
-                    print('exist, new name')
-                    newFile = name + str(index) + '.' + extention
-                    index += 1
-                    newFilePath = os.path.join(root, newFile)
-                    os.rename(filePath, newFilePath)
-                except OSError:
-                    print('os error')
-
-
 def safeScreenshot(d):
     try:
         img = d.screenshot()
@@ -260,5 +233,3 @@ if __name__ =='__main__':
     apksDir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/googleplay/apks'
     device1Id = '192.168.56.104'
     #uninstallApks_single(apksDir, device1Id)
-
-    shorterFilename(saveDir)
