@@ -22,11 +22,12 @@ def addLinkToDict(schemeName, activityName, linkCount, thisDict, pkName, action)
 def injectApk(folderName, deeplinks=r'deeplinks.json'):
     # get packageName
     xmlDir = os.path.join(folderName, 'AndroidManifest.xml')
-
+    print(xmlDir)
     allLinks = []
     thisDict = {}
     try:
         with open(xmlDir, 'r') as fd:
+
             doc = xmltodict.parse(fd.read())
             pkName = doc['manifest']['@package']
             thisDict = {pkName: {}}
@@ -142,6 +143,7 @@ def injectApk(folderName, deeplinks=r'deeplinks.json'):
                                                      }
                         thisDict = addLinkToDict(schemeName, activityName, linkCount, thisDict, pkName,
                                                  'android.intent.action.VIEW')
+
     except FileNotFoundError as e:
         print(e)
         return
@@ -183,6 +185,7 @@ if __name__ == '__main__':
     # get sys args
     args = sys.argv
     # folderName = args[1]
+    print("WHAT is THis?????????????????????????")
     folderName = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/data/ess_41_reflexis_one_v4.1..apk'
     # folderName = 'Amazon Prime Video by Amazon Mobile LLC - com.amazon.avod.thirdpartyclient'
     deeplinks = r'../data/deeplinks.json'

@@ -1,15 +1,11 @@
 import random
 
-import uiautomator2 as u2
-import requests
 from util import *
-from dynamic_testing.testing_path_planner import PathPlanner
-from dynamic_testing.hierachySolver import click_points_Solver, bounds2int
-from dynamic_testing.grantPermissonDetector import dialogSolver
-import subprocess
+from testing_path_planner import PathPlanner
+from hierachySolver import click_points_Solver, bounds2int
+from grantPermissonDetector import dialogSolver
 from datetime import datetime
-from uiautomator2 import Direction
-from activity_launcher import launch_activity_by_deeplinks, launch_activity_by_deeplink
+from activity_launcher import launch_activity_by_deeplinks
 
 
 def random_dfs_explore(d, deviceId, path_planner, timeout=30):
@@ -121,10 +117,21 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_
 
 
 if __name__ == '__main__':
-    deviceId = '192.168.57.101'
+    # deviceId = '192.168.57.101'
+    # G
+    deviceId = '192.168.57.101:5555'
+    # deviceId = '192.168.57.102:5555'
+    # deviceId = '192.168.57.103:5555'
+
+    # android studio
+    # deviceId = 'emulator-5554'
+    # oppo
+    deviceId = 'c5ffac19'
+    # huawei
+    # deviceId = 'VWS0220317002414'
     # deviceId = 'cb8c90f4'
-    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks/ez.apk'
-    atg_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/activity_atg/ez.json'
-    deeplinks_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks_params.json'
-    log = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/visited_rate/ez.txt'
+    apk_path = r'/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/repackaged_apks/ez.apk'
+    atg_json = r'/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/activity_atg/ez.json'
+    deeplinks_json = r'/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/deeplinks_params.json'
+    log = r'/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/visited_rate/ez.txt'
     unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log)

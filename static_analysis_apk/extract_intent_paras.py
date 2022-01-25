@@ -39,7 +39,7 @@ def intent_field_extractor(path):
 def smali_intent_para_extractor(path, save_path):
     apps_intent_para = {}
     apps = [i for i in os.listdir(path)]
-
+    # print(apps)
     # find package names for each app. find all activity names
     packages = []
     apps_activities = {}
@@ -78,6 +78,8 @@ def smali_intent_para_extractor(path, save_path):
     for subscript, app in enumerate(apps):
         app_path = os.path.join(path, app)
         intent_para = {}
+        print(subscript)
+        print(packages)
         package = packages[subscript]
         for root, dirs, files in os.walk(app_path):
             for file in files:
@@ -137,6 +139,6 @@ def smali_intent_para_extractor(path, save_path):
 if __name__ == '__main__':
     # path = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/recompile samples'
     # intent_field_extractor(path)
-    path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/intent_para.json'
+    path = r'/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/recompiled_apks'
+    save_path = r'/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/intent_para.json'
     smali_intent_para_extractor(path, save_path)
