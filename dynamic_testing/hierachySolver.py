@@ -142,7 +142,13 @@ def click_points_Solver(xml1):
             if 'systemui' not in package:
                 leaves.append(child)
 
-    return leaves
+    ret_bounds = []
+    for leaf in leaves:
+        bounds = leaf.attrib.get('bounds')
+        bounds = bounds2int(bounds)
+        ret_bounds.append(bounds)
+
+    return ret_bounds
 
 
 def full_UI_click_test(sess, xml, cmd):

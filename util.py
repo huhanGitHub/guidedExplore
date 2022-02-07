@@ -44,7 +44,7 @@ def installApk(apkPath, device=None, reinstall=True):
         print('uninstall success')
 
     # begin to install apk
-    command3 = prefixCmd + ' install ' + apkPath
+    command3 = prefixCmd + ' install -t ' + apkPath
     # os.system(command3)
     try:
         out = subprocess.check_output(command3, shell=True, stderr=subprocess.STDOUT, timeout=25).decode('utf-8')

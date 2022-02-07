@@ -218,7 +218,7 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
         # break
     save_path = os.path.join(save_dir, folder[folder.rindex('/') + 1:] + '.json')
 
-    with open(save_path, 'a') as fp:
+    with open(save_path, 'w') as fp:
         json.dump(activity_dict, fp, indent=4)
 
 

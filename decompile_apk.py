@@ -36,7 +36,7 @@ if __name__ == '__main__':
     deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.txt'
     # batch_decompile(apk_dir, save_dir, re_packaged_dir)
 
-    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/apks/EZ.apk'
-    app_save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/ez'
+    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/apks/TextPad.apk'
+    app_save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/TextPad'
     unit_decpmpile(apk_path, app_save_path)
 

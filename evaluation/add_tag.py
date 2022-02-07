@@ -1,0 +1,48 @@
+import os
+
+
+def add_tag(java_path, tag_index):
+    tag_string = 'onClick('
+    tag_index = tag_index
+    package_name = 'import com.maxistar.textpad.utils.Milestone;\n'
+    contents = ''
+    with open(java_path, 'r', encoding='utf8') as f:
+        lines = f.readlines()
+        contents = lines
+        for index, line in enumerate(lines):
+            if tag_string in line:
+                cur_line = line
+                cur_index = index
+                # find { to insert code
+                while '{' not in cur_line:
+                    cur_index = cur_index + 1
+                    cur_line = lines[cur_index]
+
+                replace_string = '{' + '\n Milestone mile = new Milestone("point {0}"); \n mile.tag(); \n'.format(str(tag_index))
+                cur_line = cur_line.replace('{', replace_string)
+                tag_index += 1
+                contents[cur_index] = cur_line
+
+    contents.insert(1, package_name)
+    with open(java_path, 'w', encoding='utf8') as f:
+        f.writelines(contents)
+
+    return tag_index
+
+
+def batch_add_tag(dir):
+    tag_index = 0
+    for root, dirs, files in os.walk(dir):
+        for file in files:
+            if str(file).endswith('.java'):
+                file_path = os.path.join(root, file)
+                tag_index = add_tag(file_path, tag_index)
+
+    print(tag_index)
+
+
+if __name__=='__main__':
+    java_file = r'/Users/hhuu0025/AndroidStudioProjects/TextPad/app/src/main/java/com/maxistar/textpad/activities/EditorActivity.java'
+    tag_index = 0
+    dir = r'/Users/hhuu0025/AndroidStudioProjects/TextPad/'
+    batch_add_tag(dir)

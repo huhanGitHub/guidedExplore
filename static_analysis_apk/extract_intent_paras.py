@@ -5,8 +5,50 @@ try:
 except ImportError:
     import xml.etree.ElementTree as ET
 intent_smali_fileds = 'Landroid/content/Intent;->get'
+intent_get_action = 'Landroid/content/Intent;->getAction()'
 const_string = 'const-string'
 package_identifier = 'package="'
+equals_smali = 'Ljava/lang/String;->equals'
+contains_smali = 'Ljava/util/Set;->contains'
+
+
+# first check the field contains_smali and equals_smali to judge if equals or contains is existed
+def check_equals_contains(smali_file):
+    equals = False
+    contains = False
+    with open(smali_file, 'r', encoding='utf8') as f:
+        lines = f.readlines()
+        for line in lines:
+            if equals_smali in line:
+                equals = True
+            if contains_smali in line:
+                contains = True
+
+    return equals, contains
+
+
+def extract_force_test_strings(smali_file):
+    strings = []
+    equals, contains = check_equals_contains(smali_file)
+    if equals or contains:
+        # extract all strings
+        with open(smali_file, 'r+', encoding='utf8') as f:
+            lines = f.readlines()
+            for line in lines:
+                if const_string in line:
+                    tag = line.strip()
+                    tag = tag[tag.index('"') + 1: tag.rindex('"')]
+                    tag = tag.replace('\n', '')
+                    if tag != '':
+                        strings.append(tag)
+
+        if len(strings) != 0:
+            if contains and not equals:
+                strings = [' '.join(strings)]
+
+            return strings
+
+    return strings
 
 
 # statistics intent paras
