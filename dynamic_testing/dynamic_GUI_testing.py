@@ -23,6 +23,7 @@ def random_bfs_explore(d, deviceId, path_planner, timeout=60, swipe=False):
     # judge if the screen can swipe
     swipe = False
     xml = d.dump_hierarchy(compressed=True)
+
     leaves = click_points_Solver(xml)
     d.swipe_ext(Direction.FORWARD)
     xml2 = d.dump_hierarchy(compressed=True)
@@ -219,7 +220,7 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_
 
 
 if __name__ == '__main__':
-    deviceId = '192.168.57.103'
+    deviceId = '192.168.57.101'
     # deviceId = 'cb8c90f4'
     # deviceId = 'VEG0220B17010232'
     apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks/TextPad.apk'
