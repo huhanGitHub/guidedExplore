@@ -30,13 +30,13 @@ def unit_decpmpile(apk_path, app_save_dir):
 
 
 if __name__ == '__main__':
-    re_packaged_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks'
-    apk_dir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/apks'
-    save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.txt'
+    re_packaged_dir = r'data/repackaged_apks'
+    apk_dir = r'data/apks'
+    save_dir = r'/Users/han/GoogleDrive/Monash/project/guidedExplore/data/recompiled_apks'
+    deeplinks_path = r'data/deeplinks.txt'
     # batch_decompile(apk_dir, save_dir, re_packaged_dir)
 
-    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/apks/TextPad.apk'
-    app_save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/TextPad'
+    apk_path = r'data/apks/ebay.apk'
+    app_save_path = r'data/recompiled_apks/ebay'
     unit_decpmpile(apk_path, app_save_path)
 

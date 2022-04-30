@@ -47,9 +47,9 @@ def unit_run_preprocess(app_save_dir, repackage_app_save_dir, deeplinks_path, sa
 
 
 if __name__ == '__main__':
-    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/TextPad'
-    repackage_app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks'
-    deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.json'
-    save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data'
-    recompiled_apks = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
+    app_save_dir = r'data/recompiled_apks/ebay'
+    repackage_app_save_dir = r'data/repackaged_apks'
+    deeplinks_path = r'data/deeplinks.json'
+    save_dir = r'data'
+    recompiled_apks = r'data/recompiled_apks'
     unit_run_preprocess(app_save_dir, repackage_app_save_dir, deeplinks_path, save_dir, recompiled_apks)

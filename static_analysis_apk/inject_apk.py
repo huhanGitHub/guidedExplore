@@ -185,5 +185,5 @@ if __name__ == '__main__':
     # folderName = args[1]
     folderName = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/data/ess_41_reflexis_one_v4.1..apk'
     # folderName = 'Amazon Prime Video by Amazon Mobile LLC - com.amazon.avod.thirdpartyclient'
-    deeplinks = r'../data/deeplinks.json'
+    deeplinks = r'data/deeplinks.json'
     injectApk(folderName, deeplinks)

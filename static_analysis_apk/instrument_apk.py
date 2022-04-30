@@ -48,18 +48,18 @@ def unit_inject(app_save_dir, re_packaged_apk, deeplinks_path):
 
 def unit_sign_APK(apk_path):
     print('sign ' + apk_path)
-    cmd3 = '/Users/hhuu0025/Downloads/SDK/build-tools/30.0.3/apksigner sign --ks /Users/hhuu0025/.android/debug.keystore --ks-pass pass:android --key-pass pass:android ' + apk_path
+    cmd3 = '/Users/han/Library/Android/sdk/build-tools/30.0.3/apksigner sign --ks /Users/han/.android/debug.keystore --ks-pass pass:android --key-pass pass:android ' + apk_path
     os.system(cmd3)
 
 
 if __name__ == '__main__':
-    re_packaged_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks'
-    apk_dir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/apks'
-    save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.json'
+    re_packaged_dir = r'data/repackaged_apks'
+    apk_dir = r'data/apks'
+    save_dir = r'data/recompiled_apks'
+    deeplinks_path = r'data/deeplinks.json'
     # batch_inject(apk_dir, save_dir, re_packaged_dir, deeplinks_path)
     # batch_sign_apks(re_packaged_dir)
-    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/fluxi'
+    app_save_dir = r'data/recompiled_apks/fluxi'
     unit_inject(app_save_dir, re_packaged_dir + '/test.apk', deeplinks_path)
 
     # unit_sign_APK(re_packaged_dir + '/test.apk')
