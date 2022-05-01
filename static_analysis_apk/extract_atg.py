@@ -3,7 +3,6 @@ import re
 import json
 
 
-
 def activity_mapping(abs_path, folders, available_activity_dict, save_dir):
     for folder in folders:
         activity_dict = {}
@@ -133,18 +132,16 @@ def batch_extract(decompiled_apks, save_dir):
     activity_mapping(decompiled_apks, folders, available_activity_dict, save_dir=save_dir)
 
 
-def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'activity_match'):
+def unit_extract(folder, available_activity_dict, save_dir=r'activity_match'):
     activity_dict = {}
-
-    folder_path = os.path.join(decompiled_apks, folder)
-    smali_folders = os.listdir(folder_path)
+    smali_folders = os.listdir(folder)
     smali_folders = [x for x in smali_folders if 'smali' in x]
 
     print('@@@@@@@@@@@@@@@@@@@@@@   ' + folder + '   @@@@@@@@@@@@@@@@@@@@@@')
 
     for smali_folder in smali_folders:
 
-        smali_path = os.path.join(folder_path, smali_folder)
+        smali_path = os.path.join(folder, smali_folder)
 
         for root, dirs, files in os.walk(smali_path):
 
@@ -158,7 +155,6 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
 
                 class_path = fullpath[: fullpath.rindex('.smali')]
                 class_path = class_path.replace(smali_path, '').replace('/', '.')[1:]
-
 
                 try:
                     with open(fullpath, 'r', encoding='utf8') as f:
@@ -197,7 +193,6 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
                                 if '$' in activity:
                                     activity = activity.split("$")[0]
 
-
                                 if activity in available_activity_dict[folder.split('/')[-1]]:
                                     activity_lst.append(activity)
                                     print(activity + "is found!")
@@ -223,9 +218,19 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
 
 
 if __name__ == '__main__':
-    # decompiled_apks = '/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    # save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/activity_atg'
+    decompiled_apks = '/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
+    save_dir = '/Users/hhuu0025/PycharmProjects/guidedExplorer/data/'
+    # batch_extract(decompiled_apks=decompiled_apks, save_dir=save_dir)
 
-    decompiled_apks = '/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/recompiled_apks'
-    save_dir = '/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/activity_atg'
-    batch_extract(decompiled_apks=decompiled_apks, save_dir=save_dir)
+    folders = os.listdir(decompiled_apks)
+    ignore = ['.idea', '.git', 'activity_match', 'README.md', '.DS_Store', '.ipynb_checkpoints', 'activity.py',
+              'smalianalysis.py', 'activity.py']
+    folders = [x for x in folders if x not in ignore]
+
+    available_activity_dict = activity_searching(folders, decompiled_apks)
+    atg_save_dir = os.path.join(save_dir, 'activity_atg')
+    if not os.path.exists(atg_save_dir):
+        os.mkdir(atg_save_dir)
+
+    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/realtor'
+    unit_extract(app_save_dir, available_activity_dict, save_dir=atg_save_dir)

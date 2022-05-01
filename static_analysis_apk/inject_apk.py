@@ -92,6 +92,8 @@ def injectApk(folderName, deeplinks=r'deeplinks.json'):
                         else:
                             # add single intent-filter
                             actions = []
+                            if 'action' not in activity['intent-filter']:
+                                continue
                             if type(activity['intent-filter']['action']) == list:
                                 for ac in activity['intent-filter']['action']:
                                     actions.append(ac['@android:name'])
@@ -183,7 +185,7 @@ if __name__ == '__main__':
     # get sys args
     args = sys.argv
     # folderName = args[1]
-    folderName = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/data/ess_41_reflexis_one_v4.1..apk'
+    folderName = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/realtor'
     # folderName = 'Amazon Prime Video by Amazon Mobile LLC - com.amazon.avod.thirdpartyclient'
     deeplinks = r'../data/deeplinks.json'
     injectApk(folderName, deeplinks)

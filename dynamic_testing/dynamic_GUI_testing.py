@@ -219,12 +219,76 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_
     return
 
 
+def unit_dynamic_testing_package(deviceId, apk_path, atg_json, deeplinks_json, log_save_path, packageName, test_time=1200):
+    visited_rate = []
+
+    try:
+        d = u2.connect(deviceId)
+    except requests.exceptions.ConnectionError:
+        print('requests.exceptions.ConnectionError')
+        return
+
+    test_start_time = datetime.now()
+
+    # open launcher activity
+    d.app_start(packageName)
+    d.sleep(3)
+    dialogSolver(d)
+    # d.swipe_ext(Direction.FORWARD)
+    # d.swipe_ext(Direction.BACKWARD)
+    path_planner = PathPlanner(packageName, atg_json, deeplinks_json)
+    delta = 0
+    while delta <= test_time:
+        random_bfs_explore(d, deviceId, path_planner, timeout=60, swipe=True)
+        print('---------------------- visited rate: ', path_planner.get_visited_rate())
+        visited_rate.append(path_planner.get_visited_rate())
+
+        while True:
+            next_activity = path_planner.pop_next_activity()
+            if next_activity is not None:
+                # d.app_start(d_package, next_activity)
+                deeplinks, actions, params = path_planner.get_deeplinks_by_package_activity(packageName,
+                                                                                            next_activity)
+                status = launch_activity_by_deeplinks(deviceId, deeplinks, actions, params)
+                if status:
+                    path_planner.set_visited(next_activity)
+                    break
+            else:
+                print('no next activity in ATG')
+                unvisited = path_planner.get_unvisited_activity_deeplinks()
+                if unvisited is None:
+                    print('no activity, finish')
+                    print('visited rate:%s' % (path_planner.get_visited_rate()))
+                    visited_rate.append(path_planner.get_visited_rate())
+                    path_planner.log_visited_rate(visited_rate, path=log_save_path)
+                    cur_test_time = datetime.now()
+                    delta = (cur_test_time - test_start_time).total_seconds()
+                    print('time cost:' + str(delta))
+                    return
+                else:
+                    for i in unvisited:
+                        activity, deeplinks, actions, params = i
+                        status = launch_activity_by_deeplinks(deviceId, deeplinks, actions, params)
+                        path_planner.set_popped(activity)
+                        if status:
+                            path_planner.set_visited(activity)
+                            random_bfs_explore(d, deviceId, path_planner, timeout=60, swipe=True)
+                            break
+
+        cur_test_time = datetime.now()
+        delta = (cur_test_time - test_start_time).total_seconds()
+
+    print('visited rate:%s in %s seconds' % (path_planner.get_visited_rate(), test_time))
+    path_planner.log_visited_rate(visited_rate, path=log_save_path)
+    return
+
+
 if __name__ == '__main__':
-    deviceId = '192.168.57.101'
+    # deviceId = '192.168.57.104'
     # deviceId = 'cb8c90f4'
-    # deviceId = 'VEG0220B17010232'
-    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks/TextPad.apk'
-    atg_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/activity_atg/TextPad.json'
+    deviceId = 'VEG0220B17010232'
+    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks/AmazonVideo.apk'
+    atg_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/activity_atg/AmazonVideo.json'
     deeplinks_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks_params.json'
-    log = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/visited_rate/TextPad.txt'
+    log = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/visited_rate/amazon.txt'
     unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log, reinstall=False)

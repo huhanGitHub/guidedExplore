@@ -59,7 +59,7 @@ if __name__ == '__main__':
     deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.json'
     # batch_inject(apk_dir, save_dir, re_packaged_dir, deeplinks_path)
     # batch_sign_apks(re_packaged_dir)
-    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/fluxi'
-    unit_inject(app_save_dir, re_packaged_dir + '/test.apk', deeplinks_path)
+    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/AmazonVideo'
+    unit_inject(app_save_dir, re_packaged_dir + '/AmazonVideo.apk', deeplinks_path)
 
     # unit_sign_APK(re_packaged_dir + '/test.apk')

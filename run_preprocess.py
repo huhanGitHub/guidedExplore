@@ -6,7 +6,7 @@ from static_analysis_apk.extract_intent_paras import smali_intent_para_extractor
 from static_analysis_apk.merge_deeplink_params import ParamGenerator
 
 
-def unit_run_preprocess(app_save_dir, repackage_app_save_dir, deeplinks_path, save_dir, recompiled_apks):
+def unit_run_preprocess(app_save_dir, recompiled_apks, repackage_app_save_dir, deeplinks_path, save_dir):
     if not os.path.exists(app_save_dir):
         print(app_save_dir, 'not found')
         return
@@ -18,8 +18,8 @@ def unit_run_preprocess(app_save_dir, repackage_app_save_dir, deeplinks_path, sa
     # instrument apk
     apk = app_save_dir[app_save_dir.rindex('/') + 1:]
     repackage_app_save_apk = os.path.join(repackage_app_save_dir, apk)
-    if not os.path.exists(repackage_app_save_apk):
-        os.mkdir(repackage_app_save_apk)
+    # if not os.path.exists(repackage_app_save_apk):
+    #     os.mkdir(repackage_app_save_apk)
     unit_inject(app_save_dir, repackage_app_save_apk + '.apk', deeplinks_path)
 
     # extract atg
@@ -29,12 +29,10 @@ def unit_run_preprocess(app_save_dir, repackage_app_save_dir, deeplinks_path, sa
     folders = [x for x in folders if x not in ignore]
 
     available_activity_dict = activity_searching(folders, recompiled_apks)
-    folder = app_save_dir
-
     atg_save_dir = os.path.join(save_dir, 'activity_atg')
     if not os.path.exists(atg_save_dir):
         os.mkdir(atg_save_dir)
-    unit_extract(decompiled_apks=recompiled_apks, folder=folder, available_activity_dict=available_activity_dict,
+    unit_extract(folder=app_save_dir, available_activity_dict=available_activity_dict,
                  save_dir=atg_save_dir)
 
     # extract intent parameters
@@ -47,9 +45,14 @@ def unit_run_preprocess(app_save_dir, repackage_app_save_dir, deeplinks_path, sa
 
 
 if __name__ == '__main__':
-    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/TextPad'
+
+    # fixed results path, change once
     repackage_app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks'
-    deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.json'
+    deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks_params.json'
     save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data'
     recompiled_apks = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    unit_run_preprocess(app_save_dir, repackage_app_save_dir, deeplinks_path, save_dir, recompiled_apks)
+
+    # decompiled apk source files, change test cases here
+    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/youtube'
+
+    unit_run_preprocess(app_save_dir, recompiled_apks, repackage_app_save_dir, deeplinks_path, save_dir)
