@@ -14,9 +14,9 @@ Set the following configuration of this test in the dynamic_testing/dynamic_GUI_
     
  Then, run this script to explore apps.
  
+ We provide two pre-injected example apps: youtube and EZ explorer in the data/repackaged_apps.
  Note that the apks are all pre-injected into deeplinks and extracted intent parameters and atg in the atg_json and deeplinks_json.
- We provide two example apps: youtube and EZ explorer.
  There may be unpredictable issues, so pls run each app multiple times.
- Lgging in and granting permission in advance will help a lot.
+ Pre-login and granting permission in advance will improve the effectiveness of app exploration.
  The code here is not the latest version, but it can still achieve state-of-the-art.
  
