@@ -14,7 +14,7 @@ from uiautomator2 import Direction
 from activity_launcher import launch_activity_by_deeplinks, launch_activity_by_deeplink
 
 
-def random_bfs_explore(d, deviceId, path_planner, timeout=60, swipe=False):
+def random_bfs_explore(d, deviceId, package_name, path_planner, timeout=60):
 
     d_activity, d_package, isLauncher = getActivityPackage(d)
     start_time = datetime.now()
@@ -43,18 +43,16 @@ def random_bfs_explore(d, deviceId, path_planner, timeout=60, swipe=False):
         if delta > cur_timeout:
             return
 
-        _, _, cur_isLauncher = getActivityPackage(d)
-        if cur_isLauncher != d_activity:
-            full_cur_activity = path_planner.get_activity_full_path(d_activity)
-            # d.app_start(d_package, full_cur_activity)
-            deeplinks, actions, params = path_planner.get_deeplinks_by_package_activity(d_package,
-                                                                                        full_cur_activity)
-            status = launch_activity_by_deeplinks(deviceId, deeplinks, actions, params)
-
         # random testing, click clickable pixel on the screen randomly
         if random_status:
-            d_activity, d_package, isLauncher = getActivityPackage(d)
-            path_planner.set_visited(d_activity)
+            cur_d_activity, cur_d_package, cur_isLauncher = getActivityPackage(d)
+            path_planner.set_visited(cur_d_activity)
+            if cur_d_activity != d_activity or cur_d_package != package_name:
+                full_cur_activity = path_planner.get_activity_full_path(d_activity)
+                # d.app_start(d_package, full_cur_activity)
+                deeplinks, actions, params = path_planner.get_deeplinks_by_package_activity(d_package,
+                                                                                            full_cur_activity)
+                status = launch_activity_by_deeplinks(deviceId, deeplinks, actions, params)
 
             direction_list = [0, 1, 2, 2, 2]
             dire = random.choice(direction_list)
@@ -175,7 +173,7 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_
     path_planner = PathPlanner(packageName, atg_json, deeplinks_json)
     delta = 0
     while delta <= test_time:
-        random_bfs_explore(d, deviceId, path_planner, timeout=60, swipe=True)
+        random_bfs_explore(d, deviceId, packageName, path_planner, timeout=60)
         print('---------------------- visited rate: ', path_planner.get_visited_rate())
         visited_rate.append(path_planner.get_visited_rate())
 
@@ -208,7 +206,7 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_
                         path_planner.set_popped(activity)
                         if status:
                             path_planner.set_visited(activity)
-                            random_bfs_explore(d, deviceId, path_planner, timeout=60, swipe=True)
+                            random_bfs_explore(d, deviceId, packageName, path_planner, timeout=60)
                             break
 
         cur_test_time = datetime.now()
@@ -239,7 +237,7 @@ def unit_dynamic_testing_package(deviceId, apk_path, atg_json, deeplinks_json, l
     path_planner = PathPlanner(packageName, atg_json, deeplinks_json)
     delta = 0
     while delta <= test_time:
-        random_bfs_explore(d, deviceId, path_planner, timeout=60, swipe=True)
+        random_bfs_explore(d, deviceId, packageName, path_planner, timeout=60)
         print('---------------------- visited rate: ', path_planner.get_visited_rate())
         visited_rate.append(path_planner.get_visited_rate())
 
@@ -272,7 +270,7 @@ def unit_dynamic_testing_package(deviceId, apk_path, atg_json, deeplinks_json, l
                         path_planner.set_popped(activity)
                         if status:
                             path_planner.set_visited(activity)
-                            random_bfs_explore(d, deviceId, path_planner, timeout=60, swipe=True)
+                            random_bfs_explore(d, deviceId, packageName, path_planner, timeout=60)
                             break
 
         cur_test_time = datetime.now()
@@ -284,11 +282,15 @@ def unit_dynamic_testing_package(deviceId, apk_path, atg_json, deeplinks_json, l
 
 
 if __name__ == '__main__':
-    # deviceId = '192.168.57.104'
-    # deviceId = 'cb8c90f4'
-    deviceId = 'VEG0220B17010232'
-    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks/AmazonVideo.apk'
-    atg_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/activity_atg/AmazonVideo.json'
-    deeplinks_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks_params.json'
-    log = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/visited_rate/amazon.txt'
+    # deviceId = '192.168.57.105'
+    deviceId = 'cb8c90f4'
+    # deviceId = 'VEG0220B17010232'
+    apk_path = r'../data/repackaged_apks/youtube.apk'
+    atg_json = r'../data/activity_atg/youtube.json'
+    deeplinks_json = r'../data/deeplinks_params.json'
+    log = r'../data/visited_rate/youtube.txt'
+
+    # log in the app in advance and set the parameter reinstall as false to explore app with login
+    # there may be unpredictable issues, so pls run each app multiple times.
+    # logging in and granting permission in advance will help a lot
     unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log, reinstall=False)
