@@ -282,8 +282,8 @@ def unit_dynamic_testing_package(deviceId, apk_path, atg_json, deeplinks_json, l
 
 
 if __name__ == '__main__':
-    # deviceId = '192.168.57.105'
-    deviceId = 'cb8c90f4'
+    deviceId = '192.168.57.105'
+    # deviceId = 'cb8c90f4'
     # deviceId = 'VEG0220B17010232'
     apk_path = r'../data/repackaged_apks/youtube.apk'
     atg_json = r'../data/activity_atg/youtube.json'

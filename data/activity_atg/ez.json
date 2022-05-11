@@ -1,0 +1,222 @@
+{
+    "audience_network/com/facebook/ads/redexgen/X/9I": [
+        "com.facebook.ads.AudienceNetworkActivity"
+    ],
+    "audience_network/com/facebook/ads/redexgen/X/LG": [
+        "com.facebook.ads.AudienceNetworkActivity"
+    ],
+    "com/google/android/exoplayer2/ui/DefaultTimeBar": [
+        "\"android.widget.SeekBar\""
+    ],
+    "com/google/android/gms/ads/internal/overlay/zzm": [
+        "\"com.google.android.gms.ads.AdActivity\""
+    ],
+    "com/google/android/gms/auth/api/signin/internal/zbm": [
+        "com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+    ],
+    "com/google/android/gms/common/api/GoogleApiActivity": [
+        "com.google.android.gms.common.api.GoogleApiActivity"
+    ],
+    "com/google/firebase/auth/OAuthProvider": [
+        "com.google.firebase.auth.internal.GenericIdpActivity"
+    ],
+    "com/google/firebase/auth/internal/zzf": [
+        "com.google.firebase.auth.internal.RecaptchaActivity"
+    ],
+    "com/google/android/gms/measurement/internal/zzkg": [
+        "\"com.google.android.gms.measurement.AppMeasurementReceiver\""
+    ],
+    "com/google/android/gms/measurement/internal/zzjo": [
+        "\"com.google.android.gms.measurement.AppMeasurementService\""
+    ],
+    "com/google/android/gms/measurement/internal/zzfe": [
+        "\"com.google.android.gms.measurement.AppMeasurementService\""
+    ],
+    "com/google/android/material/card/MaterialCardView": [
+        "\"androidx.cardview.widget.CardView\""
+    ],
+    "com/google/android/material/chip/Chip": [
+        "\"android.view.View\"",
+        "\"android.widget.Button\"",
+        "\"android.widget.CompoundButton\""
+    ],
+    "com/vungle/warren/AdActivity": [
+        "com.vungle.warren.ui.VungleActivity"
+    ],
+    "com/inmobi/media/ab": [
+        "com.inmobi.ads.rendering.InMobiAdActivity"
+    ],
+    "com/inmobi/media/l": [
+        "com.inmobi.ads.rendering.InMobiAdActivity"
+    ],
+    "com/inmobi/media/k": [
+        "com.inmobi.ads.rendering.InMobiAdActivity"
+    ],
+    "com/inmobi/media/cg": [
+        "com.inmobi.ads.rendering.InMobiAdActivity"
+    ],
+    "com/unity3d/services/ads/api/AdUnit": [
+        "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+        "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+        "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+        "com.unity3d.services.ads.adunit.AdUnitActivity"
+    ],
+    "com/ironsource/sdk/controller/w": [
+        "com.ironsource.sdk.controller.OpenUrlActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/MainNewActivity": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.home.ActSplash",
+        "com.explorer.file.manager.fileexplorer.exfile.ui.premium.PremiumActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/home/HomeFragment": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.premium.PremiumActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/home/ActSplash": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.policy.ActivityPolicy",
+        "com.explorer.file.manager.fileexplorer.exfile.MainNewActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/exit/ActExit": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.exit.ActExit"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/dialogs/DialogPremium": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.home.ActSplash"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/dialogs/DialogRemoveAds": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.home.ActSplash"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/dialogs/DialogSuggestPremium": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.home.ActSplash"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/analyze/HomeAnalyzeFragment": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.premium.PremiumActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/setting/SettingFragment": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.home.ActSplash"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/cleaner/HomeCleanerFragment": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.premium.PremiumActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/premium/PremiumActivity": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.premium.PremiumActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/music_palyer/notifications/RealNotifications": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.music_palyer.ui.activities.MusicPlayerActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/notifications/FtpNotification": [
+        "com.explorer.file.manager.fileexplorer.exfile.MainNewActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/ui/policy/ActivityPolicy": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.home.ActSplash"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/utils/asynchronous/services/AbstractProgressiveService": [
+        "com.explorer.file.manager.fileexplorer.exfile.MainNewActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/utils/asynchronous/services/EncryptService": [
+        "com.explorer.file.manager.fileexplorer.exfile.MainNewActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/utils/asynchronous/services/DecryptService": [
+        "com.explorer.file.manager.fileexplorer.exfile.MainNewActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/utils/asynchronous/services/ExtractService": [
+        "com.explorer.file.manager.fileexplorer.exfile.MainNewActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/utils/crashreport/ExErrorActivity": [
+        "com.explorer.file.manager.fileexplorer.exfile.utils.crashreport.ExErrorActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/traking/ActScanAppUninstall": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.home.ActSplash"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/traking/ActScanAppInstall": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.home.ActSplash"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/service/ServiceManager": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.home.ActSplash"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/base/BaseFragment": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.music_palyer.ui.activities.MusicPlayerActivity",
+        "com.explorer.file.manager.fileexplorer.exfile.ui.text_edit.TextEditorActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/base/office/ReadDirection": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.text_edit.TextEditorActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/base/office/OfficeUtils": [
+        "com.explorer.file.manager.fileexplorer.exfile.base.office.activity.EzExcelFileActivity",
+        "com.explorer.file.manager.fileexplorer.exfile.base.office.activity.EzOfficeViewActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/base/office/activity/EzDocumentActivity": [
+        "com.explorer.file.manager.fileexplorer.exfile.base.office.activity.EzDocumentActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/base/office/activity/EzExcelFileActivity": [
+        "com.explorer.file.manager.fileexplorer.exfile.base.office.activity.EzExcelFileActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/base/cast/CastJobService": [
+        "com.explorer.file.manager.fileexplorer.exfile.MainNewActivity"
+    ],
+    "com/explorer/file/manager/fileexplorer/exfile/base/cast/CastOptionsProvider": [
+        "com.explorer.file.manager.fileexplorer.exfile.ui.music_palyer.ui.activities.ExpandedControlsActivity"
+    ],
+    "androidx/appcompat/widget/ScrollingTabContainerView": [
+        "\"androidx.appcompat.app.ActionBar"
+    ],
+    "androidx/appcompat/widget/SwitchCompat": [
+        "\"android.widget.Switch\""
+    ],
+    "androidx/appcompat/widget/LinearLayoutCompat": [
+        "\"androidx.appcompat.widget.LinearLayoutCompat\""
+    ],
+    "androidx/customview/widget/ExploreByTouchHelper": [
+        "\"android.view.View\""
+    ],
+    "com/applovin/impl/mediation/debugger/a": [
+        "com.applovin.mediation.MaxDebuggerActivity"
+    ],
+    "com/applovin/impl/mediation/debugger/ui/a/c": [
+        "com.applovin.mediation.MaxDebuggerAdUnitDetailActivity"
+    ],
+    "com/applovin/impl/mediation/debugger/ui/a/a": [
+        "com.applovin.mediation.MaxDebuggerAdUnitDetailActivity"
+    ],
+    "com/applovin/impl/mediation/debugger/ui/c/a": [
+        "com.applovin.mediation.MaxDebuggerMultiAdActivity"
+    ],
+    "com/applovin/impl/mediation/debugger/ui/b/a": [
+        "com.applovin.mediation.MaxDebuggerTestLiveNetworkActivity",
+        "com.applovin.mediation.MaxDebuggerDetailActivity",
+        "com.applovin.mediation.MaxDebuggerAdUnitsListActivity"
+    ],
+    "com/applovin/impl/sdk/j": [
+        "com.applovin.sdk.AppLovinWebViewActivity"
+    ],
+    "com/applovin/impl/adview/q": [
+        "com.applovin.adview.AppLovinFullscreenActivity",
+        "com.applovin.adview.AppLovinInterstitialActivity"
+    ],
+    "com/applovin/impl/adview/e": [
+        "com.applovin.sdk.AppLovinWebViewActivity"
+    ],
+    "com/android/billingclient/api/BillingClientImpl": [
+        "com.android.billingclient.api.ProxyBillingActivity"
+    ],
+    "com/bytedance/sdk/openadsdk/core/z": [
+        "com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageActivity",
+        "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+        "com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity"
+    ],
+    "com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity": [
+        "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity"
+    ],
+    "com/bytedance/sdk/openadsdk/activity/TTDelegateActivity": [
+        "com.bytedance.sdk.openadsdk.activity.TTDelegateActivity"
+    ],
+    "com/bytedance/sdk/openadsdk/component/reward/j": [
+        "com.bytedance.sdk.openadsdk.activity.TTFullScreenVideoActivity",
+        "com.bytedance.sdk.openadsdk.activity.TTFullScreenExpressVideoActivity"
+    ],
+    "com/bytedance/sdk/openadsdk/component/reward/k": [
+        "com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity",
+        "com.bytedance.sdk.openadsdk.activity.TTRewardExpressVideoActivity"
+    ],
+    "com/bytedance/sdk/openadsdk/adapter/PangleAdInterstitialActivity": [
+        "com.bytedance.sdk.openadsdk.adapter.PangleAdInterstitialActivity"
+    ]
+}
