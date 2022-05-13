@@ -33,7 +33,7 @@ def batch_sign_apks(re_packaged_apks):
 def unit_inject(app_save_dir, re_packaged_apk, deeplinks_path):
     # print('Start apktool')
     # cmd1 = 'apktool d ' + apk_path + ' -f -o ' + app_save_dir
-    # os.system(cmd1)
+    # # os.system(cmd1)
 
     print('run inject apk')
     injectApk(app_save_dir, deeplinks_path)

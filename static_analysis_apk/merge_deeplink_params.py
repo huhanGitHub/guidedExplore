@@ -1,5 +1,5 @@
 import json
-
+import os
 
 class ParamGenerator:
     intent_paras = {}
@@ -56,7 +56,6 @@ class ParamGenerator:
                     params_list = self.get_paras_by_pkg_activity(package, activity)
                     if params_list is not None:
                         activities.get(activity).get(params).extend(params_list)
-
             with open(merged_path, 'w', encoding='utf8') as save:
                 json.dump(deeplinks, save, indent=4)
 

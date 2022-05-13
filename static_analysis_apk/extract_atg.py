@@ -15,7 +15,7 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir=r'acti
         print('@@@@@@@@@@@@@@@@@@@@@@   ' + folder + '   @@@@@@@@@@@@@@@@@@@@@@')
         # print(avaliable_activity_dict[folder])
         for smali_folder in smali_folders:
-            # print(smali_folder)
+            print(smali_folder)
             smali_path = os.path.join(folder_path, smali_folder)
             os.chdir(smali_path)
             # print(os.listdir())
@@ -170,7 +170,7 @@ def batch_extract(decompiled_apks, save_dir):
 
 def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'activity_match'):
     activity_dict = {}
-    folder_path = os.path.join(decompiled_apks, folder)
+    folder_path = os.path.join(decompiled_apks, folder).replace('data/recompiled_apks/', '', 1)
     # os.chdir(folder_path)
     smali_folders = os.listdir(folder_path)
     smali_folders = [x for x in smali_folders if 'smali' in x]
@@ -262,7 +262,7 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
     # for k,v in activity_dict.items():
     #     print(k,v)
 
-    save_path = os.path.join(save_dir, folder + '.json')
+    save_path = os.path.join(save_dir, folder + '.json').replace('data/recompiled_apks/', '')
     with open(save_path, 'a') as fp:
         json.dump(activity_dict, fp, indent=4)
         print('Count: ' + str(count))
