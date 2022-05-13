@@ -129,9 +129,11 @@ def xmlScreenSaver_single(saveDir, xml1, img1, activity1):
         img1.save(img1Path)
 
 
-def safeScreenshot(d):
+def saveScreenshot(d, ss_path, activity_name):
     try:
         img = d.screenshot()
+        img.save(ss_path + activity_name + '.png')
+        img.close()
         return img
     except Exception:
         return None
