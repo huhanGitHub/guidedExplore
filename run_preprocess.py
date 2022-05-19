@@ -47,12 +47,12 @@ def unit_run_preprocess(app_save_dir, recompiled_apks, repackage_app_save_dir, d
 if __name__ == '__main__':
 
     # fixed results path, change once
-    repackage_app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/repackaged_apks'
-    deeplinks_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks_params.json'
-    save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data'
-    recompiled_apks = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
+    repackage_app_save_dir = r'data/repackaged_apks'
+    deeplinks_path = r'data/deeplinks_params.json'
+    save_dir = r'data'
+    recompiled_apks = r'data/recompiled_apks'
 
     # decompiled apk source files, change test cases here
-    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/youtube'
+    app_save_dir = r'data/recompiled_apks/youtube'
 
     unit_run_preprocess(app_save_dir, recompiled_apks, repackage_app_save_dir, deeplinks_path, save_dir)

@@ -185,7 +185,7 @@ if __name__ == '__main__':
     # get sys args
     args = sys.argv
     # folderName = args[1]
-    folderName = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/realtor'
+    folderName = r'../data/recompiled_apks/realtor'
     # folderName = 'Amazon Prime Video by Amazon Mobile LLC - com.amazon.avod.thirdpartyclient'
     deeplinks = r'../data/deeplinks.json'
     injectApk(folderName, deeplinks)

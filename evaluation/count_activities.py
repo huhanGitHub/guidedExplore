@@ -127,7 +127,7 @@ def activity_searching(folders, abs_path):
 
 
 def batch_extract(decompiled_apks, save_dir):
-    # abs_path = '/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/data'
+
     folders = os.listdir(decompiled_apks)
     ignore = ['.idea', '.git', 'activity_match', 'README.md', '.DS_Store', '.ipynb_checkpoints', 'activity.py',
               'smalianalysis.py', 'activity.py', 'extract_atg.py']
@@ -137,8 +137,6 @@ def batch_extract(decompiled_apks, save_dir):
     for k, v in available_activity_dict.items():
         print(k, ' Activities:' + str(len(v)))
 
-    # save_dir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/ATG/activity_match/atg'
-    # activity_mapping(decompiled_apks, folders, available_activity_dict, save_dir=save_dir)
 
 
 def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'activity_match'):
@@ -231,9 +229,9 @@ def unit_extract(decompiled_apks, folder, available_activity_dict, save_dir=r'ac
 
 
 if __name__ == '__main__':
-    # decompiled_apks = '/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    # save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/activity_atg'
+    # decompiled_apks = '../data/recompiled_apks'
+    # save_dir = r'../data/activity_atg'
 
-    decompiled_apks = '/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    save_dir = '/Users/ruiqidong/Desktop/chunyang/guidedExplore/data/activity_atg'
+    decompiled_apks = '../data/recompiled_apks'
+    save_dir = '../data/activity_atg'
     batch_extract(decompiled_apks=decompiled_apks, save_dir=save_dir)

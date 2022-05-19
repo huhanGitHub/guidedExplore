@@ -31,12 +31,12 @@ def unit_decpmpile(apk_path, app_save_dir):
 
 if __name__ == '__main__':
 
-    apk_dir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/apks'
-    save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
+    apk_dir = r'../uiautomator2/apks'
+    save_dir = r'../data/recompiled_apks'
 
     # batch_decompile(apk_dir, save_dir, re_packaged_dir)
 
-    apk_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/apks/youtube.apk'
-    app_save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/youtube'
+    apk_path = r'data/apks/youtube.apk'
+    app_save_path = r'data/recompiled_apks/youtube'
     unit_decpmpile(apk_path, app_save_path)
 

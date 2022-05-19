@@ -146,10 +146,10 @@ def reverse_atg(atg):
 
 
 if __name__ == '__main__':
-    atg_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/activity_atg/fluxi.json'
+    atg_json = r'../data/activity_atg/fluxi.json'
     # atg = rank_atg_weight(atg_json)
     # reverse_atg(atg)
-    deeplinks = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks_params.json'
+    deeplinks = r'../data/deeplinks_params.json'
     package = 'com.reflexisinc.dasess4110'
     path_planner = PathPlanner(package, atg_json, deeplinks)
     print(path_planner.pop_next_activity(), path_planner)

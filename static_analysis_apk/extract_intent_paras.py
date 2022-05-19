@@ -179,6 +179,6 @@ def smali_intent_para_extractor(path, save_path):
 if __name__ == '__main__':
     # path = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/recompile samples'
     # intent_field_extractor(path)
-    path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    save_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/intent_para.json'
+    path = r'../data/recompiled_apks'
+    save_path = r'../data/intent_para.json'
     smali_intent_para_extractor(path, save_path)

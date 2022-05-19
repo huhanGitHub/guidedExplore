@@ -18,5 +18,5 @@ def count_method(log):
 
 
 if __name__ == '__main__':
-    log = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/rq3/fastbot/fastbot_nosurffirreddit.txt'
+    log = r'../data/rq3/fastbot/fastbot_nosurffirreddit.txt'
     count_method(log)

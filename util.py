@@ -227,9 +227,9 @@ def uninstallApks_single(apk_dir, deviceId):
 
 
 if __name__ =='__main__':
-    saveDir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/googleplay/apks'
+    saveDir = r'../uiautomator2/googleplay/apks'
     maxLen = 100
 
-    apksDir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/googleplay/apks'
+    apksDir = r'../uiautomator2/googleplay/apks'
     device1Id = '192.168.56.104'
     #uninstallApks_single(apksDir, device1Id)

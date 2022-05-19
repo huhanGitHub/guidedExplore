@@ -218,8 +218,8 @@ def unit_extract(folder, available_activity_dict, save_dir=r'activity_match'):
 
 
 if __name__ == '__main__':
-    decompiled_apks = '/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks'
-    save_dir = '/Users/hhuu0025/PycharmProjects/guidedExplorer/data/'
+    decompiled_apks = '../data/recompiled_apks'
+    save_dir = '../data/'
     # batch_extract(decompiled_apks=decompiled_apks, save_dir=save_dir)
 
     folders = os.listdir(decompiled_apks)
@@ -232,5 +232,5 @@ if __name__ == '__main__':
     if not os.path.exists(atg_save_dir):
         os.mkdir(atg_save_dir)
 
-    app_save_dir = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/recompiled_apks/realtor'
+    app_save_dir = r'../data/recompiled_apks/realtor'
     unit_extract(app_save_dir, available_activity_dict, save_dir=atg_save_dir)

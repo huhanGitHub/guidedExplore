@@ -62,7 +62,7 @@ class ParamGenerator:
 
 
 if __name__ == '__main__':
-    params_path = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/intent_para.json'
+    params_path = r'../data/intent_para.json'
     params = ParamGenerator(params_path)
-    deeplinks_json = r'/Users/hhuu0025/PycharmProjects/guidedExplorer/data/deeplinks.json'
+    deeplinks_json = r'../data/deeplinks.json'
     params.merge_deeplinks_params(deeplinks_json)
