@@ -13,7 +13,7 @@ def read_deeplinks(deeplink):
         return deeplinks
 
 
-# adb shell am start -a android.intent.action.VIEW -d com_example_hanhu://com.example.hanhu.SettingsActivity --es textview1 "I\ am\ from\ adb" -e textview2 "from\ adb"
+# adb shell am start -a android.intent.action.VIEW -d com_example_xxx://com.example.xxx.SettingsActivity --es textview1 "I\ am\ from\ adb" -e textview2 "from\ adb"
 def launch_activity_by_deeplink(deviceId, deeplink, action, params):
     cmd = 'adb -s ' + deviceId + ' shell am start -W -a ' + action + ' -d ' + deeplink
     if len(params) != 0:
