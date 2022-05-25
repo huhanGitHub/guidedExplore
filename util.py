@@ -156,7 +156,7 @@ def apksUninstall(apkPath, d1, d2, d1_packages, d2_packages):
 
 
 def uninstallApks():
-    apksDir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/googleplay/apks'
+    apksDir = r'/Users/xxx/PycharmProjects/uiautomator2/googleplay/apks'
     device1Id = 'cb8c90f4'
     device2Id = 'R52RA0C2MFF'
     log = r'log.txt'

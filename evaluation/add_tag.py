@@ -110,7 +110,7 @@ def batch_add_tag_all(dir):
 
 
 if __name__ == '__main__':
-    java_file = r'/Users/hhuu0025/AndroidStudioProjects/TextPad/app/src/main/java/com/maxistar/textpad/activities/EditorActivity.java'
+    java_file = r'/Users/xxx/AndroidStudioProjects/TextPad/app/src/main/java/com/maxistar/textpad/activities/EditorActivity.java'
     tag_index = 0
     dir = r'../data/source_code_apks/NoSurfForReddit-master'
     batch_add_tag_all(dir)

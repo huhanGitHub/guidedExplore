@@ -121,14 +121,14 @@ def activity_searching(folders, abs_path):
 
 
 def batch_extract(decompiled_apks, save_dir):
-    # abs_path = '/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/data'
+    # abs_path = '/Users/xxx/PycharmProjects/uiautomator2/activityMining/data'
     folders = os.listdir(decompiled_apks)
     ignore = ['.idea', '.git', 'activity_match', 'README.md', '.DS_Store', '.ipynb_checkpoints', 'activity.py',
               'smalianalysis.py', 'activity.py', 'extract_atg.py']
     folders = [x for x in folders if x not in ignore]
 
     available_activity_dict = activity_searching(folders, decompiled_apks)
-    # save_dir = r'/Users/hhuu0025/PycharmProjects/uiautomator2/activityMining/ATG/activity_match/atg'
+    # save_dir = r'/Users/xxx/PycharmProjects/uiautomator2/activityMining/ATG/activity_match/atg'
     activity_mapping(decompiled_apks, folders, available_activity_dict, save_dir=save_dir)
 
 
