@@ -1,6 +1,4 @@
-import time
-
-from util import *
+from utils.util import *
 import xml.etree.ElementTree as ET
 from hierachySolver import bounds2int
 

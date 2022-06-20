@@ -1,20 +1,17 @@
 import random
 
-import uiautomator2 as u2
-import requests
 import uiautomator2.exceptions
 
-from util import *
+from utils.util import *
 from dynamic_testing.testing_path_planner import PathPlanner
-from dynamic_testing.hierachySolver import click_points_Solver, bounds2int
+from dynamic_testing.hierachySolver import click_points_Solver
 from dynamic_testing.grantPermissonDetector import dialogSolver
-import subprocess
 from datetime import datetime
 from uiautomator2 import Direction
-from activity_launcher import launch_activity_by_deeplinks, launch_activity_by_deeplink
+from activity_launcher import launch_activity_by_deeplinks
 
 
-def random_bfs_explore(d, deviceId, package_name, path_planner, timeout=60):
+def random_bfs_explore(d, deviceId, package_name, path_planner, timeout=60, collect_GUI=False):
 
     d_activity, d_package, isLauncher = getActivityPackage(d)
     start_time = datetime.now()
@@ -150,7 +147,7 @@ def random_bfs_explore(d, deviceId, package_name, path_planner, timeout=60):
             random_status = True
 
 
-def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_path, test_time=1200, reinstall=False):
+def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_path, test_time=1200, reinstall=True):
     visited_rate = []
     installed1, packageName, mainActivity = installApk(apk_path, device=deviceId, reinstall=reinstall)
     if installed1 != 0:
@@ -282,13 +279,14 @@ def unit_dynamic_testing_package(deviceId, apk_path, atg_json, deeplinks_json, l
 
 
 if __name__ == '__main__':
-    deviceId = '192.168.57.105'
+    # deviceId = '192.168.57.105'
+    deviceId = '192.168.57.105:5555'
     # deviceId = 'cb8c90f4'
     # deviceId = 'VEG0220B17010232'
-    apk_path = r'../data/repackaged_apks/youtube.apk'
-    atg_json = r'../data/activity_atg/youtube.json'
+    apk_path = r'../data/repackaged_apks/ez.apk'
+    atg_json = r'../data/activity_atg/ez.json'
     deeplinks_json = r'../data/deeplinks_params.json'
-    log = r'../data/visited_rate/youtube.txt'
+    log = r'../data/visited_rate/ez.txt'
 
     # log in the app in advance and set the parameter reinstall as false to explore app with login
     # there may be unpredictable issues, so pls run each app multiple times.
