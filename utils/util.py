@@ -10,6 +10,8 @@ from pyaxmlparser import APK
 
 import uiautomator2 as u2
 
+from dynamic_testing.hierachySolver import click_points_Solver
+
 
 def connectionAdaptor(phoneDevice, tabletDevice):
     try:
@@ -278,6 +280,7 @@ def pretty_json(obj):
 def pretty_print(*objs):
     for obj in objs:
         print(pretty_json(obj))
+
 
 
 if __name__ == "__main__":
