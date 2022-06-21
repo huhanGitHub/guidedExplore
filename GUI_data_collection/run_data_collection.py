@@ -167,10 +167,10 @@ if __name__ == '__main__':
     deviceId = '192.168.57.105:5555'
     # deviceId = 'cb8c90f4'
     # deviceId = 'VEG0220B17010232'
-    apk_path = r'../data/repackaged_apks/ez.apk'
-    atg_json = r'../data/activity_atg/ez.json'
-    deeplinks_json = r'../data/deeplinks_params.json'
-    log = r'../data/visited_rate/ez.txt'
+    apk_path = r'../data/repackaged_apks/wish.apk'
+    atg_json = r'../data/activity_atg/wish.json'
+    deeplinks_json = r'../data/deeplinks.json'
+    log = r'../data/visited_rate/wish.txt'
 
     # log in the app in advance and set the parameter reinstall as false to explore app with login
     # there may be unpredictable issues, so pls run each app multiple times.

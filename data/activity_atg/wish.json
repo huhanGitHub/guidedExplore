@@ -1,0 +1,628 @@
+{
+    "fy.e": [
+        "\"com.google.android.gms.measurement.AppMeasurementService\""
+    ],
+    "kz.f": [
+        "com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+    ],
+    "a40.f": [
+        "com.klarna.mobile.sdk.core.natives.browser.ui.InternalBrowserActivity"
+    ],
+    "p30.b": [
+        "com.klarna.mobile.sdk.core.natives.browser.ui.InternalBrowserActivity"
+    ],
+    "com.google.android.gms.measurement.internal.v7": [
+        "\"com.google.android.gms.measurement.AppMeasurementService\""
+    ],
+    "com.google.android.gms.measurement.internal.m8": [
+        "\"com.google.android.gms.measurement.AppMeasurementReceiver\""
+    ],
+    "com.google.android.material.chip.Chip": [
+        "\"android.view.View\"",
+        "\"android.widget.Button\"",
+        "\"android.widget.CompoundButton\""
+    ],
+    "com.stripe.android.StripePaymentController": [
+        "com.stripe.android.view.Stripe3ds2CompletionActivity"
+    ],
+    "com.stripe.android.PaymentAuthWebViewStarter": [
+        "com.stripe.android.view.PaymentAuthWebViewActivity"
+    ],
+    "com.stripe.android.PaymentRelayStarter": [
+        "com.stripe.android.view.PaymentRelayActivity"
+    ],
+    "com.stripe.android.stripe3ds2.views.ChallengeProgressActivity": [
+        "com.stripe.android.stripe3ds2.views.ChallengeProgressActivity"
+    ],
+    "com.stripe.android.view.AddPaymentMethodActivityStarter": [
+        "com.stripe.android.view.AddPaymentMethodActivity"
+    ],
+    "com.stripe.android.view.PaymentMethodsActivityStarter": [
+        "com.stripe.android.view.PaymentMethodsActivity"
+    ],
+    "com.stripe.android.view.PaymentFlowActivityStarter": [
+        "com.stripe.android.view.PaymentFlowActivity"
+    ],
+    "un.p": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "yl.f": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity",
+        "com.contextlogic.wish.activity.wishlistpage.WishlistPageActivity",
+        "com.contextlogic.wish.activity.browse.BrowseActivity",
+        "com.contextlogic.wish.activity.share.ShareActivity",
+        "com.contextlogic.wish.activity.settings.accountsettings.AccountSettingsActivity",
+        "com.contextlogic.wish.activity.settings.feed.FeedSettingsActivity",
+        "com.contextlogic.wish.activity.cart.CartActivity",
+        "com.contextlogic.wish.activity.settings.changepassword.ChangePasswordActivity",
+        "com.contextlogic.wish.activity.settings.notifications.NotificationSettingsActivity",
+        "com.contextlogic.wish.activity.notifications.NotificationsActivity",
+        "com.contextlogic.wish.activity.settings.notifications.EmailSettingsActivity",
+        "com.contextlogic.wish.activity.profile.wishlist.WishlistActivity",
+        "com.contextlogic.wish.activity.settings.SettingsActivity",
+        "com.contextlogic.wish.activity.webview.WebViewActivity",
+        "com.contextlogic.wish.activity.settings.changephonenumber.ChangePhoneNumberActivity",
+        "com.contextlogic.wish.activity.managepayments.ManagePaymentsActivity",
+        "com.contextlogic.wish.ui.activities.buoi.userverification.UserVerificationActivity",
+        "com.contextlogic.wish.activity.webview.KlarnaWebViewActivity",
+        "com.contextlogic.wish.activity.feed.newbranded.AuthorizedBrandsFeedActivity",
+        "com.contextlogic.wish.activity.subscription.dashboard.SubscriptionDashboardActivity",
+        "com.contextlogic.wish.activity.imageviewer.ImageViewerActivity",
+        "com.contextlogic.wish.activity.cart.shipping.WishBluePickupLocationDetailsActivity",
+        "com.contextlogic.wish.activity.profile.update.UpdateProfileActivity",
+        "com.contextlogic.wish.activity.commercecash.CommerceCashActivity",
+        "com.contextlogic.wish.activity.giftcard.SendGiftCardActivity",
+        "com.contextlogic.wish.activity.profile.ProfileActivity",
+        "com.contextlogic.wish.activity.settings.changeemail.ChangeEmailActivity",
+        "com.contextlogic.wish.activity.search.SearchActivity",
+        "com.contextlogic.wish.activity.feed.brand.BrandFeedActivity",
+        "com.contextlogic.wish.activity.settings.datacontrol.DataControlSettingsActivity",
+        "com.contextlogic.wish.activity.settings.push.PushNotificationSettingsActivity",
+        "com.contextlogic.wish.activity.signup.freegift.SignupFreeGiftActivity",
+        "com.contextlogic.wish.activity.settings.changecurrency.ChangeCurrencyActivity",
+        "com.contextlogic.wish.activity.cart.commerceloan.CommerceLoanCartActivity",
+        "com.contextlogic.wish.activity.ugcvideocontest.UgcVideoContestActivity",
+        "com.contextlogic.wish.activity.instructions.InstructionPageActivity",
+        "com.contextlogic.wish.ui.activities.incentives.rewards_dashboard.RewardsActivity"
+    ],
+    "no.a": [
+        "com.contextlogic.wish.activity.profile.ProfileActivity",
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "lm.c": [
+        "com.contextlogic.wish.activity.webview.plaid.PlaidWebViewActivity"
+    ],
+    "wk.a": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "uw.k": [
+        "com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+    ],
+    "dj.b": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "im.m": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "im.f": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "oo.s": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity",
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "oo.n": [
+        "com.contextlogic.wish.activity.giftcard.SendGiftCardActivity"
+    ],
+    "oo.k": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "oo.a0": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "oo.b": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "oo.r": [
+        "com.contextlogic.wish.activity.cart.shipping.WishBluePickupLocationDetailsActivity"
+    ],
+    "com.contextlogic.wish.ui.activities.growth.categoryquiz.CategoryQuizActivity": [
+        "com.contextlogic.wish.ui.activities.growth.categoryquiz.CategoryQuizActivity"
+    ],
+    "com.contextlogic.wish.ui.activities.common.ServiceFragment": [
+        "com.contextlogic.wish.dialog.address.RequestShippingAddressSplashActivity"
+    ],
+    "com.contextlogic.wish.ui.activities.common.BaseActivity": [
+        "com.contextlogic.wish.activity.signup.redesign.SignupFlowActivity",
+        "com.contextlogic.wish.activity.webview.WebViewActivity",
+        "com.contextlogic.wish.activity.browse.BrowseActivity",
+        "com.contextlogic.wish.activity.loggedoutfeed.LoggedOutFeedActivity",
+        "com.contextlogic.wish.activity.login.landing.LandingActivity",
+        "com.contextlogic.wish.activity.search.SearchActivity"
+    ],
+    "com.contextlogic.wish.ui.activities.buoi.userverification.EmailConfirmationActivity": [
+        "com.contextlogic.wish.ui.activities.buoi.userverification.EmailConfirmationActivity"
+    ],
+    "com.contextlogic.wish.ui.views.incentives.daily_login_bonus.DailyLoginBonusFragment": [
+        "com.contextlogic.wish.ui.activities.incentives.rewards_dashboard.RewardsActivity"
+    ],
+    "com.contextlogic.wish.ui.views.buoi.userverification.EmailConfirmationFragment": [
+        "com.contextlogic.wish.ui.activities.buoi.userverification.UserVerificationActivity",
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "com.contextlogic.wish.ui.views.buoi.userverification.UserVerificationFragment": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "com.contextlogic.wish.ui.bottomnav.a": [
+        "com.contextlogic.wish.activity.wishlistpage.WishlistPageActivity"
+    ],
+    "com.contextlogic.wish.homepage.view.HomepageFragment": [
+        "com.contextlogic.wish.activity.search.SearchActivity"
+    ],
+    "com.contextlogic.wish.dialog.promotion.sweepstakes.v1.SweepstakesV1SplashFragment": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "com.contextlogic.wish.dialog.promotion.sweepstakes.v2.SweepstakesV2SplashView": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "com.contextlogic.wish.dialog.popupanimation.itemadded.ItemAddedDialogFragment": [
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "com.contextlogic.wish.dialog.multibutton.BlitzBuyTimesUpDialog": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity",
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "com.contextlogic.wish.dialog.address.b": [
+        "com.contextlogic.wish.activity.cart.shipping.WishBluePickupLocationDetailsActivity"
+    ],
+    "com.contextlogic.wish.social.ShoppingPartySplashFragment": [
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "com.contextlogic.wish.notifications.local.LocalNotificationWorker": [
+        "com.contextlogic.wish.activity.link.DeepLinkActivity"
+    ],
+    "com.contextlogic.wish.notifications.push.PushMessagingService": [
+        "com.contextlogic.wish.activity.link.DeepLinkActivity"
+    ],
+    "com.google.android.exoplayer2.ui.b": [
+        "\"android.widget.SeekBar\""
+    ],
+    "com.facebook.CustomTabActivity": [
+        "com.facebook.CustomTabMainActivity"
+    ],
+    "com.facebook.CustomTabMainActivity": [
+        "com.facebook.CustomTabMainActivity"
+    ],
+    "com.facebook.referrals.a": [
+        "com.facebook.CustomTabMainActivity"
+    ],
+    "com.facebook.login.k": [
+        "com.facebook.FacebookActivity"
+    ],
+    "com.facebook.login.a": [
+        "com.facebook.CustomTabMainActivity"
+    ],
+    "com.getbouncer.cardverify.ui.network.CardVerifyActivity": [
+        "com.getbouncer.cardverify.ui.network.CardVerifyActivity"
+    ],
+    "com.getbouncer.cardverify.ui.local.CardVerifyActivity": [
+        "com.getbouncer.cardverify.ui.local.CardVerifyActivity"
+    ],
+    "com.getbouncer.cardverify.ui.zerofraud.CardVerifyActivity": [
+        "com.getbouncer.cardverify.ui.zerofraud.CardVerifyActivity"
+    ],
+    "wo.l": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "df.b": [
+        "com.contextlogic.wish.activity.profile.ProfileActivity"
+    ],
+    "df.f": [
+        "com.contextlogic.wish.activity.imageviewer.ImageViewerActivity"
+    ],
+    "hc.a": [
+        "com.contextlogic.wish.activity.cart.commerceloan.CommerceLoanCartActivity"
+    ],
+    "hc.l": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "k5.a": [
+        "com.afterpay.android.view.AfterpayCheckoutActivity"
+    ],
+    "androidx.appcompat.widget.SwitchCompat": [
+        "\"android.widget.Switch\""
+    ],
+    "androidx.appcompat.widget.l0": [
+        "\"androidx.appcompat.app.ActionBar"
+    ],
+    "androidx.appcompat.widget.e0": [
+        "\"androidx.appcompat.widget.LinearLayoutCompat\""
+    ],
+    "c9.a": [
+        "com.cardinalcommerce.shared.cs.userinterfaces.ChallengeNativeView",
+        "com.cardinalcommerce.shared.cs.userinterfaces.ChallengeHTMLView"
+    ],
+    "if.e": [
+        "com.contextlogic.wish.activity.commercecash.CommerceCashActivity"
+    ],
+    "l5.a": [
+        "com.afterpay.android.internal.AfterpayInfoActivity"
+    ],
+    "ec.c": [
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "wc.d": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "x9.i": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "x9.f": [
+        "com.contextlogic.wish.activity.recentwishlistproducts.RecentWishlistProductsActivity"
+    ],
+    "g.r": [
+        "com.stripe.android.stripe3ds2.views.ChallengeActivity"
+    ],
+    "o.p": [
+        "com.klarna.checkout.browser.BrowserActivity"
+    ],
+    "ge.a": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity",
+        "com.contextlogic.wish.activity.login.forgotpassword.ForgotPasswordActivity",
+        "com.contextlogic.wish.activity.browse.BrowseActivity",
+        "com.contextlogic.wish.activity.settings.accountsettings.countrysettings.CountrySettingsActivity",
+        "com.contextlogic.wish.activity.feed.tag.TagFeedActivity",
+        "com.contextlogic.wish.activity.merchantprofile.MerchantProfileActivity",
+        "com.contextlogic.wish.activity.cart.CartActivity",
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsRelatedItemsActivity",
+        "com.contextlogic.wish.activity.feed.newbranded.AuthorizedBrandProductsActivity",
+        "com.contextlogic.wish.activity.login.landing.LandingActivity",
+        "com.contextlogic.wish.activity.imageviewer.photovideoviewer.PhotoVideoViewerActivity",
+        "com.contextlogic.wish.activity.returnpolicy.ReturnPolicyActivity",
+        "com.contextlogic.wish.activity.settings.SettingsActivity",
+        "com.contextlogic.wish.activity.webview.WebViewActivity",
+        "com.contextlogic.wish.activity.cart.loggedoutstate.LoggedOutCartActivity",
+        "com.contextlogic.wish.activity.feed.newbranded.AuthorizedBrandsFeedActivity",
+        "com.contextlogic.wish.activity.imageviewer.ImageViewerActivity",
+        "com.contextlogic.wish.activity.search.SearchActivity",
+        "com.contextlogic.wish.activity.link.DeepLinkActivity",
+        "com.contextlogic.wish.activity.developer.DeveloperSettingsActivity",
+        "com.contextlogic.wish.activity.categories.CategoriesActivity",
+        "com.contextlogic.wish.activity.menu.MenuActivity",
+        "com.contextlogic.wish.activity.feed.search.SearchFeedActivity",
+        "com.contextlogic.wish.activity.settings.changecurrency.ChangeCurrencyActivity",
+        "com.contextlogic.wish.activity.ratings.RatingsActivity",
+        "com.contextlogic.wish.activity.loggedoutfeed.LoggedOutFeedActivity",
+        "com.contextlogic.wish.activity.feed.collections.CollectionFeedActivity"
+    ],
+    "af.g": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "ef.a0": [
+        "com.contextlogic.wish.activity.profile.ProfileActivity"
+    ],
+    "l9.e0": [
+        "com.contextlogic.wish.activity.cart.shipping.WishBluePickupLocationDetailsActivity"
+    ],
+    "ie.i": [
+        "com.contextlogic.wish.activity.login.signin.SignInActivity"
+    ],
+    "fa.e": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "ff.c": [
+        "com.contextlogic.wish.activity.profile.ProfileActivity"
+    ],
+    "xc.k": [
+        "com.contextlogic.wish.activity.feed.newbranded.AuthorizedBrandsFeedActivity"
+    ],
+    "com.braintreepayments.api.j": [
+        "com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+    ],
+    "com.braintreepayments.api.g": [
+        "com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+    ],
+    "com.contextlogic.wish.activity.welcomecenter.WelcomeCenterActivity": [
+        "com.contextlogic.wish.activity.welcomecenter.WelcomeCenterActivity"
+    ],
+    "com.contextlogic.wish.activity.welcomecenter.education.WishEducationPageActivity": [
+        "com.contextlogic.wish.activity.welcomecenter.education.WishEducationPageActivity"
+    ],
+    "com.contextlogic.wish.activity.instructions.InstructionPageActivity": [
+        "com.contextlogic.wish.activity.instructions.InstructionPageActivity"
+    ],
+    "com.contextlogic.wish.activity.settings.SettingsFragment": [
+        "com.contextlogic.wish.activity.developer.DeveloperSettingsActivity"
+    ],
+    "com.contextlogic.wish.activity.settings.changeuseridentityfield.ChangeUserIdentityFieldActivity": [
+        "com.contextlogic.wish.activity.settings.changeuseridentityfield.ChangeUserIdentityFieldActivity"
+    ],
+    "com.contextlogic.wish.activity.settings.accountsettings.AccountSettingsFragment": [
+        "com.contextlogic.wish.activity.settings.accountsettings.countrysettings.CountrySettingsActivity"
+    ],
+    "com.contextlogic.wish.activity.search2.userverification.AgeVerificationSplashDialog": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "com.contextlogic.wish.activity.developer.DeveloperSettingsFragment": [
+        "com.contextlogic.wish.activity.developer.DeveloperSettingsExperimentsActivity",
+        "com.contextlogic.wish.activity.developer.DeveloperSettingsSessionTimeActivity",
+        "com.contextlogic.wish.activity.developer.DeveloperSettingCookieActivity"
+    ],
+    "com.contextlogic.wish.activity.dynamicsignon.view.DynamicSignOnView": [
+        "com.contextlogic.wish.activity.login.forgotpassword.ForgotPasswordActivity"
+    ],
+    "com.contextlogic.wish.activity.wishlistpage.WishlistPageFragment": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity",
+        "com.contextlogic.wish.activity.profile.wishlist.WishlistActivity"
+    ],
+    "com.contextlogic.wish.activity.signup.freegift.SignupFreeGiftServiceFragment": [
+        "com.contextlogic.wish.activity.cart.shipping.StandaloneShippingInfoActivity"
+    ],
+    "com.contextlogic.wish.activity.signup.redesign.SignupFlowFragment": [
+        "com.contextlogic.wish.activity.signup.freegift.SignupFreeGiftActivity",
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "com.contextlogic.wish.activity.signup.mysterybox.MysteryBoxFragment": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.customerfirstpolicy.policyinfo.CustomerFirstPolicyInfoActivity": [
+        "com.contextlogic.wish.activity.customerfirstpolicy.policyinfo.CustomerFirstPolicyInfoActivity"
+    ],
+    "com.contextlogic.wish.activity.webview.WebViewFragment": [
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "com.contextlogic.wish.activity.webview.KlarnaWebViewActivity": [
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "com.contextlogic.wish.activity.mediaviewer.MediaStoryViewerActivity": [
+        "com.contextlogic.wish.activity.mediaviewer.MediaStoryViewerActivity"
+    ],
+    "com.contextlogic.wish.activity.mediaviewer.showroom.a": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.subscription.cancel.SubscriptionCancellationActivity": [
+        "com.contextlogic.wish.activity.subscription.cancel.SubscriptionCancellationActivity"
+    ],
+    "com.contextlogic.wish.activity.subscription.splash.SubscriptionSplashActivity": [
+        "com.contextlogic.wish.activity.subscription.splash.SubscriptionSplashActivity"
+    ],
+    "com.contextlogic.wish.activity.subscription.faq.SubscriptionFaqFragment": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.subscription.faq.SubscriptionFaqActivity": [
+        "com.contextlogic.wish.activity.subscription.faq.SubscriptionFaqActivity"
+    ],
+    "com.contextlogic.wish.activity.subscription.terms.SubscriptionTermsActivity": [
+        "com.contextlogic.wish.activity.subscription.terms.SubscriptionTermsActivity"
+    ],
+    "com.contextlogic.wish.activity.subscription.billing.SubscriptionBillingActivity": [
+        "com.contextlogic.wish.activity.subscription.billing.SubscriptionBillingActivity"
+    ],
+    "com.contextlogic.wish.activity.search.a": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.imageviewer.ImageViewerFragment": [
+        "com.contextlogic.wish.activity.profile.ProfileActivity",
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.imageviewer.photovideoviewer.PhotoVideoViewerFragment": [
+        "com.contextlogic.wish.activity.imageviewer.ImageViewerActivity"
+    ],
+    "com.contextlogic.wish.activity.facebook.WishFacebookDeepLinkActivity": [
+        "com.contextlogic.wish.activity.link.DeepLinkActivity"
+    ],
+    "com.contextlogic.wish.activity.profile.ProfileFragment": [
+        "com.contextlogic.wish.activity.profile.wishlist.WishlistActivity"
+    ],
+    "com.contextlogic.wish.activity.profile.b": [
+        "com.contextlogic.wish.activity.imageviewer.ImageViewerActivity"
+    ],
+    "com.contextlogic.wish.activity.profile.WishStarDialogFragment": [
+        "com.contextlogic.wish.activity.profile.ProfileActivity"
+    ],
+    "com.contextlogic.wish.activity.profile.ProfileServiceFragment": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.profile.follow.UserListFragment": [
+        "com.contextlogic.wish.activity.profile.ProfileActivity"
+    ],
+    "com.contextlogic.wish.activity.promocode.AppliedCommerceCashCodeDialogFragment": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity",
+        "com.contextlogic.wish.activity.commercecash.CommerceCashActivity"
+    ],
+    "com.contextlogic.wish.activity.feed.d": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.feed.BaseProductFeedFragment": [
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "com.contextlogic.wish.activity.feed.m0": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.feed.blue.browsebystore.BrowseByStoreFeedHeaderView": [
+        "com.contextlogic.wish.activity.cart.shipping.WishBluePickupLocationDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.feed.blue.browsebystore.BrowseByStoreFeedActivity": [
+        "com.contextlogic.wish.activity.feed.blue.browsebystore.BrowseByStoreFeedActivity"
+    ],
+    "com.contextlogic.wish.activity.feed.productrow.ProductRowView": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.feed.newbranded.AuthorizedBrandProductsActivity": [
+        "com.contextlogic.wish.activity.feed.newbranded.AuthorizedBrandProductsActivity"
+    ],
+    "com.contextlogic.wish.activity.feed.collections.CollectionFeedActivity": [
+        "com.contextlogic.wish.activity.feed.collections.CollectionFeedActivity"
+    ],
+    "com.contextlogic.wish.activity.feed.collections.savedcollections.SavedCollectionsFeedActivity": [
+        "com.contextlogic.wish.activity.feed.collections.savedcollections.SavedCollectionsFeedActivity"
+    ],
+    "com.contextlogic.wish.activity.productdetails.ProductDetailsFragment": [
+        "com.contextlogic.wish.ui.activities.ppcx.reportissue.ReportIssueActivity",
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "com.contextlogic.wish.activity.productdetails.k": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.productdetails.j0": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.productdetails.f0": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.productdetails.u1": [
+        "com.contextlogic.wish.activity.profile.ProfileActivity",
+        "com.contextlogic.wish.activity.imageviewer.ImageViewerActivity"
+    ],
+    "com.contextlogic.wish.activity.productdetails.featureviews.s0": [
+        "com.contextlogic.wish.activity.imageviewer.ImageViewerActivity",
+        "com.contextlogic.wish.activity.imageviewer.photovideoviewer.PhotoVideoViewerActivity"
+    ],
+    "com.contextlogic.wish.activity.menu.MenuFragment": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity",
+        "com.contextlogic.wish.ui.activities.incentives.daily_login_bonus.DailyLoginBonusActivity",
+        "com.contextlogic.wish.activity.wishlistpage.WishlistPageActivity",
+        "com.contextlogic.wish.activity.browse.BrowseActivity",
+        "com.contextlogic.wish.activity.dealshub.DealsHubFeedActivity",
+        "com.contextlogic.wish.activity.share.ShareActivity",
+        "com.contextlogic.wish.activity.promocode.PromoCodeActivity",
+        "com.contextlogic.wish.activity.subscription.dashboard.SubscriptionDashboardActivity",
+        "com.contextlogic.wish.activity.notifications.NotificationsActivity",
+        "com.contextlogic.wish.activity.commercecash.CommerceCashActivity",
+        "com.contextlogic.wish.activity.giftcard.SendGiftCardActivity",
+        "com.contextlogic.wish.activity.profile.ProfileActivity",
+        "com.contextlogic.wish.ui.activities.incentives.rewards_dashboard.RewardsActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.CartServiceFragment": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity",
+        "com.contextlogic.wish.activity.webview.KlarnaWebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.CartFragment": [
+        "com.contextlogic.wish.activity.cart.emptycartfeed.EmptyCartActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.CartActivity": [
+        "com.contextlogic.wish.activity.cart.loggedoutstate.LoggedOutCartActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.RequestFieldDialogFragment": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.addtocart.ItemAddedHeaderView": [
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.shipping.WishBluePickupLocationMapFragment": [
+        "com.contextlogic.wish.activity.cart.shipping.WishBluePickupLocationDetailsActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.shipping.StandaloneManageAddressesFragment": [
+        "com.contextlogic.wish.activity.cart.shipping.StandaloneShippingInfoActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.shipping.bulkshipping.BulkChangeShippingOptionActivity": [
+        "com.contextlogic.wish.activity.cart.shipping.bulkshipping.BulkChangeShippingOptionActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.loggedoutstate.LoggedOutCartFragment": [
+        "com.contextlogic.wish.activity.cart.CartActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.commerceloan.CommerceLoanRepaymentBannerView": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity",
+        "com.contextlogic.wish.activity.cart.commerceloan.CommerceLoanCartActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.giftcard.GiftCardDialogFragment": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.items.y": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity",
+        "com.contextlogic.wish.activity.commercecash.CommerceCashTermsActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.billing.PaypalInstallmentsStructure": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.cart.billing.paymentform.achbanktransfer.AchManagePaymentsActivity": [
+        "com.contextlogic.wish.activity.cart.billing.paymentform.achbanktransfer.AchManagePaymentsActivity"
+    ],
+    "com.contextlogic.wish.activity.loggedoutfeed.LoggedOutFeedActivity": [
+        "com.contextlogic.wish.activity.loggedoutfeed.LoggedOutFeedActivity"
+    ],
+    "com.contextlogic.wish.activity.browse.StandAloneBlitzBuyActivity": [
+        "com.contextlogic.wish.activity.browse.StandAloneBlitzBuyActivity"
+    ],
+    "com.contextlogic.wish.activity.browse.UniversalFilteredFeedActivity": [
+        "com.contextlogic.wish.activity.browse.UniversalFilteredFeedActivity"
+    ],
+    "com.contextlogic.wish.activity.referralprogram.ReferralProgramActivity": [
+        "com.contextlogic.wish.activity.engagementreward.earningscenter.EarningsCenterActivity"
+    ],
+    "com.contextlogic.wish.activity.giftcard.SendGiftCardServiceFragment": [
+        "com.contextlogic.wish.activity.cart.commercecash.CommerceCashCartActivity"
+    ],
+    "com.contextlogic.wish.activity.filter.FullScreenFilterActivity": [
+        "com.contextlogic.wish.activity.filter.FullScreenFilterActivity"
+    ],
+    "com.contextlogic.wish.activity.commercecash.a": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.commercecash.h": [
+        "com.contextlogic.wish.activity.browse.BrowseActivity"
+    ],
+    "com.contextlogic.wish.activity.commercecash.k": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.commercecash.g": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.commercecash.e": [
+        "com.contextlogic.wish.activity.commercecash.CommerceCashTermsActivity"
+    ],
+    "com.contextlogic.wish.activity.merchantprofile.a": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.merchantprofile.n": [
+        "com.contextlogic.wish.activity.imageviewer.ImageViewerActivity"
+    ],
+    "com.contextlogic.wish.activity.merchantprofile.o": [
+        "com.contextlogic.wish.activity.profile.ProfileActivity"
+    ],
+    "com.contextlogic.wish.activity.notifications.a": [
+        "com.contextlogic.wish.activity.productdetails.ProductDetailsActivity",
+        "com.contextlogic.wish.activity.webview.WebViewActivity",
+        "com.contextlogic.wish.activity.feed.brand.BrandFeedActivity",
+        "com.contextlogic.wish.activity.share.ShareActivity",
+        "com.contextlogic.wish.activity.feed.tag.TagFeedActivity",
+        "com.contextlogic.wish.activity.profile.ProfileActivity"
+    ],
+    "com.contextlogic.wish.activity.login.landing.LandingFragment": [
+        "com.contextlogic.wish.activity.login.signin.SignInActivity"
+    ],
+    "com.contextlogic.wish.activity.login.forgotpassword.ForgotPasswordActivity": [
+        "com.contextlogic.wish.activity.login.signin.SignInActivity"
+    ],
+    "com.contextlogic.wish.activity.login.signin.SignInFragment": [
+        "com.contextlogic.wish.activity.login.createaccount.CreateAccountActivity",
+        "com.contextlogic.wish.activity.login.forgotpassword.ForgotPasswordActivity"
+    ],
+    "com.contextlogic.wish.activity.login.createaccount.CreateAccountFragment": [
+        "com.contextlogic.wish.activity.login.signin.SignInActivity"
+    ],
+    "com.contextlogic.wish.activity.login.onboarding.OnboardingActivity": [
+        "com.contextlogic.wish.activity.login.onboarding.OnboardingActivity"
+    ],
+    "com.contextlogic.wish.activity.tempuser.view.AuthenticationBottomSheetFragment": [
+        "com.contextlogic.wish.activity.login.forgotpassword.ForgotPasswordActivity"
+    ],
+    "com.contextlogic.wish.activity.managepayments.AddEditPaymentsFragment": [
+        "com.contextlogic.wish.activity.cart.shipping.StandaloneShippingInfoActivity"
+    ],
+    "com.contextlogic.wish.activity.termspolicy.TermsPolicyTextView": [
+        "com.contextlogic.wish.activity.webview.WebViewActivity"
+    ],
+    "com.contextlogic.wish.activity.share.ShareActivity": [
+        "com.contextlogic.wish.activity.invite.InviteCouponActivity"
+    ],
+    "com.afterpay.android.view.AfterpayCheckoutV2Activity": [
+        "com.afterpay.android.view.AfterpayCheckoutV2Activity"
+    ],
+    "com.afterpay.android.view.AfterpayCheckoutActivity": [
+        "com.afterpay.android.view.AfterpayCheckoutActivity"
+    ],
+    "xe.a": [
+        "com.contextlogic.wish.activity.settings.notifications.NotificationSettingsActivity"
+    ]
+}
