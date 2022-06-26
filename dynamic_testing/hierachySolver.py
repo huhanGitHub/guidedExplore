@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 
 import uiautomator2.exceptions
 import subprocess
+import logging
 
 viewList = ['android.widget.TextView', 'android.widget.ImageView', 'android.widget.Button']
 removeView = ['']
@@ -172,6 +173,7 @@ def full_UI_click_test(sess, xml, cmd):
         except subprocess.TimeoutExpired as e:
             print('cmd timeout')
             print(str(e))
+            logging.error(f'cmd timeout: {str(e)}')
             crash.append(leaf.attrib)
             return crash
         # except uiautomator2.exceptions.SessionBrokenError as e:
@@ -232,8 +234,8 @@ def xml_compare(x1, x2, excludes=None, diff_items = 0):
         # print('tail: %r != %r' % (x1.tail, x2.tail))
         diff_items += 1
         return False
-    cl1 = x1.getchildren()
-    cl2 = x2.getchildren()
+    cl1 = list(x1) #x1.getchildren()
+    cl2 = list(x2) #x2.getchildren()
     if len(cl1) != len(cl2):
         # print('children length differs, %i != %i'
         #                   % (len(cl1), len(cl2)))

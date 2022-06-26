@@ -1,14 +1,16 @@
+import logging
 import random
+from datetime import datetime
 
 import uiautomator2.exceptions
-
-from utils.util import *
-from dynamic_testing.testing_path_planner import PathPlanner
-from dynamic_testing.hierachySolver import click_points_Solver
-from dynamic_testing.grantPermissonDetector import dialogSolver
-from datetime import datetime
 from uiautomator2 import Direction
+from utils.util import *
+from GUI_data_collection import Device
+
 from activity_launcher import launch_activity_by_deeplinks
+from dynamic_testing.grantPermissonDetector import dialogSolver
+from dynamic_testing.hierachySolver import click_points_Solver
+from dynamic_testing.testing_path_planner import PathPlanner
 
 
 def random_bfs_explore(d, deviceId, package_name, path_planner, timeout=60, collect_GUI=False):
@@ -154,7 +156,8 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_
         print('install ' + apk_path + ' fail.')
         return
     try:
-        d = u2.connect(deviceId)
+        d = Device(deviceId)
+        d.app_install(apk_path)
     except requests.exceptions.ConnectionError:
         print('requests.exceptions.ConnectionError')
         return
@@ -162,6 +165,7 @@ def unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log_save_
     test_start_time = datetime.now()
 
     # open launcher activity
+    # assert packageName == 'com.explorer.file.manager.fileexplorer.exfile'
     d.app_start(packageName)
     d.sleep(3)
     dialogSolver(d)
@@ -280,15 +284,21 @@ def unit_dynamic_testing_package(deviceId, apk_path, atg_json, deeplinks_json, l
 
 if __name__ == '__main__':
     # deviceId = '192.168.57.105'
-    deviceId = '192.168.57.105:5555'
+    deviceId = '192.168.57.101:5555'
     # deviceId = 'cb8c90f4'
     # deviceId = 'VEG0220B17010232'
-    apk_path = r'../data/repackaged_apks/ez.apk'
-    atg_json = r'../data/activity_atg/ez.json'
-    deeplinks_json = r'../data/deeplinks_params.json'
-    log = r'../data/visited_rate/ez.txt'
+    name = 'Lightroom'
+    apk_path = f'./data/repackaged_apks/{name}.apk'
+    atg_json = f'./data/activity_atg/{name}.json'
+    deeplinks_json = r'./data/deeplinks_params.json'
+    log = f'./data/visited_rate/{name}.txt'
 
     # log in the app in advance and set the parameter reinstall as false to explore app with login
     # there may be unpredictable issues, so pls run each app multiple times.
     # logging in and granting permission in advance will help a lot
-    unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log, reinstall=False)
+    while True:
+        try:
+            unit_dynamic_testing(deviceId, apk_path, atg_json, deeplinks_json, log, reinstall=False)
+        except Exception as e:
+            # type(e).__name__
+            logging.error(e)

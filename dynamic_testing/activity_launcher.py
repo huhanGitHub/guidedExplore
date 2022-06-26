@@ -2,6 +2,7 @@ import os
 import subprocess
 import json
 import time
+import logging
 
 intent_error_msg = 'Error: Activity not started'
 intent_success_msg = 'Status: ok'
@@ -20,17 +21,17 @@ def launch_activity_by_deeplink(deviceId, deeplink, action, params):
         params_cmd = ' '.join(params)
         cmd = cmd + ' ' + params_cmd
     try:
-        p = subprocess.run(cmd, shell=True, timeout=5, capture_output=True).stdout
+        p = subprocess.run(cmd, shell=True, timeout=10, capture_output=True).stdout
 
         if intent_error_msg in str(p):
-            print('intent fail')
+            logging.error('intent fail')
             return False
         else:
             if intent_success_msg in str(p):
                 return True
             return False
     except subprocess.TimeoutExpired:
-        print('cmd timeout')
+        logging.error(f'cmd timeout: {cmd}')
         return False
 
 

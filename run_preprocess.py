@@ -1,5 +1,5 @@
 import os
-from decompile_apk import unit_decpmpile, batch_decompile
+from decompile_apk import unit_decompile, batch_decompile
 from static_analysis_apk.instrument_apk import unit_inject, unit_sign_APK, batch_inject, batch_sign_apks
 from static_analysis_apk.extract_atg import unit_extract, batch_extract, activity_searching
 from static_analysis_apk.extract_intent_paras import smali_intent_para_extractor
@@ -17,10 +17,10 @@ def unit_run_preprocess(app_save_dir, recompiled_apks, repackage_app_save_dir, d
 
     # instrument apk
     apk = app_save_dir[app_save_dir.rindex('/') + 1:]
-    repackage_app_save_apk = os.path.join(repackage_app_save_dir, apk)
+    repackage_app_save_apk = os.path.join(repackage_app_save_dir, apk) + '.apk'
     # if not os.path.exists(repackage_app_save_apk):
     #     os.mkdir(repackage_app_save_apk)
-    unit_inject(app_save_dir, repackage_app_save_apk + '.apk', deeplinks_path)
+    unit_inject(app_save_dir, repackage_app_save_apk, deeplinks_path)
 
     # extract atg
     folders = os.listdir(recompiled_apks)
@@ -41,7 +41,9 @@ def unit_run_preprocess(app_save_dir, recompiled_apks, repackage_app_save_dir, d
 
     # merge intent params and activity atgs
     params = ParamGenerator(paras_save_path)
-    params.merge_deeplinks_params(deeplinks_path)
+    # TODO ?
+    params.merge_deeplinks_params(deeplinks_path, paras_save_path)
+    return repackage_app_save_apk
 
 
 if __name__ == '__main__':

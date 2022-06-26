@@ -19,3 +19,6 @@ set the following configuration of this test in the dynamic_testing/dynamic_GUI_
  Pre-login and granting permission in advance will improve the effectiveness of app exploration.
  The code here is not the latest version, but it can still achieve state-of-the-art.
  
+ #### Command Line Interface
+ `python main.py`
+ 

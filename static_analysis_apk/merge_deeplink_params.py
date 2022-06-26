@@ -45,8 +45,7 @@ class ParamGenerator:
 
         return results
 
-    def merge_deeplinks_params(self, deeplink_json,
-                               merged_path=r'/Users/xxx/PycharmProjects/guidedExplorer/data/deeplinks_params.json'):
+    def merge_deeplinks_params(self, deeplink_json, merged_path):
         params = 'params'
         with open(deeplink_json, 'r', encoding='utf8') as f:
             deeplinks = json.loads(f.read())
@@ -65,4 +64,5 @@ if __name__ == '__main__':
     params_path = r'../data/intent_para.json'
     params = ParamGenerator(params_path)
     deeplinks_json = r'../data/deeplinks.json'
-    params.merge_deeplinks_params(deeplinks_json)
+    merged_json = r'../data/deeplinks_params.json'
+    params.merge_deeplinks_params(deeplinks_json, merged_json)

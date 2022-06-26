@@ -16798,5 +16798,2076 @@
                 "--es extra_key other"
             ]
         }
+    },
+    "com.handmark.expressweather": {
+        "com.oneweather.rewards.ui.SuggestedAppsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.SuggestedAppsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.SuggestedAppsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.SuggestedAppsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.SuggestedAppsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.SplashActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity6",
+                    "android.intent.action.MAIN"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity7",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity8",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity9",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity9",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es es getData",
+                "--es es getData",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es LAUNCH_FROM_SPLASH getData",
+                "--es LAUNCH_FROM_SPLASH getData",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es LAUNCH_FROM_SPLASH getData",
+                "--es LAUNCH_FROM_SPLASH getData",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es branch_force_new_session getData"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.HomeActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HomeActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HomeActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HomeActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HomeActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ei WIDGET_ID 1",
+                "--es extra_key other",
+                "--es onResumeFragments()\\ -\\ Updating\\ last\\ version\\ run extras_string",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es LaunchScreenID extras_string",
+                "--es location string",
+                "--es location extras_string",
+                "--es BUNDLE_FROM_NOTIFICATION extras_string",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es widgetName string",
+                "--es widgetName string",
+                "--es cityId string",
+                "--es cityId string",
+                "--es extra_key other",
+                "--es cityId string",
+                "--es cityId extras_string",
+                "--es cityId extras_string",
+                "--es WIDGET_NAME string",
+                "--es Version string",
+                "--es LAUNCH_ACTION string",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es Widget string",
+                "--es Version string",
+                "--es NA string",
+                "--es Interval string",
+                "--es widgetName string",
+                "--es widgetName string",
+                "--ei forecast_type 1",
+                "--es LAUNCH_SOURCE string",
+                "--es widgetName string",
+                "--es extra_key other",
+                "--es deep_link_value getData",
+                "--es video_guid string",
+                "--es :::\\ requestCode\\ :: string",
+                "--ei onActivityResult()\\ -\\ NO\\ REQUEST\\ CODE\\ -\\ DEFAULT\\ TO\\ superclass 1",
+                "--ez new True",
+                "--ez FORCE_HIDE_WEATHER_FACTS True",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es launch_from_mo_engage_notification string",
+                "--es extra_key other",
+                "--es cityId string",
+                "--es extra_key other",
+                "--es LAUNCH_SHORTS_FROM_NOTIFICATION string",
+                "--es extra_key other",
+                "--es LAUNCH_REWARDS extras_string",
+                "--es LAUNCH_REWARDS string",
+                "--es LAUNCH_REWARDS string",
+                "--ez GO_TO_TRENDING True",
+                "--es GO_TO_TRENDING string",
+                "--es GO_TO_TRENDING string",
+                "--ez GO_TO_VIDEO True",
+                "--es GO_TO_VIDEO string",
+                "--es GO_TO_VIDEO string",
+                "--es GO_TO_VIDEO string",
+                "--es GO_TO_VIDEO string",
+                "--es extra_key other",
+                "--es deeplink_source string",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es widgetName string",
+                "--es extra_key other",
+                "--es cityId string",
+                "--ei forecast_type 1",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es onNewIntent()\\ -\\ Active\\ location\\ [before\\ launch\\ city\\ comparison]= string",
+                "--es extra_key other",
+                "--ei forecast_type 1",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es widgetName string",
+                "--es LAUNCH_FROM_WIDGET_4X1_CTA string",
+                "--es LAUNCH_FROM_WIDGET_4X1_CTA string",
+                "--es cityId string"
+            ]
+        },
+        "com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV2": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV21",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV22",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV23",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV23",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ei forecast_type 1",
+                "--es LAUNCH_SOURCE string",
+                "--es widgetName string",
+                "--es extra_key other",
+                "--ei WIDGET_ID 1",
+                "--es extra_key other",
+                "--es OneWeather.getInstance() extras_string",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es LaunchScreenID extras_string",
+                "--es location string",
+                "--es location extras_string",
+                "--es BUNDLE_FROM_NOTIFICATION extras_string",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es widgetName string",
+                "--es widgetName string",
+                "--es cityId string",
+                "--es OneWeather.getInstance() string",
+                "--es extra_key other",
+                "--es intent string",
+                "--es WIDGET_NAME string",
+                "--es Version string",
+                "--es LAUNCH_ACTION string",
+                "--es LAUNCH_ACTION extras_string",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es deeplink_source string",
+                "--es Widget string",
+                "--es Version string",
+                "--es NA string",
+                "--es Interval string",
+                "--es widgetName string",
+                "--es widgetName string",
+                "--es video_guid string",
+                "--es extra_key other",
+                "--es widgetName string",
+                "--es LAUNCH_FROM_WIDGET_4X1_CTA string",
+                "--es LAUNCH_FROM_WIDGET_4X1_CTA string",
+                "--es cityId string",
+                "--es :::\\ requestCode\\ :: string",
+                "--ei onActivityResult()\\ -\\ NO\\ REQUEST\\ CODE\\ -\\ DEFAULT\\ TO\\ superclass 1",
+                "--ez new True",
+                "--ez FORCE_HIDE_WEATHER_FACTS True",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es LAUNCH_HEALTH_CENTER_NOTIFICATION string",
+                "--es extra_key other",
+                "--es cityId string",
+                "--es extra_key other",
+                "--es LAUNCH_SHORTS_FROM_NOTIFICATION string",
+                "--es extra_key other",
+                "--es LAUNCH_REWARDS extras_string",
+                "--es LAUNCH_REWARDS string",
+                "--es LAUNCH_REWARDS string",
+                "--ez GO_TO_TRENDING True",
+                "--es CARD_ID string",
+                "--es TRENDING_NEWS_URL string",
+                "--ez GO_TO_VIDEO True",
+                "--es GO_TO_VIDEO string",
+                "--es GO_TO_VIDEO string",
+                "--es video_geo_value string",
+                "--es video_geo_value string",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es widgetName string",
+                "--es extra_key other",
+                "--es cityId string",
+                "--ei forecast_type 1",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es onNewIntent()\\ -\\ Active\\ location\\ [before\\ launch\\ city\\ comparison]= string",
+                "--es extra_key other",
+                "--ei forecast_type 1",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es deep_link_value getData"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.MainActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity1",
+                    "android.intent.action.MAIN"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.HealthCenterMapsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterMapsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterMapsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterMapsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterMapsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.ManageDailySummaryActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ManageDailySummaryActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ManageDailySummaryActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ManageDailySummaryActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ManageDailySummaryActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.TrendingActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.TrendingActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.TrendingActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.TrendingActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.TrendingActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es COLD extras_string",
+                "--es COLD extras_string",
+                "--es CARD_ID extras_string"
+            ]
+        },
+        "com.handmark.expressweather.settings.SettingsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.settings.SettingsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.settings.SettingsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.settings.SettingsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.settings.SettingsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es extra_key other",
+                "--es extra_key other"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.AboutActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AboutActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AboutActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AboutActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AboutActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.ThemePickerActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemePickerActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemePickerActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemePickerActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemePickerActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--el newThemeId 2",
+                "--el editThemeId 2",
+                "--ez EXTRA_SUBMIT_THEME True",
+                "--el EXTRA_SUBMIT_THEME 2",
+                "--es extra_key other"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.ThemeEditorActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemeEditorActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemeEditorActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemeEditorActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemeEditorActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--el editThemeId 2",
+                "--el baseThemeId 2"
+            ]
+        },
+        "com.handmark.expressweather.BackgroundPickerActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPickerActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPickerActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPickerActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPickerActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es extra_key other",
+                "--ez bkgrdadded True",
+                "--ez bkgrdUsed True",
+                "--ez bkgrddel True"
+            ]
+        },
+        "com.handmark.expressweather.BackgroundPreviewActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPreviewActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPreviewActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPreviewActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPreviewActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es extra_key other",
+                "--ei pos 1",
+                "--ei inuse 1"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.VideoFeedActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoFeedActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoFeedActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoFeedActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoFeedActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.WeatherStoryActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherStoryActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherStoryActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherStoryActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherStoryActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es TAP_FORWARD extras_string",
+                "--ei bubble_pos 1"
+            ]
+        },
+        "com.handmark.expressweather.video.FullScreenVideoActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.video.FullScreenVideoActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.video.FullScreenVideoActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.video.FullScreenVideoActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.video.FullScreenVideoActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es videoUrl string",
+                "--es videoPreviewImageUrl string"
+            ]
+        },
+        "com.handmark.expressweather.AddLocationActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.AddLocationActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.AddLocationActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.AddLocationActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.AddLocationActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es EXTRA_DEEPLINK_DATA string",
+                "--es EXTRA_DEEPLINK_DATA string",
+                "--es EXTRA_DEEPLINK_DATA string",
+                "--es EXTRA_DEEPLINK_DATA string",
+                "--ez KEY_IS_FTUE True",
+                "--es extra_key other",
+                "--es extra_key other"
+            ]
+        },
+        "com.handmark.expressweather.FeedbackActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.FeedbackActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.FeedbackActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.FeedbackActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.FeedbackActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.SettingsDashActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsDashActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsDashActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsDashActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsDashActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.PostActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.PostActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.PostActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.PostActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.PostActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es screenshot string",
+                "--es editable_message string"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.SettingsLocationsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsLocationsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsLocationsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsLocationsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsLocationsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es idRemoved string",
+                "--es idRenamed string"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.SettingsEditLocationActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsEditLocationActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsEditLocationActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsEditLocationActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsEditLocationActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es cityId string"
+            ]
+        },
+        "com.handmark.expressweather.billing.PurchaseActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.billing.PurchaseActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.billing.PurchaseActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.billing.PurchaseActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.billing.PurchaseActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es key_request_source string",
+                "--es com.handmark.expressweather.billingUpdated extras_string"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.WeatherDetailsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherDetailsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherDetailsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherDetailsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherDetailsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es LAUNCH_SOURCE string",
+                "--es WEATHER_DETAILS extras_string",
+                "--es _locationId extras_string",
+                "--es COLD extras_string",
+                "--es CCPA\\ Logs)\\ -\\ CCPA\\ Dialog\\ Show extras_string",
+                "--es isFromTodayScreen extras_string",
+                "--es extra_key other"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.HelpActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HelpActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HelpActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HelpActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HelpActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.PrivacyPageActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PrivacyPageActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PrivacyPageActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PrivacyPageActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PrivacyPageActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure1x1Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ez EXTRA_TRACFONE True"
+            ]
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure2x1Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ez REQUEST_LOCATION_PERMISSION True",
+                "--ez isreconfigure True"
+            ]
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x2Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x1Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure2x3Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ez REQUEST_LOCATION_PERMISSION True",
+                "--ez isreconfigure True"
+            ]
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure2x2Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure3x3Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ez REQUEST_LOCATION_PERMISSION True",
+                "--ez isreconfigure True"
+            ]
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure6x3Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ez isreconfigure True",
+                "--ez isreconfigure True",
+                "--es appWidgetId extras_string"
+            ]
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.amazon.device.ads.DTBActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other"
+            ]
+        },
+        "com.handmark.expressweather.CCPAActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPAActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPAActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPAActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPAActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es EXTRA_DEEPLINK_DATA string",
+                "--ez launch_from_settings_location True",
+                "--es EXTRA_DEEPLINK_DATA string",
+                "--ez force_show_privacy_policy_dialog True",
+                "--ez force_show_privacy_policy_dialog True",
+                "--es EXTRA_DEEPLINK_DATA string",
+                "--es EXTRA_DEEPLINK_DATA string"
+            ]
+        },
+        "com.handmark.expressweather.CCPADialogActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPADialogActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPADialogActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPADialogActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPADialogActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es EXTRA_DEEPLINK_DATA string"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.VideoDetailsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoDetailsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoDetailsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoDetailsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoDetailsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es intent extras_string",
+                "--es SOURCE string"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.AlertActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AlertActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AlertActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AlertActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AlertActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es extra_key other",
+                "--es cityId extras_string",
+                "--es widgetName extras_string",
+                "--ei WIDGET_ID 1",
+                "--es LAUNCH_ACTION string",
+                "--es Version string",
+                "--es Version extras_string",
+                "--es WIDGET_NAME string",
+                "--es LAUNCH_ACTION string",
+                "--es Version string",
+                "--es LAUNCH_FROM_MOENGAGE_LOCATION_FIPS_CODE string"
+            ]
+        },
+        "com.handmark.expressweather.RefreshIntervalActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.RefreshIntervalActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.RefreshIntervalActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.RefreshIntervalActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.RefreshIntervalActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es key_request_source string"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.MinutelyForecastActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MinutelyForecastActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MinutelyForecastActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MinutelyForecastActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MinutelyForecastActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es LAUNCH_FROM_MOENGAGE_LOCATION_S2CELL_ID string",
+                "--ez KEY_SHOW_TEMPERATURE True",
+                "--ez LAUNCH_FROM_MO_ENGAGE_NOTIFICATION True"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es location_id string",
+                "--es launch_source string"
+            ]
+        },
+        "com.handmark.expressweather.WebViewActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.WebViewActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.WebViewActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.WebViewActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.WebViewActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.PermissionSettingsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PermissionSettingsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PermissionSettingsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PermissionSettingsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PermissionSettingsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es SOURCE string",
+                "--es SOURCE string"
+            ]
+        },
+        "com.handmark.expressweather.ui.activities.WidgetFoldActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WidgetFoldActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WidgetFoldActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WidgetFoldActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WidgetFoldActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ei appWidgetId 1",
+                "--ei tabbedLayoutId 1",
+                "--ei tabbedLayoutCellId 1",
+                "--ez extraIs4x2 True",
+                "--es source string"
+            ]
+        },
+        "com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es intent extras_string"
+            ]
+        },
+        "com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV2": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV21",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV22",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV23",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV23",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es null\\ cannot\\ be\\ cast\\ to\\ non-null\\ type\\ java.lang.String extras_string"
+            ]
+        },
+        "com.oneweather.shorts.ui.details.ShortsDetailActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.shorts.ui.details.ShortsDetailActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.shorts.ui.details.ShortsDetailActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.shorts.ui.details.ShortsDetailActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.shorts.ui.details.ShortsDetailActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es intent extras_string"
+            ]
+        },
+        "com.oneweather.stories.ui.details.StoriesDetailsV2Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.stories.ui.details.StoriesDetailsV2Activity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.stories.ui.details.StoriesDetailsV2Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.stories.ui.details.StoriesDetailsV2Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.stories.ui.details.StoriesDetailsV2Activity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es BUBBLE_ID string"
+            ]
+        },
+        "com.oneweather.rewards.ui.CongratulationsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.CongratulationsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.CongratulationsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.CongratulationsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.CongratulationsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es ADSFREE_TYPE string",
+                "--es SOURCE string",
+                "--es AppName string"
+            ]
+        },
+        "com.oneweather.rewards.ui.RewardsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.RewardsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.RewardsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.RewardsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.RewardsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es intent extras_string",
+                "--es SOURCE string"
+            ]
+        },
+        "com.oneweather.crosspromotions.presentation.AppBannerActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.crosspromotions.presentation.AppBannerActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.crosspromotions.presentation.AppBannerActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.crosspromotions.presentation.AppBannerActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.crosspromotions.presentation.AppBannerActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es mBinding extras_string"
+            ]
+        },
+        "com.mopub.mobileads.MoPubFullscreenActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.mopub.mobileads.MoPubFullscreenActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.mobileads.MoPubFullscreenActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.mobileads.MoPubFullscreenActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.mobileads.MoPubFullscreenActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es extra_key other"
+            ]
+        },
+        "com.mopub.common.MoPubBrowser": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.mopub.common.MoPubBrowser1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.MoPubBrowser2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.MoPubBrowser3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.MoPubBrowser3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.mopub.common.privacy.ConsentDialogActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.mopub.common.privacy.ConsentDialogActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.privacy.ConsentDialogActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.privacy.ConsentDialogActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.privacy.ConsentDialogActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es html-page-content string"
+            ]
+        },
+        "com.inmobi.ads.rendering.InMobiAdActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.inmobi.ads.rendering.InMobiAdActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.inmobi.ads.rendering.InMobiAdActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.inmobi.ads.rendering.InMobiAdActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.inmobi.ads.rendering.InMobiAdActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ei com.inmobi.ads.rendering.InMobiAdActivity.EXTRA_AD_CONTAINER_INDEX 1",
+                "--ei com.inmobi.ads.rendering.InMobiAdActivity.EXTRA_AD_CONTAINER_TYPE 1",
+                "--ez com.inmobi.ads.rendering.InMobiAdActivity.EXTRA_AD_ACTIVITY_IS_FULL_SCREEN True",
+                "--ei com.inmobi.ads.rendering.InMobiAdActivity.EXTRA_AD_ACTIVITY_TYPE 1",
+                "--es com.inmobi.ads.rendering.InMobiAdActivity.IN_APP_BROWSER_URL string",
+                "--el placementId 2",
+                "--ez allowAutoRedirection True",
+                "--es impressionId string",
+                "--es creativeId string",
+                "--ei id 1",
+                "--ei id 1",
+                "--es extra_key other"
+            ]
+        },
+        "com.google.android.gms.ads.AdActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.google.android.gms.ads.AdActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.ads.AdActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.ads.AdActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.ads.AdActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.gms.common.api.GoogleApiActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.google.android.gms.common.api.GoogleApiActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.common.api.GoogleApiActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.common.api.GoogleApiActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.common.api.GoogleApiActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es notify_manager extras_string",
+                "--ei failing_client_id 1",
+                "--ez notify_manager True",
+                "--ei failing_client_id 1"
+            ]
+        },
+        "com.facebook.ads.AudienceNetworkActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.facebook.ads.AudienceNetworkActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.facebook.ads.AudienceNetworkActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.facebook.ads.AudienceNetworkActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.facebook.ads.AudienceNetworkActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.android.billingclient.api.ProxyBillingActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.android.billingclient.api.ProxyBillingActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.android.billingclient.api.ProxyBillingActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.android.billingclient.api.ProxyBillingActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.android.billingclient.api.ProxyBillingActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es \\ and\\ billing\\'s\\ responseCode:\\  extras_string",
+                "--es \\ and\\ billing\\'s\\ responseCode:\\  extras_string",
+                "--es extra_key other",
+                "--es extra_key other",
+                "--es extra_key other"
+            ]
+        },
+        "com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.play.core.common.PlayCoreDialogWrapperActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.common.PlayCoreDialogWrapperActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.common.PlayCoreDialogWrapperActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.common.PlayCoreDialogWrapperActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.common.PlayCoreDialogWrapperActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--ei window_flags 1",
+                "--es extra_key other",
+                "--es result_receiver extras_string"
+            ]
+        },
+        "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es extra_url string"
+            ]
+        },
+        "com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es spotId string"
+            ]
+        },
+        "com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": [
+                "--es video_url string"
+            ]
+        },
+        "com.moengage.pushbase.activities.PushTracker": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushTracker1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushTracker2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushTracker3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushTracker3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.moengage.pushbase.activities.PushClickDialogTracker": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushClickDialogTracker1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushClickDialogTracker2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushClickDialogTracker3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushClickDialogTracker3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.moengage.integrationverifier.internal.IntegrationVerificationActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        }
     }
 }

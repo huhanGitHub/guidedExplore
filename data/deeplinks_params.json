@@ -16798,5 +16798,3080 @@
                 "--es extra_key other"
             ]
         }
+    },
+    "com.handmark.expressweather": {
+        "com.oneweather.rewards.ui.SuggestedAppsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.SuggestedAppsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.SuggestedAppsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.SuggestedAppsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.SuggestedAppsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.SuggestedAppsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.SplashActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity6",
+                    "android.intent.action.MAIN"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity7",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity8",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity9",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity10",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SplashActivity10",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.HomeActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HomeActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HomeActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HomeActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HomeActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HomeActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV2": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV21",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV22",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV23",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV24",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.homev2.presentation.HomeActivityV24",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.MainActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity1",
+                    "android.intent.action.MAIN"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MainActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.HealthCenterMapsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterMapsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterMapsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterMapsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterMapsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterMapsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.ManageDailySummaryActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ManageDailySummaryActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ManageDailySummaryActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ManageDailySummaryActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ManageDailySummaryActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ManageDailySummaryActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.TrendingActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.TrendingActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.TrendingActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.TrendingActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.TrendingActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.TrendingActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.settings.SettingsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.settings.SettingsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.settings.SettingsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.settings.SettingsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.settings.SettingsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.settings.SettingsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.AboutActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AboutActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AboutActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AboutActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AboutActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AboutActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.ThemePickerActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemePickerActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemePickerActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemePickerActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemePickerActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemePickerActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.ThemeEditorActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemeEditorActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemeEditorActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemeEditorActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemeEditorActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.ThemeEditorActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.BackgroundPickerActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPickerActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPickerActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPickerActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPickerActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPickerActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.BackgroundPreviewActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPreviewActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPreviewActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPreviewActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPreviewActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.BackgroundPreviewActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.VideoFeedActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoFeedActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoFeedActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoFeedActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoFeedActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoFeedActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.WeatherStoryActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherStoryActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherStoryActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherStoryActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherStoryActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherStoryActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.video.FullScreenVideoActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.video.FullScreenVideoActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.video.FullScreenVideoActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.video.FullScreenVideoActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.video.FullScreenVideoActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.video.FullScreenVideoActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.AddLocationActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.AddLocationActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.AddLocationActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.AddLocationActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.AddLocationActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.AddLocationActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.FeedbackActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.FeedbackActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.FeedbackActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.FeedbackActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.FeedbackActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.FeedbackActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.SettingsDashActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsDashActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsDashActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsDashActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsDashActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsDashActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.PostActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.PostActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.PostActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.PostActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.PostActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.PostActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.SettingsLocationsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsLocationsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsLocationsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsLocationsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsLocationsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsLocationsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.SettingsEditLocationActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsEditLocationActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsEditLocationActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsEditLocationActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsEditLocationActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SettingsEditLocationActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.billing.PurchaseActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.billing.PurchaseActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.billing.PurchaseActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.billing.PurchaseActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.billing.PurchaseActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.billing.PurchaseActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.WeatherDetailsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherDetailsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherDetailsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherDetailsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherDetailsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WeatherDetailsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.HelpActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HelpActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HelpActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HelpActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HelpActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HelpActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.PrivacyPageActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PrivacyPageActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PrivacyPageActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PrivacyPageActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PrivacyPageActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PrivacyPageActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure1x1Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure1x1Activity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure2x1Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x1Activity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x2Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2Activity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x1Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1Activity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure2x3Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3Activity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure2x2Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x2Activity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure3x3Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure3x3Activity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure6x3Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure6x3Activity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x1ClockActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure5x1ClockActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure4x2ClockSearchActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity1",
+                    "android.appwidget.action.APPWIDGET_CONFIGURE"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.widgets.WidgetConfigure2x3TracfoneActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.amazon.device.ads.DTBActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.amazon.device.ads.DTBActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.CCPAActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPAActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPAActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPAActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPAActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPAActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.CCPADialogActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPADialogActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPADialogActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPADialogActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPADialogActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.CCPADialogActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.VideoDetailsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoDetailsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoDetailsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoDetailsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoDetailsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.VideoDetailsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.AlertActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AlertActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AlertActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AlertActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AlertActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.AlertActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.RefreshIntervalActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.RefreshIntervalActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.RefreshIntervalActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.RefreshIntervalActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.RefreshIntervalActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.RefreshIntervalActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterDetailsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.HealthCenterAirQualityActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.NudgeGoPremiumActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.MinutelyForecastActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MinutelyForecastActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MinutelyForecastActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MinutelyForecastActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MinutelyForecastActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.MinutelyForecastActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.SetDailySummaryNotificationActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.WebViewActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.WebViewActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.WebViewActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.WebViewActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.WebViewActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.WebViewActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.PermissionSettingsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PermissionSettingsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PermissionSettingsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PermissionSettingsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PermissionSettingsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.PermissionSettingsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.ui.activities.WidgetFoldActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WidgetFoldActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WidgetFoldActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WidgetFoldActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WidgetFoldActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.ui.activities.WidgetFoldActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.weatherV2.bingeVideo.ui.BingeVideoActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV2": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV21",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV22",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV23",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV24",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.handmark.expressweather.minutelyforecast.ui.MinutelyForecastActivityV24",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.oneweather.shorts.ui.details.ShortsDetailActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.shorts.ui.details.ShortsDetailActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.shorts.ui.details.ShortsDetailActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.shorts.ui.details.ShortsDetailActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.shorts.ui.details.ShortsDetailActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.shorts.ui.details.ShortsDetailActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.oneweather.stories.ui.details.StoriesDetailsV2Activity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.stories.ui.details.StoriesDetailsV2Activity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.stories.ui.details.StoriesDetailsV2Activity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.stories.ui.details.StoriesDetailsV2Activity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.stories.ui.details.StoriesDetailsV2Activity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.stories.ui.details.StoriesDetailsV2Activity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.oneweather.rewards.ui.CongratulationsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.CongratulationsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.CongratulationsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.CongratulationsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.CongratulationsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.CongratulationsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.oneweather.rewards.ui.RewardsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.RewardsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.RewardsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.RewardsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.RewardsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.rewards.ui.RewardsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.oneweather.crosspromotions.presentation.AppBannerActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.oneweather.crosspromotions.presentation.AppBannerActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.crosspromotions.presentation.AppBannerActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.crosspromotions.presentation.AppBannerActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.crosspromotions.presentation.AppBannerActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.oneweather.crosspromotions.presentation.AppBannerActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.mopub.mobileads.MoPubFullscreenActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.mopub.mobileads.MoPubFullscreenActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.mobileads.MoPubFullscreenActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.mobileads.MoPubFullscreenActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.mobileads.MoPubFullscreenActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.mobileads.MoPubFullscreenActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.mopub.common.MoPubBrowser": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.mopub.common.MoPubBrowser1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.MoPubBrowser2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.MoPubBrowser3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.MoPubBrowser4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.MoPubBrowser4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.mopub.common.privacy.ConsentDialogActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.mopub.common.privacy.ConsentDialogActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.privacy.ConsentDialogActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.privacy.ConsentDialogActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.privacy.ConsentDialogActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.mopub.common.privacy.ConsentDialogActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.inmobi.ads.rendering.InMobiAdActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.inmobi.ads.rendering.InMobiAdActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.inmobi.ads.rendering.InMobiAdActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.inmobi.ads.rendering.InMobiAdActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.inmobi.ads.rendering.InMobiAdActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.inmobi.ads.rendering.InMobiAdActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.gms.ads.AdActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.google.android.gms.ads.AdActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.ads.AdActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.ads.AdActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.ads.AdActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.ads.AdActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.gms.common.api.GoogleApiActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.google.android.gms.common.api.GoogleApiActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.common.api.GoogleApiActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.common.api.GoogleApiActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.common.api.GoogleApiActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.gms.common.api.GoogleApiActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.facebook.ads.AudienceNetworkActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.facebook.ads.AudienceNetworkActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.facebook.ads.AudienceNetworkActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.facebook.ads.AudienceNetworkActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.facebook.ads.AudienceNetworkActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.facebook.ads.AudienceNetworkActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.android.billingclient.api.ProxyBillingActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.android.billingclient.api.ProxyBillingActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.android.billingclient.api.ProxyBillingActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.android.billingclient.api.ProxyBillingActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.android.billingclient.api.ProxyBillingActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.android.billingclient.api.ProxyBillingActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.play.core.common.PlayCoreDialogWrapperActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.common.PlayCoreDialogWrapperActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.common.PlayCoreDialogWrapperActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.common.PlayCoreDialogWrapperActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.common.PlayCoreDialogWrapperActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.google.android.play.core.common.PlayCoreDialogWrapperActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivityCore4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.moengage.pushbase.activities.PushTracker": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushTracker1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushTracker2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushTracker3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushTracker4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushTracker4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.moengage.pushbase.activities.PushClickDialogTracker": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushClickDialogTracker1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushClickDialogTracker2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushClickDialogTracker3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushClickDialogTracker4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.pushbase.activities.PushClickDialogTracker4",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.moengage.integrationverifier.internal.IntegrationVerificationActivity": {
+            "deeplinks": [
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_handmark_expressweather://com.moengage.integrationverifier.internal.IntegrationVerificationActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        }
+    },
+    "com.adobe.lrmobile": {
+        "com.adobe.lrmobile.material.sharedwithme.SharedWithYou": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.sharedwithme.SharedWithYou1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.sharedwithme.SharedWithYou2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.lrimport.ptpimport.PtpActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.ptpimport.PtpActivity1",
+                    "android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.ptpimport.PtpActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.ptpimport.PtpActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.ptpimport.PtpActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.LrCaptureActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.LrCaptureShortcutCreatorActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureShortcutCreatorActivity1",
+                    "android.intent.action.CREATE_SHORTCUT"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureShortcutCreatorActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureShortcutCreatorActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureShortcutCreatorActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.analytics.TestSettingsAnalyticsActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.analytics.TestSettingsAnalyticsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.analytics.TestSettingsAnalyticsActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.StorageCheckActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.StorageCheckActivity1",
+                    "android.intent.action.MAIN"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.StorageCheckActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.StorageCheckActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.StorageCheckActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.collections.neworganize.adhocshare.AdHocShareActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.neworganize.adhocshare.AdHocShareActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.neworganize.adhocshare.AdHocShareActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.grid.search.AssistantSearchActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.search.AssistantSearchActivity1",
+                    "com.google.android.gms.actions.SEARCH_ACTION"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.search.AssistantSearchActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.search.AssistantSearchActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.search.AssistantSearchActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.util.DialogProviderActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.util.DialogProviderActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.util.DialogProviderActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.grid.GridViewActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.GridViewActivity1",
+                    "android.intent.action.SEARCH"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.GridViewActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.GridViewActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.GridViewActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.loupe.LoupePhoneActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.loupe.LoupePhoneActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.loupe.LoupePhoneActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.loupe.LoupeActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.loupe.LoupeActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.loupe.LoupeActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.slideshow.SlideshowActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.slideshow.SlideshowActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.slideshow.SlideshowActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.PreferencesActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.PreferencesActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.PreferencesActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.MetadataSharingActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.MetadataSharingActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.MetadataSharingActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.ShareDefaultsRemovalActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.ShareDefaultsRemovalActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.ShareDefaultsRemovalActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.UsageDataActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.UsageDataActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.UsageDataActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.StorageSDCardActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.StorageSDCardActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.StorageSDCardActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.lrimport.importgallery.ImportGalleryActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.importgallery.ImportGalleryActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.importgallery.ImportGalleryActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.lrimport.importgallery.ImportGalleryFolderDetailActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.importgallery.ImportGalleryFolderDetailActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.importgallery.ImportGalleryFolderDetailActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.lrimport.CollectionChooserActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.CollectionChooserActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.CollectionChooserActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.application.login.LoginActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.LoginActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.LoginActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.application.login.upsells.UpsellActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.UpsellActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.UpsellActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.application.login.upsells.UpsellFeaturePopupActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.UpsellFeaturePopupActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.UpsellFeaturePopupActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.application.login.upsells.choice.UpsellChoicePhoneActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellChoicePhoneActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellChoicePhoneActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.application.login.upsells.choice.UpsellChoiceTabletActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellChoiceTabletActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellChoiceTabletActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.application.login.upsells.choice.UpsellStreamlinedActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellStreamlinedActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellStreamlinedActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.application.login.upsells.choice.UpsellV2ChoiceActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellV2ChoiceActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellV2ChoiceActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.android.billingclient.api.ProxyBillingActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.android.billingclient.api.ProxyBillingActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.android.billingclient.api.ProxyBillingActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.DeviceInfoActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.DeviceInfoActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.DeviceInfoActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.account.AccountManagementActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.account.AccountManagementActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.account.AccountManagementActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.HelpActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.HelpActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.HelpActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.AutoAddActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.AutoAddActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.AutoAddActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.ImportCorrectionsActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.ImportCorrectionsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.ImportCorrectionsActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.AboutLightroomActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.AboutLightroomActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.AboutLightroomActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.collections.folders.AlbumFolderChooserActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.folders.AlbumFolderChooserActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.folders.AlbumFolderChooserActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.SupportActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.SupportActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.SupportActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.GuidedTutorialActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.GuidedTutorialActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.GuidedTutorialActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.loupe.video.VideoPlayerActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.loupe.video.VideoPlayerActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.loupe.video.VideoPlayerActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.techpreview.TechPreviewActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.techpreview.TechPreviewActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.techpreview.TechPreviewActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity1",
+                    "android.intent.action.SEND_MULTIPLE"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity2",
+                    "android.intent.action.SEND"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity3",
+                    "android.intent.action.SEND"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.WhatsNewActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.WhatsNewActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.WhatsNewActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.util.WebViewActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.util.WebViewActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.util.WebViewActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.cooper.user.EditCommunityProfileActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.user.EditCommunityProfileActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.user.EditCommunityProfileActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.feedback.FeedbackActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.feedback.FeedbackActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.feedback.FeedbackActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.cooper.CooperLearnDetailActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperLearnDetailActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperLearnDetailActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.cooper.CooperAuthorPageActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperAuthorPageActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperAuthorPageActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.cooper.CooperAuthorNotFoundActivty": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperAuthorNotFoundActivty1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperAuthorNotFoundActivty2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.cooper.blocking.BlockedUsersListActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.blocking.BlockedUsersListActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.blocking.BlockedUsersListActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.cooper.personalized.CooperUSSFeedActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.personalized.CooperUSSFeedActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.personalized.CooperUSSFeedActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.creativesdk.foundation.internal.auth.AdobeAuthSignInActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthSignInActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthSignInActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthSignInActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthSignInActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.collections.neworganize.NewCollectionsOrganizeActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.neworganize.NewCollectionsOrganizeActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.neworganize.NewCollectionsOrganizeActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.applink.AppLinkReceiverActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.applink.AppLinkReceiverActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.applink.AppLinkReceiverActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.applink.AppLinkReceiverActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.applink.AppLinkReceiverActivity4",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.applink.AppLinkReceiverActivity5",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.applink.AppLinkReceiverActivity5",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.engagementsdk.AdobeEngagementActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.engagementsdk.AdobeEngagementActivity1",
+                    "AdobeCreativeSDKEngagement.PushAction"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.engagementsdk.AdobeEngagementActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.engagementsdk.AdobeEngagementActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.engagementsdk.AdobeEngagementActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.material.settings.peoplelegal.PeopleLegalActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.peoplelegal.PeopleLegalActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.peoplelegal.PeopleLegalActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.lrmobile.internalflags.InternalPrefsActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.internalflags.InternalPrefsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.lrmobile.internalflags.InternalPrefsActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.capturemodule.CaptureActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.capturemodule.CaptureActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.capturemodule.CaptureActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.marketing.mobile.FullscreenMessageActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.marketing.mobile.FullscreenMessageActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.marketing.mobile.FullscreenMessageActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.marketing.mobile.MessageFullScreenActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.marketing.mobile.MessageFullScreenActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.marketing.mobile.MessageFullScreenActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.marketing.mobile.GriffonFullScreenTakeoverActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.marketing.mobile.GriffonFullScreenTakeoverActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.marketing.mobile.GriffonFullScreenTakeoverActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.facebook.FacebookActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.facebook.FacebookActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.facebook.FacebookActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.facebook.CustomTabMainActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.facebook.CustomTabMainActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.facebook.CustomTabMainActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.facebook.CustomTabActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.facebook.CustomTabActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.facebook.CustomTabActivity2",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.facebook.CustomTabActivity3",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.facebook.CustomTabActivity3",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.creativesdk.foundation.internal.auth.AdobeDataUsageNoticeActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeDataUsageNoticeActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeDataUsageNoticeActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.creativesdk.foundation.internal.auth.AdobeAuthContinuableEventActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthContinuableEventActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthContinuableEventActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.adobe.creativesdk.foundation.internal.base.AdobeTOUHandlerActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.base.AdobeTOUHandlerActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.base.AdobeTOUHandlerActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.gms.auth.api.signin.internal.SignInHubActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.google.android.gms.auth.api.signin.internal.SignInHubActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.google.android.gms.auth.api.signin.internal.SignInHubActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.gms.common.api.GoogleApiActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.google.android.gms.common.api.GoogleApiActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.google.android.gms.common.api.GoogleApiActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.samsung.android.sdk.iap.lib.activity.DialogActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.DialogActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.DialogActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.samsung.android.sdk.iap.lib.activity.CheckPackageActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.CheckPackageActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.CheckPackageActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.samsung.android.sdk.iap.lib.activity.AccountActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.AccountActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.AccountActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.samsung.android.sdk.iap.lib.activity.PaymentActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.PaymentActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.PaymentActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        },
+        "com.google.android.play.core.common.PlayCoreDialogWrapperActivity": {
+            "deeplinks": [
+                [
+                    "com_adobe_lrmobile://com.google.android.play.core.common.PlayCoreDialogWrapperActivity1",
+                    "android.intent.action.VIEW"
+                ],
+                [
+                    "com_adobe_lrmobile://com.google.android.play.core.common.PlayCoreDialogWrapperActivity2",
+                    "android.intent.action.VIEW"
+                ]
+            ],
+            "params": []
+        }
     }
 }
