@@ -89,7 +89,6 @@ def activity_mapping(abs_path, folders, available_activity_dict, save_dir):
 
 
 def activity_searching(folders, abs_path):
-    count = 0
     activity_dict = {}
     activity_lst = []
     for folder in folders:
@@ -101,7 +100,6 @@ def activity_searching(folders, abs_path):
         try:
             with open(manifestval_path, 'r', encoding='utf8') as file:
                 lines = file.readlines()
-                lines_length = len(lines)
 
                 for line in lines:
                     m = re.match('.*<activity.*android:name=\"(.*)\".*>', line)
@@ -117,6 +115,32 @@ def activity_searching(folders, abs_path):
 
             pass
     # print(activity_dict)
+    return activity_dict
+
+
+def activity_searching_one(folder_path):
+    """
+    :param folder_path: path of a decompiled apk file
+    """
+    activity_dict = {}
+    activity_lst = []
+    folder = os.path.basename(folder_path)
+
+    manifestval_path = os.path.join(folder_path, 'AndroidManifest.xml')
+    try:
+        with open(manifestval_path, 'r', encoding='utf8') as file:
+            lines = file.readlines()
+            for line in lines:
+                m = re.match('.*<activity.*android:name=\"(.*)\".*>', line)
+                if m:
+                    if len(m.group(1).split()) > 1:
+                        activity = m.group(1).split()[0][:-1]
+                    else:
+                        activity = m.group(1)
+                    activity_lst.append(activity)
+            activity_dict[folder] = list(set(activity_lst))
+    except Exception as e:
+        print(str(e))
     return activity_dict
 
 

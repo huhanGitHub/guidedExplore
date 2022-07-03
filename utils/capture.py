@@ -10,9 +10,7 @@ def capture(device, save_dir=definitions.APK_DIR):
     img = device.screenshot()
 
     def getPath(devicetype, filetype):
-        return os.path.join(
-            save_dir, f"{package}_{activity}_{devicetype}.{filetype}"
-        )
+        return os.path.join(save_dir, f"{package}_{activity}_{devicetype}.{filetype}")
 
 
 def saveXmlScreen(saveDir, xml1, xml2, img1, img2, activity_name, package_name):

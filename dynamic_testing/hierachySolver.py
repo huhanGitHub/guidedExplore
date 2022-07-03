@@ -4,19 +4,23 @@ import uiautomator2.exceptions
 import subprocess
 import logging
 
-viewList = ['android.widget.TextView', 'android.widget.ImageView', 'android.widget.Button']
-removeView = ['']
-textViewList = ['android.widget.TextView']
-middleTexts = ['search']
+viewList = [
+    "android.widget.TextView",
+    "android.widget.ImageView",
+    "android.widget.Button",
+]
+removeView = [""]
+textViewList = ["android.widget.TextView"]
+middleTexts = ["search"]
 
 
 def nodeCompare(node1, node2):
-    text1 = node1.attrib.get('text', None)
-    text2 = node2.attrib.get('text', None)
-    resourceId1 = node1.attrib.get('resourceId', None)
-    resourceId2 = node2.attrib.get('resourceId', None)
-    description1 = node1.attrib.get('description', None)
-    description2 = node2.attrib.get('description', None)
+    text1 = node1.attrib.get("text", None)
+    text2 = node2.attrib.get("text", None)
+    resourceId1 = node1.attrib.get("resourceId", None)
+    resourceId2 = node2.attrib.get("resourceId", None)
+    description1 = node1.attrib.get("description", None)
+    description2 = node2.attrib.get("description", None)
 
     count = 0
     if text1 == text2:
@@ -35,9 +39,9 @@ def nodeCompare(node1, node2):
 def pairTextview(phoneViews, tabletViews):
     pairs = []
     for textview1 in phoneViews:
-        text1 = textview1.attrib.get('text', None)
+        text1 = textview1.attrib.get("text", None)
         for textview2 in tabletViews:
-            text2 = textview2.attrib.get('text', None)
+            text2 = textview2.attrib.get("text", None)
             if text1 == text2:
                 pair = [textview1, textview2, text1]
                 pairs.append(pair)
@@ -53,10 +57,10 @@ def pairTextview(phoneViews, tabletViews):
     middle = []
     for i in pairs:
         view = i[0]
-        bounds = view.attrib.get('bounds')
+        bounds = view.attrib.get("bounds")
         bounds = bounds2int(bounds)
-        bounds2 = bounds2int(i[1].attrib.get('bounds'))
-        text = view.attrib.get('text').lower()
+        bounds2 = bounds2int(i[1].attrib.get("bounds"))
+        text = view.attrib.get("text").lower()
         y1 = bounds[1]
         y2 = bounds[3]
         if y2 < 300:
@@ -77,9 +81,9 @@ def pairTextview(phoneViews, tabletViews):
 
 
 def bounds2int(bounds):
-    bounds = bounds.replace('][', ',')
+    bounds = bounds.replace("][", ",")
     bounds = bounds[1:-1]
-    bounds = [int(i) for i in bounds.split(',')]
+    bounds = [int(i) for i in bounds.split(",")]
     return bounds
 
 
@@ -94,14 +98,14 @@ def hierachySolver(xml1, xml2):
     phoneViews = []
     tabletViews = []
     for child in root1.iter():
-        className = child.attrib.get('class', None)
+        className = child.attrib.get("class", None)
         if className is None:
             continue
         if className in textViewList:
             phoneViews.append(child)
 
     for child in root2.iter():
-        className = child.attrib.get('class', None)
+        className = child.attrib.get("class", None)
         if className is None:
             continue
         if className in textViewList:
@@ -121,7 +125,7 @@ def hierachySolver(xml1, xml2):
         clickBounds.extend(bottom)
     if len(middle) != 0:
         if len(middle) >= 5:
-            print('too many click points, truncate top10')
+            print("too many click points, truncate top10")
             middle = middle[:5]
         clickBounds.extend(middle)
     return clickBounds
@@ -135,7 +139,7 @@ def click_points_Solver(xml1):
 
     ret_bounds = []
     for leaf in leaves:
-        bounds = leaf.attrib.get('bounds')
+        bounds = leaf.attrib.get("bounds")
         bounds = bounds2int(bounds)
         ret_bounds.append(bounds)
 
@@ -147,16 +151,15 @@ def find_leaves(root1):
     leaves = []
 
     for child in root1.iter():
-        className = child.attrib.get('class', None)
+        className = child.attrib.get("class", None)
         if className is None:
             continue
         if len(child) == 0:
-            package = child.attrib.get('package')
-            if 'systemui' not in package:
+            package = child.attrib.get("package")
+            if "systemui" not in package:
                 leaves.append(child)
 
     return leaves
-
 
 
 def full_UI_click_test(sess, xml, cmd):
@@ -164,22 +167,23 @@ def full_UI_click_test(sess, xml, cmd):
     crash = []
 
     for leaf in leaves:
-        bounds = leaf.attrib.get('bounds')
+        bounds = leaf.attrib.get("bounds")
         bounds = bounds2int(bounds)
         try:
             sess.click((bounds[0] + bounds[2]) / 2, (bounds[1] + bounds[3]) / 2)
             sess.sleep(1)
             p = subprocess.run(cmd, shell=True, timeout=8)
         except subprocess.TimeoutExpired as e:
-            print('cmd timeout')
+            print("cmd timeout")
             print(str(e))
-            logging.error(f'cmd timeout: {str(e)}')
+            logging.error(f"cmd timeout: {str(e)}")
             crash.append(leaf.attrib)
             return crash
         # except uiautomator2.exceptions.SessionBrokenError as e:
         #     print(str(e))
         #     crash.append(leaf)
     return crash
+
 
 def text_compare(t1, t2):
     """
@@ -191,12 +195,12 @@ def text_compare(t1, t2):
     """
     if not t1 and not t2:
         return True
-    if t1 == '*' or t2 == '*':
+    if t1 == "*" or t2 == "*":
         return True
-    return (t1 or '').strip() == (t2 or '').strip()
+    return (t1 or "").strip() == (t2 or "").strip()
 
 
-def xml_compare(x1, x2, excludes=None, diff_items = 0):
+def xml_compare(x1, x2, excludes=None, diff_items=0):
     """
     Compares two xml etrees
     :param x1: the first tree
@@ -234,8 +238,8 @@ def xml_compare(x1, x2, excludes=None, diff_items = 0):
         # print('tail: %r != %r' % (x1.tail, x2.tail))
         diff_items += 1
         return False
-    cl1 = list(x1) #x1.getchildren()
-    cl2 = list(x2) #x2.getchildren()
+    cl1 = list(x1)  # x1.getchildren()
+    cl2 = list(x2)  # x2.getchildren()
     if len(cl1) != len(cl2):
         # print('children length differs, %i != %i'
         #                   % (len(cl1), len(cl2)))

@@ -1,5 +1,6 @@
 import os
 import json
+import logging
 try:
     import xml.etree.cElementTree as ET
 except ImportError:
@@ -173,6 +174,108 @@ def smali_intent_para_extractor(path, save_path):
         apps_intent_para[package] = intent_para
     save_json = json.dumps(apps_intent_para, indent=4)
     with open(save_path, 'w', encoding='utf8') as f2:
+        f2.write(save_json)
+
+
+def smali_intent_para_extractor_one(decom_folder, save_path):
+    apps_intent_para = {}
+    app = os.path.basename(decom_folder)
+    apps = [app]
+
+    # find package names for each app. find all activity names
+    packages = []
+    apps_activities = {}
+    app_path = os.path.join(decom_folder, app)
+    if not os.path.isdir(app_path):
+        return
+
+    activities = []
+    for file in os.listdir(app_path):
+        if "AndroidManifest.xml" in file:
+            file_path = os.path.join(app_path, file)
+            if "original" in file_path:
+                continue
+            try:
+                tree = ET.parse(file_path)
+                root = tree.getroot()
+                package = root.attrib.get("package", None)
+                if package is None:
+                    continue
+                for node in root.iter("activity"):
+                    name = node.attrib.get(
+                        "{http://schemas.android.com/apk/res/android}name"
+                    )
+                    activities.append(name)
+            except ET.ParseError as e:
+                logging.error(str(e))
+                logging.error(file_path)
+                package = file
+
+            packages.append(package)
+            apps_activities[package] = activities
+
+    for app in apps:
+        if (".DS_Store" in app) or ("R.smali" in app):
+            apps.remove(app)
+
+    subscript = 0
+    app_path = os.path.join(decom_folder, app)
+    intent_para = {}
+    package = packages[subscript]
+    for root, dirs, files in os.walk(app_path):
+        for file in files:
+            # use suffix 'activity' to judge
+            if "activity" in file or "Activity" in file:
+                if file.endswith(".smali"):
+                    file_path = os.path.join(root, file)
+                    pairs = []
+                    with open(file_path, "r+", encoding="utf8") as f:
+                        lines = f.readlines()
+                        for i, line in enumerate(lines):
+                            if intent_smali_fileds in line:
+                                index = line.index(intent_smali_fileds)
+                                end = line.index("(", index)
+                                field = line[index:end]
+                                field = field.replace(";\n", "")
+                                field = field.replace(
+                                    "Landroid/content/Intent;->", ""
+                                )
+
+                                # find const string in the previous lines
+                                pre_index = i - 1
+                                while pre_index >= 0:
+                                    if const_string in lines[pre_index]:
+                                        tag = lines[pre_index].strip()
+                                        tag = tag[
+                                            tag.index('"') + 1:tag.rindex('"')
+                                        ]
+                                        tag = tag.replace("\n", "")
+                                        pair = [tag, field]
+                                        pairs.append(pair)
+                                        break
+                                    else:
+                                        pre_index = pre_index - 1
+
+                        if len(pairs) != 0:
+                            # handle anonymous functions in an activity
+                            if "$" in file:
+                                file = file.split("$")[0]
+
+                            file = file.replace(".smali", "")
+
+                            # find the full name of activity
+                            full_name_activities = apps_activities.get(package)
+                            for full in full_name_activities:
+                                if file in full:
+                                    file = full
+
+                            cur_pairs = intent_para.setdefault(file, [])
+                            cur_pairs.extend(pairs)
+                            intent_para[file] = cur_pairs
+
+    apps_intent_para[package] = intent_para
+    save_json = json.dumps(apps_intent_para, indent=4)
+    with open(save_path, "w", encoding="utf8") as f2:
         f2.write(save_json)
 
 

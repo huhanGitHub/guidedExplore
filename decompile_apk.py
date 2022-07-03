@@ -1,16 +1,17 @@
 import os
+import logging
 
 
 def batch_decompile(apk_dir, save_dir, re_packaged_dir):
     for root, dirs, files in os.walk(apk_dir):
         for apk in files:
-            if not str(apk).endswith('.apk'):
+            if not str(apk).endswith(".apk"):
                 continue
             apk_path = os.path.join(root, apk)
             app_save_dir = os.path.join(save_dir, apk)
             re_packaged_apk = os.path.join(re_packaged_dir, apk)
             if os.path.exists(app_save_dir) and os.path.exists(re_packaged_apk):
-                print(apk + 'skip')
+                print(apk + "skip")
                 continue
             unit_decompile(apk_path, app_save_dir)
 
@@ -24,18 +25,18 @@ def batch_decompile(apk_dir, save_dir, re_packaged_dir):
 
 
 def unit_decompile(apk_path, app_save_dir):
-    print('Start apktool')
-    cmd1 = 'apktool d ' + apk_path + ' -f -o ' + app_save_dir
+    logging.info("Start apktool")
+    cmd1 = "apktool d " + apk_path + " -f -o " + app_save_dir
     os.system(cmd1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
-    apk_dir = r'../uiautomator2/apks'
-    save_dir = r'../data/recompiled_apks'
+    apk_dir = r"../uiautomator2/apks"
+    save_dir = r"../data/recompiled_apks"
 
     # batch_decompile(apk_dir, save_dir, re_packaged_dir)
 
-    apk_path = r'data/apks/youtube.apk'
-    app_save_path = r'data/recompiled_apks/youtube'
+    apk_path = r"data/apks/youtube.apk"
+    app_save_path = r"data/recompiled_apks/youtube"
     unit_decompile(apk_path, app_save_path)
