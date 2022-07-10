@@ -232,7 +232,6 @@ def unit_extract(folder, available_activity_dict, save_dir=r'activity_match'):
                             activity_dict[class_path] = list(set(activity_lst))
                 except Exception as e:
                     print(str(e))
-                    # print(fullpath)
                     pass
         # break
     save_path = os.path.join(save_dir, folder[folder.rindex('/') + 1:] + '.json')

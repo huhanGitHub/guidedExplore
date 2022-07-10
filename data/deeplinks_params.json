@@ -15396,10 +15396,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.sharedwithme.SharedWithYou1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.sharedwithme.SharedWithYou2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15413,14 +15409,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.ptpimport.PtpActivity2",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.ptpimport.PtpActivity3",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.ptpimport.PtpActivity3",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15429,10 +15417,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15447,14 +15431,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureShortcutCreatorActivity2",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureShortcutCreatorActivity3",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.LrCaptureShortcutCreatorActivity3",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15463,10 +15439,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.analytics.TestSettingsAnalyticsActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.analytics.TestSettingsAnalyticsActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15481,14 +15453,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.StorageCheckActivity2",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.StorageCheckActivity3",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.StorageCheckActivity3",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15497,10 +15461,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.neworganize.adhocshare.AdHocShareActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.neworganize.adhocshare.AdHocShareActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15515,14 +15475,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.search.AssistantSearchActivity2",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.search.AssistantSearchActivity3",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.search.AssistantSearchActivity3",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15531,10 +15483,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.util.DialogProviderActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.util.DialogProviderActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15549,14 +15497,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.GridViewActivity2",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.GridViewActivity3",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.grid.GridViewActivity3",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15565,10 +15505,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.loupe.LoupePhoneActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.loupe.LoupePhoneActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15579,10 +15515,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.loupe.LoupeActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.loupe.LoupeActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15591,10 +15523,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.slideshow.SlideshowActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.slideshow.SlideshowActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15605,10 +15533,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.PreferencesActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.PreferencesActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15617,10 +15541,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.MetadataSharingActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.MetadataSharingActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15631,10 +15551,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.ShareDefaultsRemovalActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.ShareDefaultsRemovalActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15643,10 +15559,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.UsageDataActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.UsageDataActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15657,10 +15569,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.StorageSDCardActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.StorageSDCardActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15669,10 +15577,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.importgallery.ImportGalleryActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.importgallery.ImportGalleryActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15683,10 +15587,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.importgallery.ImportGalleryFolderDetailActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.importgallery.ImportGalleryFolderDetailActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15695,10 +15595,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.CollectionChooserActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.CollectionChooserActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15709,10 +15605,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.application.login.LoginActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.LoginActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15721,10 +15613,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.UpsellActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.UpsellActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15735,10 +15623,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.UpsellFeaturePopupActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.UpsellFeaturePopupActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15747,10 +15631,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellChoicePhoneActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellChoicePhoneActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15761,10 +15641,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellChoiceTabletActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellChoiceTabletActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15773,10 +15649,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellStreamlinedActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellStreamlinedActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15787,10 +15659,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellV2ChoiceActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.application.login.upsells.choice.UpsellV2ChoiceActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15799,10 +15667,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.android.billingclient.api.ProxyBillingActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.android.billingclient.api.ProxyBillingActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15813,10 +15677,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.DeviceInfoActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.DeviceInfoActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15825,10 +15685,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.account.AccountManagementActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.account.AccountManagementActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15839,10 +15695,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.HelpActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.HelpActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15851,10 +15703,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.AutoAddActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.AutoAddActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15865,10 +15713,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.ImportCorrectionsActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.ImportCorrectionsActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15877,10 +15721,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.AboutLightroomActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.AboutLightroomActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15891,10 +15731,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.folders.AlbumFolderChooserActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.folders.AlbumFolderChooserActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15903,10 +15739,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.SupportActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.SupportActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15917,10 +15749,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.GuidedTutorialActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.GuidedTutorialActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15930,10 +15758,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.loupe.video.VideoPlayerActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.loupe.video.VideoPlayerActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15942,10 +15766,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.techpreview.TechPreviewActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.techpreview.TechPreviewActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15970,11 +15790,7 @@
                     "android.intent.action.VIEW"
                 ],
                 [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity5",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity5",
+                    "com_adobe_lrmobile://com.adobe.lrmobile.lrimport.openewithlrimport.AddToLrActivity4",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -15985,10 +15801,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.WhatsNewActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.WhatsNewActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -15997,10 +15809,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.util.WebViewActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.util.WebViewActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16011,10 +15819,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.user.EditCommunityProfileActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.user.EditCommunityProfileActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16023,10 +15827,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.feedback.FeedbackActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.feedback.FeedbackActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16037,10 +15837,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperLearnDetailActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperLearnDetailActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16049,10 +15845,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperAuthorPageActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperAuthorPageActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16063,10 +15855,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperAuthorNotFoundActivty1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.CooperAuthorNotFoundActivty2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16076,10 +15864,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.blocking.BlockedUsersListActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.blocking.BlockedUsersListActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16088,10 +15872,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.personalized.CooperUSSFeedActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.cooper.personalized.CooperUSSFeedActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16106,14 +15886,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthSignInActivity2",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthSignInActivity3",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthSignInActivity3",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16122,10 +15894,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.neworganize.NewCollectionsOrganizeActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.collections.neworganize.NewCollectionsOrganizeActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16150,11 +15918,7 @@
                     "android.intent.action.VIEW"
                 ],
                 [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.applink.AppLinkReceiverActivity5",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.applink.AppLinkReceiverActivity5",
+                    "com_adobe_lrmobile://com.adobe.lrmobile.applink.AppLinkReceiverActivity4",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16169,14 +15933,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.engagementsdk.AdobeEngagementActivity2",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.engagementsdk.AdobeEngagementActivity3",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.engagementsdk.AdobeEngagementActivity3",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16185,10 +15941,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.peoplelegal.PeopleLegalActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.material.settings.peoplelegal.PeopleLegalActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16199,10 +15951,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.lrmobile.internalflags.InternalPrefsActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.lrmobile.internalflags.InternalPrefsActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16211,10 +15959,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.capturemodule.CaptureActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.capturemodule.CaptureActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16225,10 +15969,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.marketing.mobile.FullscreenMessageActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.marketing.mobile.FullscreenMessageActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16237,10 +15977,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.marketing.mobile.MessageFullScreenActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.marketing.mobile.MessageFullScreenActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16251,10 +15987,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.marketing.mobile.GriffonFullScreenTakeoverActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.marketing.mobile.GriffonFullScreenTakeoverActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16264,10 +15996,6 @@
                 [
                     "com_adobe_lrmobile://com.facebook.FacebookActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.facebook.FacebookActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16276,10 +16004,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.facebook.CustomTabMainActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.facebook.CustomTabMainActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16294,14 +16018,6 @@
                 [
                     "com_adobe_lrmobile://com.facebook.CustomTabActivity2",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.facebook.CustomTabActivity3",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.facebook.CustomTabActivity3",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16310,10 +16026,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeDataUsageNoticeActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeDataUsageNoticeActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16324,10 +16036,6 @@
                 [
                     "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthContinuableEventActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.auth.AdobeAuthContinuableEventActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16336,10 +16044,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.base.AdobeTOUHandlerActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.adobe.creativesdk.foundation.internal.base.AdobeTOUHandlerActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16350,10 +16054,6 @@
                 [
                     "com_adobe_lrmobile://com.google.android.gms.auth.api.signin.internal.SignInHubActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.google.android.gms.auth.api.signin.internal.SignInHubActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16362,10 +16062,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.google.android.gms.common.api.GoogleApiActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.google.android.gms.common.api.GoogleApiActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16376,10 +16072,6 @@
                 [
                     "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.DialogActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.DialogActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16388,10 +16080,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.CheckPackageActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.CheckPackageActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16402,10 +16090,6 @@
                 [
                     "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.AccountActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.AccountActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16414,10 +16098,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.PaymentActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.samsung.android.sdk.iap.lib.activity.PaymentActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],
@@ -16428,10 +16108,6 @@
                 [
                     "com_adobe_lrmobile://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity1",
                     "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity2",
-                    "android.intent.action.VIEW"
                 ]
             ],
             "params": []
@@ -16440,10 +16116,6 @@
             "deeplinks": [
                 [
                     "com_adobe_lrmobile://com.google.android.play.core.common.PlayCoreDialogWrapperActivity1",
-                    "android.intent.action.VIEW"
-                ],
-                [
-                    "com_adobe_lrmobile://com.google.android.play.core.common.PlayCoreDialogWrapperActivity2",
                     "android.intent.action.VIEW"
                 ]
             ],

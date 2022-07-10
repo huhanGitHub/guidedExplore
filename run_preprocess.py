@@ -1,11 +1,15 @@
-import logging
 import os
+import definitions
 
-from static_analysis_apk.extract_atg import (activity_searching,
-                                             activity_searching_one,
-                                             unit_extract)
+from static_analysis_apk.extract_atg import (
+    activity_searching,
+    activity_searching_one,
+    unit_extract,
+)
 from static_analysis_apk.extract_intent_paras import (
-    smali_intent_para_extractor, smali_intent_para_extractor_one)
+    smali_intent_para_extractor,
+    smali_intent_para_extractor_one,
+)
 from static_analysis_apk.instrument_apk import unit_inject
 from static_analysis_apk.merge_deeplink_params import ParamGenerator
 
@@ -64,17 +68,22 @@ def unit_run_preprocess(
 
 
 def unit_run_preprocess_one(
-    decom_folder, repackaged_dir, deeplinks_path, save_dir
+    decom_folder,
+    repackaged_dir,
+    deeplinks_path,
+    paras_save_dir=None,
+    atg_save_dir=definitions.ATG_DIR,
 ):
+    if paras_save_dir is None:
+        paras_save_path = os.path.join(decom_folder, "intent_para.json")
+
+    pkg_name = os.path.basename(decom_folder)
+    recompile_path = os.path.join(repackaged_dir, f"{pkg_name}.apk")
+
     # instrument apk
-    apk = os.path.basename(decom_folder)
-    recompile_path = os.path.join(repackaged_dir, f'{apk}.apk')
     unit_inject(decom_folder, recompile_path, deeplinks_path)
 
     available_activity_dict = activity_searching_one(decom_folder)
-    atg_save_dir = os.path.join(save_dir, "activity_atg")
-    if not os.path.exists(atg_save_dir):
-        os.mkdir(atg_save_dir)
     unit_extract(
         folder=decom_folder,
         available_activity_dict=available_activity_dict,
@@ -82,12 +91,11 @@ def unit_run_preprocess_one(
     )
 
     # extract intent parameters
-    paras_save_path = os.path.join(save_dir, "intent_para.json")
-    smali_intent_para_extractor_one(apk, paras_save_path)
+    smali_intent_para_extractor_one(decom_folder, paras_save_path)
 
     # merge intent params and activity atgs
     params = ParamGenerator(paras_save_path)
-    params.merge_deeplinks_params(deeplinks_path, paras_save_path)
+    params.merge_deeplinks_params(deeplinks_path, deeplinks_path)
     return recompile_path
 
 

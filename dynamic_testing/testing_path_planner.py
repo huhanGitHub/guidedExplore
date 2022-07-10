@@ -24,8 +24,6 @@ class PathPlanner:
     def pop_next_activity(self):
         pop = None
         for index, activity in enumerate(self.atg_list):
-            print(activity)
-            exit(0)
             status = self.visited_map.get(activity[0])
             if status is None:
                 continue

@@ -179,19 +179,19 @@ def smali_intent_para_extractor(path, save_path):
 
 def smali_intent_para_extractor_one(decom_folder, save_path):
     apps_intent_para = {}
-    app = os.path.basename(decom_folder)
-    apps = [app]
+    apps = [os.path.basename(decom_folder)]
 
     # find package names for each app. find all activity names
     packages = []
     apps_activities = {}
-    app_path = os.path.join(decom_folder, app)
+    app_path = decom_folder
     if not os.path.isdir(app_path):
         return
 
     activities = []
     for file in os.listdir(app_path):
         if "AndroidManifest.xml" in file:
+            print("safasdfawsflklkasfj")
             file_path = os.path.join(app_path, file)
             if "original" in file_path:
                 continue
@@ -219,7 +219,6 @@ def smali_intent_para_extractor_one(decom_folder, save_path):
             apps.remove(app)
 
     subscript = 0
-    app_path = os.path.join(decom_folder, app)
     intent_para = {}
     package = packages[subscript]
     for root, dirs, files in os.walk(app_path):

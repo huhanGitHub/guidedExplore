@@ -3,7 +3,10 @@ import os
 
 from utils.device import Device
 
-_log_format = "[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d] %(message).100s..."
+BLUE = "\033[1;34m"
+NC = "\033[0m"  # No Color
+
+_log_format = f"{BLUE}[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d]{NC} %(message)s"
 
 logging.basicConfig(format=_log_format, datefmt="%H:%M:%S", level=logging.INFO)
 
@@ -20,12 +23,16 @@ APK_DIR = _create(os.path.join(ROOT_DIR, "apks"))
 
 DATA_DIR = _create(os.path.join(ROOT_DIR, "data"))
 DEEPLINKS_PATH = os.path.join(DATA_DIR, "deeplinks_params.json")
+LOG_PATH = os.path.join(DATA_DIR, "failed_package.log")
+
+DEEPLINKS_DIR = _create(os.path.join(DATA_DIR, "deeplinks"))
 # DEEPLINKS_PATH = os.path.join(DATA_DIR, "deeplinks.json")
 DECOMPILE_DIR = _create(os.path.join(DATA_DIR, "decompiled_apks"))
 REPACKAGE_DIR = _create(os.path.join(DATA_DIR, "repackaged_apks"))
 ATG_DIR = _create(os.path.join(DATA_DIR, "activity_atg"))
 VISIT_RATE_DIR = _create(os.path.join(DATA_DIR, "visited_rate"))
 OUT_DIR = _create(os.path.join(DATA_DIR, "outputs"))
+ERROR_DIR = _create(os.path.join(DATA_DIR, "error"))
 
 # Android identifiers (serial number or ip address)
 # get by $> adb devices
@@ -42,4 +49,5 @@ def get_device():
     global _device
     if _device is None:
         _device = Device(VM_ID)
+        _device._logger.level = logging.INFO
     return _device

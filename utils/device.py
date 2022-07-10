@@ -4,9 +4,15 @@ import time
 
 import uiautomator2 as u2
 import definitions
+from xml.etree import ElementTree
+from .xml_helpers import exits_keyboard, exits_syserr
 
 
 RES_WAIT = 2  # second(s), time to wait when changing resolution.
+
+
+class ResolutionError(Exception):
+    pass
 
 
 class Device(u2.Device):
@@ -63,9 +69,7 @@ class Device(u2.Device):
         elif self.is_phone():
             return "phone"
         else:
-            raise RuntimeError(
-                "Not at a defined resolution, perhaps because of the wrong orientation"
-            )
+            raise ResolutionError("Not at a defined resolution or wrong orientation")
 
     def change_device_type(self):
         if self.is_tablet():
@@ -102,12 +106,22 @@ class Device(u2.Device):
         self.shell("wm set-user-rotation free")
         return self
 
-    def current_activity(self):
-        d_activity = self.current_app()["activity"]
-        return d_activity[d_activity.rindex(".") + 1 :]
+    def current_activity(self, fullname=False):
+        """
+        fallname = package name + activity fullname
+        """
+        app = self.app_current()
 
-    def collect_cur_activity(self):
+        activity = app['activity']
+        if fullname:
+            return app['package'] + activity
+        else:
+            return activity[activity.rindex(".") + 1:]
+
+    def collect_cur_activity(self, hide_keyboard=True):
         activity = self.current_activity()
+        if hide_keyboard:
+            self.hide_keyboard()
         xml = self.dump_hierarchy(compressed=True)
         img = self.screenshot()
         return activity, xml, img
@@ -131,13 +145,13 @@ class Device(u2.Device):
         return self
 
     def current_package(self):
-        return self.current_app()["package"]
+        return self.app_current()["package"]
 
     def collect_data(self, save_dir=None):
         """
         Collect both tablet and phone data using tablet device.
 
-        This method will automatictly save to `definitions.OUT_DIR`
+        This method will automatictly save to subfolder of `definitions.OUT_DIR`
         if not pass argument to `save_dir`.
         """
         if save_dir is None:
@@ -169,6 +183,28 @@ class Device(u2.Device):
             t_img.save(img1Path)
             p_img.save(img2Path)
         return True
+
+    def hide_keyboard(self):
+        xml = self.dump_hierarchy(compressed=True)
+        s = ElementTree.fromstring(xml)
+        if exits_keyboard(s):
+            d.press("back")
+
+    def handle_syserr(self):
+        """
+        check system prompt with title like '...keeps stopping'
+        """
+        xml = self.dump_hierarchy(compressed=True)
+        s = ElementTree.fromstring(xml)
+        exits = exits_syserr(s)
+        if exits:
+            self.press('home')
+        return exits
+
+    def is_running(self, activity: str):
+        cur_act = self.current_activity()
+        ans = activity.endswith(cur_act)
+        return ans
 
 
 if __name__ == "__main__":
