@@ -7,12 +7,14 @@ import definitions
 from adbutils import AdbError
 from dynamic_testing.activity_launcher import launch_activity_by_deeplinks
 from dynamic_testing.grantPermissonDetector import dialogSolver
-from dynamic_testing.hierachySolver import GUI_state_change, click_points_Solver
+from dynamic_testing.hierachySolver import (GUI_state_change,
+                                            click_points_Solver)
 from dynamic_testing.testing_path_planner import PathPlanner
 from pyaxmlparser import APK
 from uiautomator2.exceptions import GatewayError
 from utils.device import Device
-from utils.util import *
+from utils.util import getActivityPackage
+from utils.xml_helpers import clickable_bounds
 
 RED = "\033[0;31m"
 GREEN = "\033[0;32m"
@@ -40,8 +42,8 @@ def GUI_leaves_clicks(
     # find clickable leaves
     xml1 = d.dump_hierarchy(compressed=True)
     leaves = click_points_Solver(xml1)
-    print(len(leaves))
-    return
+
+    clickable_bounds(xml1)
     for leaf in leaves:
         if leaf in clicked_bounds:
             continue
@@ -77,7 +79,10 @@ def explore_cur_activity(d, deviceId, path_planner, timeout=60):
     d_activity, d_package, isLauncher = getActivityPackage(d)
     logging.info(f"exploring {d_activity}")
     # collect states of current activity
+    # TODO ignore com.android.launcher3, org.chromium.webview_shell
+    # com.android.permissioncontroller
     try:
+        d.hide_keyboard()
         d.collect_data()
         logging.info(f"{GREEN}collected a pair{NC}")
     except Exception as e:
@@ -112,11 +117,7 @@ def unit_dynamic_testing(
     apk_path = apk.filename
     deviceId = d._serial
 
-    try:
-        d.app_install(apk_path)
-    except RuntimeError:
-        logging.error(f"{RED}fail to install{NC} {pkg_name}")
-        return False
+    d.app_install(apk_path)
 
     d.app_start(pkg_name, wait=True)
     path_planner = PathPlanner(pkg_name, atg_json, deeplinks_json)
@@ -139,25 +140,33 @@ def unit_dynamic_testing(
             path_planner.set_popped(activity)
 
             # check activity
-            if d.handle_syserr():
-                logging.error(f"{RED}found system error prompt{NC}")
-                d.app_stop(pkg_name)
-                continue
-
             if not d.is_running(activity):
                 logging.error(f"{RED}fail to open target{NC}: {activity}")
-                continue
+                status = False
+
+            if d.handle_syserr():
+                logging.error(f"{RED}found system error prompt{NC}")
+                status = False
 
             if status:
                 path_planner.set_visited(activity)
+                # key function here
                 explore_cur_activity(d, deviceId, path_planner, timeout=60)
-
+            else:
+                d.app_stop(pkg_name)
+        # VM/device crash
         except AdbError as e:
-            logging.critical("device is probably offline")
-            logging.critical(e)
+            logging.critical(f"device is probably offline, {e}")
             desktop_notification()
-            # input("===watting for reset connection manually===")
-            raise AdbError(e)
+            input("===watting for reset connection manually===")
+        except RuntimeError as e:
+            if "is offline" in e:
+                logging.critical(f"device is probably offline, {e}")
+                desktop_notification()
+                input("===watting for reset connection manually===")
+            else:
+                raise e
+        # android system crash
         except GatewayError as e:
             logging.critical(f"{e}, trying to restart")
             while True:
@@ -166,7 +175,7 @@ def unit_dynamic_testing(
                     break
                 except GatewayError:
                     time.sleep(5)
-
+        # others
         except Exception as e:
             logging.critical(f"something wrong, {type(e).__name__}: {e}")
             import traceback

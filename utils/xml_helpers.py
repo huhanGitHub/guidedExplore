@@ -51,7 +51,13 @@ def tree_to_list(tree: ElementTree):
     return elements
 
 
-def clickable_bounds(tree: ElementTree):
+def clickable_bounds(tree):
+    """
+    tree: ElementTree or str
+    """
+    if type(tree) is str:
+        tree = ElementTree.fromstring(tree)
+
     pass_clickable = is_attr_eq('clickable', 'true')
     elements = tree_to_list(tree)
     elements = filter(pass_clickable, elements)

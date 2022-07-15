@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import logging
 import os
 import shutil
@@ -39,9 +38,7 @@ def decompile():
     for i in list(enumerate(apks + ["exit"])):
         print(i)
     i = int(input("Enter a index: "))
-    if i == len(apks):
-        return
-    else:
+    if i != len(apks):
         apk_name = APK(apks[i]).package
         save_path = os.path.join(DECOMPILE_DIR, apk_name)
         # recreate save_path
@@ -162,12 +159,10 @@ def explore(apk_path, device_id=definitions.VM_ID):
     :param apk_path: recompiled apk path
     """
     apk = APK(apk_path)
-    device = Device(device_id)
-
     name = apk.package
     logging.info(f"exploring {name}")
+    device = Device(definitions.VM_ID)
 
-    apk_path = os.path.join(definitions.REPACKAGE_DIR, f"{name}.apk")
     atg_json = os.path.join(definitions.ATG_DIR, f"{name}.json")
     deeplinks_json = os.path.join(definitions.DEEPLINKS_DIR, f"{name}.json")
     log = os.path.join(definitions.VISIT_RATE_DIR, f"{name}.txt")
@@ -181,31 +176,35 @@ def explore(apk_path, device_id=definitions.VM_ID):
         atg_json,
         deeplinks_json,
         log,
-        reinstall=False,  # NOTE true
+        reinstall=True,
     )
 
 
-def explored():
-    return [f.name for f in os.scandir(definitions.OUT_DIR) if f.isdir()]
-
-
-def write_failed_pkg(pkg):
-    with open(definitions.LOG_PATH, "a") as f:
+def log_failure(pkg):
+    with open(definitions.FAIL_LOG_PATH, "a") as f:
         f.write(pkg)
+        f.write('\n')
 
 
-def test():
-    # REVIEW unit_run_preprocess discovering entire folder, duplicated work
-    # TODO check webview element
+def run(apk=None):
+    """
+    example: apk=os.path.join(definitions.APK_DIR, "com.duolingo.apk")
+    """
     # TODO check os.system commands if multi connected devices
-    name = "com.duolingo"
-    # apks = _apk_paths()
-    apks = [os.path.join(definitions.APK_DIR, f"{name}.apk")]
-    for apk_path in apks:
+    explored_apps = [f.name for f in os.scandir(definitions.OUT_DIR) if f.is_dir()]
+    error_apps = [f for f in open(definitions.FAIL_LOG_PATH).read().splitlines()]
+    ignored_apps = set(explored_apps).union(set(error_apps))
+    if apk is None:
+        apks = filter(lambda entry: entry.name.endswith(".apk"), os.scandir(definitions.APK_DIR))
+        apks = filter(lambda entry: entry.name.removesuffix(".apk") not in ignored_apps, apks)
+    else:
+        apks = [apk]
+
+    for apk_entry in apks:
         try:
-            # apk_path = os.path.join(APK_DIR, apk_name)
-            # repack_path = os.path.join(REPACKAGE_DIR, apk_name)
             # if True:
+            apk_path = apk_entry.path
+            name = basename_no_ext(apk_path)
             if not is_preprocessed(name):
                 repack_path = preprocess(apk_path)
             else:
@@ -213,18 +212,19 @@ def test():
 
             ans = explore(repack_path)
             if ans is False:
-                write_failed_pkg(basename_no_ext(apk_path))
+                log_failure(basename_no_ext(apk_path))
         except KeyboardInterrupt:
             logging.info("KeyboardInterrupt, exiting")
             exit(0)
         except Exception as e:
-            logging.critical(f"error when processing {basename_no_ext(apk_path)},\
-                {type(e).__name__}:{e}")
+            logging.critical(f"error when processing {basename_no_ext(apk_path)}, {type(e).__name__}:{e}")
             import traceback
             logging.critical(traceback.format_exc())
+            log_failure(basename_no_ext(apk_path))
             continue
 
 
 if __name__ == "__main__":
     # cli()
-    test()
+    run()
+    # [print(f.name) for f in os.scandir(definitions.APK_DIR)]

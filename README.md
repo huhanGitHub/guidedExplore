@@ -22,3 +22,5 @@ set the following configuration of this test in the dynamic_testing/dynamic_GUI_
  #### Command Line Interface
  `python main.py`
  
+1. device rotation
+2. larger numer of apks

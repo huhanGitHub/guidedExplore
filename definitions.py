@@ -23,7 +23,7 @@ APK_DIR = _create(os.path.join(ROOT_DIR, "apks"))
 
 DATA_DIR = _create(os.path.join(ROOT_DIR, "data"))
 DEEPLINKS_PATH = os.path.join(DATA_DIR, "deeplinks_params.json")
-LOG_PATH = os.path.join(DATA_DIR, "failed_package.log")
+FAIL_LOG_PATH = os.path.join(DATA_DIR, "failed_package.log")
 
 DEEPLINKS_DIR = _create(os.path.join(DATA_DIR, "deeplinks"))
 # DEEPLINKS_PATH = os.path.join(DATA_DIR, "deeplinks.json")

@@ -88,6 +88,17 @@ def _xmls(folder):
     return [f for f in os.scandir(folder) if f.name.endswith('.xml')]
 
 
+def _get_all_xmls():
+    paths = os.scandir(definitions.OUT_DIR)
+    xmls = [xml.path for path in paths if path.is_dir() for xml in _xmls(path)]
+    return xmls
+
+
+def _get_app_count():
+    paths = [f for f in os.scandir(definitions.OUT_DIR) if f.is_dir()]
+    return len(paths)
+
+
 def tmp():
     outpus = {}
 
@@ -111,8 +122,8 @@ def tmp():
     for i in outpus.values():
         a.extend(i)
 
-    print(len([i for i in a if i >= 10]))
-    exit(0)
+    print(_get_app_count())
+    print(len([i for i in a if i >= 15]))
 
     import seaborn as sns
     plot = sns.histplot(a)
@@ -120,7 +131,7 @@ def tmp():
     plt.show()
 
 
-if __name__ == '__main__':
+def _example_info():
     paths = os.scandir(definitions.OUT_DIR)
     xmls = [xml.path for path in paths if path.is_dir() for xml in _xmls(path)]
 
@@ -132,3 +143,7 @@ if __name__ == '__main__':
         l = getl(root)
         if l != 2:
             print([(e.tag, e.attrib['package']) for e in root.findall("*")])
+
+
+if __name__ == '__main__':
+    tmp()

@@ -69,7 +69,8 @@ class Device(u2.Device):
         elif self.is_phone():
             return "phone"
         else:
-            raise ResolutionError("Not at a defined resolution or wrong orientation")
+            raise ResolutionError(f"Not at a defined resolution or wrong orientation,\
+at {self.info['displaySizeDpX']}x{self.info['displaySizeDpY']}")
 
     def change_device_type(self):
         if self.is_tablet():
@@ -184,19 +185,27 @@ class Device(u2.Device):
             p_img.save(img2Path)
         return True
 
-    def hide_keyboard(self):
+    def get_view_root(self):
         xml = self.dump_hierarchy(compressed=True)
-        s = ElementTree.fromstring(xml)
-        if exits_keyboard(s):
-            d.press("back")
+        root = ElementTree.fromstring(xml)
+        return root
 
-    def handle_syserr(self):
+    def hide_keyboard(self, root=None):
+        if root is None:
+            root = self.get_view_root()
+
+        exits = exits_keyboard(root)
+        if exits:
+            self.press("back")
+        return exits
+
+    def handle_syserr(self, root=None):
         """
         check system prompt with title like '...keeps stopping'
         """
-        xml = self.dump_hierarchy(compressed=True)
-        s = ElementTree.fromstring(xml)
-        exits = exits_syserr(s)
+        if root is None:
+            root = self.get_view_root()
+        exits = exits_syserr(root)
         if exits:
             self.press('home')
         return exits
