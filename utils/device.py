@@ -24,13 +24,29 @@ class Device(u2.Device):
     https://developer.android.com/training/multiscreen/screendensities
     """
 
-    def __init__(self, *args):
+    def __init__(self, id):
         # TODO disable animations
-        super().__init__(*args)
+        super().__init__(id)
         super().settings["operation_delay"] = (0, 10)
         super().settings["operation_delay_methods"] = ["click", "swipe", "press"]
+        #  turn off the automatic rotation
         self.font()
+        self._flip_res = True
+        self.init_landscape()
         self.to_default()
+        self.shell("settings put system accelerometer_rotation 0")
+
+    def init_landscape(self):
+        self.shell("wm size reset")
+        self.shell("settings put system user_rotation 1")
+        time.sleep(RES_WAIT)
+        x = self.info["displayWidth"]
+        y = self.info["displayHeight"]
+        print(self.info)
+        if x < y and self.info["naturalOrientation"]:
+            self.shell("settings put system user_rotation 1")
+            self._flip_res = False
+        return self
 
     TABLET_W = 1300
     TABLET_H = 800
@@ -59,7 +75,6 @@ class Device(u2.Device):
         )
 
     def to_default(self):
-        self.rotate("natural")
         self.to_tablet()
         return self
 
@@ -85,26 +100,17 @@ at {self.info['displaySizeDpX']}x{self.info['displaySizeDpY']}")
         out, code = self.shell(f"settings put system font_scale {scale}")
         return self
 
-    def res(self, w=None, h=None, reverse=False):
+    def res(self, w=None, h=None):
         """
         px = dp * (dpi / 160)
-        NOTE: The result might be unstable, sometimes w should be first, sometimes h should be first.
         """
-        if reverse:
+        if self._flip_res:
             w, h = h, w
-        if w is None and h is None:
+        if w is None or h is None:
             out, code = self.shell("wm size reset")
         else:
             out, code = self.shell(f"wm size {w}dpx{h}dp")
         time.sleep(RES_WAIT)
-        return self
-
-    def rotate(self, dirt="natural"):
-        """
-        dirt=['left', 'right', 'natural', 'upsidedown']
-        """
-        self.set_orientation(dirt)
-        self.shell("wm set-user-rotation free")
         return self
 
     def current_activity(self, fullname=False):
@@ -158,12 +164,12 @@ at {self.info['displaySizeDpX']}x{self.info['displaySizeDpY']}")
         if save_dir is None:
             save_dir = os.path.join(definitions.OUT_DIR, self.current_package())
             if not os.path.exists(save_dir):
-                print(f"Creating directory: {save_dir}")
+                logging.info(f"Creating directory: {save_dir}")
                 os.mkdir(save_dir)
         t_act, t_xml, t_img, p_act, p_xml, p_img = self.collect_pair()
 
         if p_img is None or t_img is None:
-            print("none img, save fail, return")
+            logging.error("none img, save fail, return")
             return False
 
         t = int(time.time())
