@@ -1,15 +1,17 @@
 # guidedExplore
 Step 1: install required packages in the requirement.txt
+`pip install -r requirement.txt`
 
 Step 2:
 set the following configuration of this test in the dynamic_testing/dynamic_GUI_testing.py：
 
-    deviceId = '192.168.57.105'
-    # deviceId = 'cb8c90f4'
-    apk_path = r'../data/repackaged_apks/youtube.apk'
-    atg_json = r'../data/activity_atg/youtube.json'
-    deeplinks_json = r'../data/deeplinks_params.json'
-    log = r'../data/visited_rate/youtube.txt'
+```python
+deviceId = '192.168.57.105'
+apk_path = r'../data/repackaged_apks/youtube.apk'
+atg_json = r'../data/activity_atg/youtube.json'
+deeplinks_json = r'../data/deeplinks/youtube.json'
+log = r'../data/visited_rate/youtube.txt'
+```
     
  Then, run this script to explore apps.
  
@@ -22,5 +24,7 @@ set the following configuration of this test in the dynamic_testing/dynamic_GUI_
  #### Command Line Interface
  `python main.py`
  
-1. device rotation
+#### NOTE
+- resolution and orientation
+    - if device x-axis is at longer side (i.e Device().infoand some at shorter side
 2. larger numer of apks

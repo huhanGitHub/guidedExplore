@@ -15,25 +15,18 @@ def read_deeplinks(deeplink):
 # adb shell am start -a android.intent.action.VIEW -d com_example_xxx://com.example.xxx.SettingsActivity --es textview1 "I\ am\ from\ adb" -e textview2 "from\ adb"
 def launch_activity_by_deeplink(deviceId, deeplink, action, params):
     cmd = "adb -s " + deviceId + " shell am start -W -a " + action + " -d " + deeplink
-    # TODO check where params
     if len(params) != 0:
         params_cmd = " ".join(params)
         cmd = f"{cmd} {params_cmd}"
 
     try:
-        p = subprocess.run(cmd, shell=True, timeout=10, capture_output=True).stdout
-
+        p = subprocess.run(cmd, shell=True, timeout=5, capture_output=True).stdout
         if intent_success_msg in str(p):
-            return True
-        return False
-        # if intent_error_msg in str(p):
-        #     logging.debug(f"intent fail: {deeplink}")
-        #     return False
-        # else:
-        #     return False
+            return (deviceId, deeplink, action, params)
     except subprocess.TimeoutExpired:
         logging.debug(f"cmd timeout: {deeplink}")
-        return False
+
+    return False
 
 
 def launch_activity_by_deeplinks(deviceId, deeplinks, actions, params):
@@ -45,6 +38,5 @@ def launch_activity_by_deeplinks(deviceId, deeplinks, actions, params):
         if status:
             launch_status = status
             break
-        # time.sleep(1)
 
     return launch_status

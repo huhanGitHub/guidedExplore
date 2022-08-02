@@ -24,17 +24,18 @@ class Device(u2.Device):
     https://developer.android.com/training/multiscreen/screendensities
     """
 
-    def __init__(self, id):
+    def __init__(self, id, flip_res=True, tablet_natural=False):
         # TODO disable animations
         super().__init__(id)
         super().settings["operation_delay"] = (0, 10)
         super().settings["operation_delay_methods"] = ["click", "swipe", "press"]
-        #  turn off the automatic rotation
         self.font()
-        self._flip_res = True
-        self.init_landscape()
+        #  turn off the automatic rotation
+        self.shell("settings put system accelerometer_rotation 1")
+        self._flip_res = flip_res
+        self._tablet_natural = tablet_natural
+        # self.init_landscape()
         self.to_default()
-        self.shell("settings put system accelerometer_rotation 0")
 
     def init_landscape(self):
         self.shell("wm size reset")
@@ -76,6 +77,10 @@ class Device(u2.Device):
 
     def to_default(self):
         self.to_tablet()
+        if self._tablet_natural:
+            self.shell("settings put system user_rotation 0")
+        else:
+            self.shell("settings put system user_rotation 1")
         return self
 
     def device_type(self):
@@ -138,10 +143,10 @@ at {self.info['displaySizeDpX']}x{self.info['displaySizeDpY']}")
         return: tablet data, phone data
         """
         pair = {}
-        pair[self.device_type()] = self.collect_cur_activity()
         self.change_device_type()
         pair[self.device_type()] = self.collect_cur_activity()
         self.to_default()
+        pair[self.device_type()] = self.collect_cur_activity()
         return *pair["tablet"], *pair["phone"]
 
     def app_start_wait(self, package):
@@ -202,6 +207,7 @@ at {self.info['displaySizeDpX']}x{self.info['displaySizeDpY']}")
 
         exits = exits_keyboard(root)
         if exits:
+            logging.info("found keyboard")
             self.press("back")
         return exits
 

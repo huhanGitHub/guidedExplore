@@ -1,6 +1,7 @@
 import logging
 import os
 import shutil
+import threading
 
 from pyaxmlparser import APK
 
@@ -11,8 +12,10 @@ from GUI_data_collection.run_data_collection import unit_dynamic_testing
 from run_preprocess import unit_run_preprocess_one
 from utils.device import Device
 from utils.util import installApk
+from utils.xml_helpers import click_if_find
 from utils.path import basename_no_ext
 
+from phone import collect_data
 
 def _apk_paths(dir=APK_DIR):
     apks = sorted(os.listdir(dir))
@@ -81,7 +84,7 @@ def nothing():
 
 def install():
     tablet = definitions.get_device()
-    apk_paths = _repackaged_paths() + _apk_paths()
+    apk_paths = _apk_paths()
 
     for i in list(enumerate(apk_paths + ["exit"])):
         print(i)
@@ -96,7 +99,9 @@ def install():
 
 def collect_cur():
     tablet = definitions.get_device()
-    tablet.collect_data(os.path.join(DATA_DIR, "testing"))
+    tablet.to_phone()
+    collect_data(tablet)
+    # tablet.to_tablet()
     print(str(tablet.app_current()) + "\n")
 
 
@@ -110,6 +115,11 @@ def is_preprocessed(package_name):
         os.path.join(definitions.ATG_DIR, f"{package_name}.json")
     ):
         logging.error(f"did not found atg file for {package_name}")
+        return False
+    if not os.path.exists(
+        os.path.join(definitions.REPACKAGE_DIR, f"{package_name}.apk")
+    ):
+        logging.error(f"did not found signature file for {package_name}")
         return False
     if not os.path.exists(
         os.path.join(definitions.REPACKAGE_DIR, f"{package_name}.apk.idsig")
@@ -131,15 +141,30 @@ def explore_cli():
     else:
         explore(apk_paths[i])
 
+def find_click():
+    device = definitions.get_device()
+    txt = input(":")
+    click_if_find(device, {"text": txt})
+
+def change():
+    definitions.get_device().change_device_type()
+
+def clear():
+    definitions.get_device().app_uninstall_all()
 
 def cli():
+    em = Device(definitions.EM_ID, False, False)
+    definitions._device = em
     d = {
-        "preprocess unziped apk": preprocess_cli,
+        # "preprocess unziped apk": preprocess_cli,
         "install app": install,
-        "explore repackaged apk": explore_cli,
-        "current info": collect_cur,
-        "decompile apk": decompile,
+        # "explore repackaged apk": explore_cli,
+        "save current": collect_cur,
+        # "decompile apk": decompile,
+        "find_click": find_click,
         "refresh": nothing,
+        "change": change,
+        "clear": clear
     }
 
     while True:
@@ -154,18 +179,16 @@ def is_explored(package_name):
     return os.path.exists(definitions.OUT_DIR, package_name)
 
 
-def explore(apk_path, device_id=definitions.VM_ID):
+def explore(device, apk):
     """
     :param apk_path: recompiled apk path
     """
-    apk = APK(apk_path)
     name = apk.package
     logging.info(f"exploring {name}")
-    device = Device(definitions.VM_ID)
 
     atg_json = os.path.join(definitions.ATG_DIR, f"{name}.json")
     deeplinks_json = os.path.join(definitions.DEEPLINKS_DIR, f"{name}.json")
-    log = os.path.join(definitions.VISIT_RATE_DIR, f"{name}.txt")
+    log_file = os.path.join(definitions.VISIT_RATE_DIR, f"{name}.txt")
 
     if not is_preprocessed(name):
         raise RuntimeError("failed to to preprocess or didn't preprocess")
@@ -175,7 +198,7 @@ def explore(apk_path, device_id=definitions.VM_ID):
         apk,
         atg_json,
         deeplinks_json,
-        log,
+        log_file,
         reinstall=True,
     )
 
@@ -186,45 +209,91 @@ def log_failure(pkg):
         f.write('\n')
 
 
-def run(apk=None):
+def unexplored_apks():
+    explored_apps = [f.name for f in os.scandir(definitions.OUT_DIR) if f.is_dir()]
+    failed_apps = [f for f in open(definitions.FAIL_LOG_PATH).read().splitlines()]
+    ignored_apps = set(explored_apps).union(set(failed_apps))
+    apks = [f.path for f in os.scandir(definitions.APK_DIR)
+            if f.name.endswith(".apk") and f.name.removesuffix(".apk") not in ignored_apps]
+    return apks
+
+
+def run_one(device, shared_apks):
+    pass
+
+
+def multi_run(devices):
+    lock = threading.Lock()
+    apks = unexplored_apks()
+    print(apks)
+    print(len(apks))
+
+    def pop_apk():
+        lock.acquire()
+        apk = apks.pop()
+        lock.release()
+        return apk
+    threads = [threading.Thread(run_one, (d, apks, pop_apk)) for d in devices]
+    for i in threads:
+        i.start()
+
+    for i in threads:
+        i.join()
+
+
+def run(device, apk=None):
     """
+    explore one apk or apks under `definitions.APK_DIR`
     example: apk=os.path.join(definitions.APK_DIR, "com.duolingo.apk")
     """
     # TODO check os.system commands if multi connected devices
-    explored_apps = [f.name for f in os.scandir(definitions.OUT_DIR) if f.is_dir()]
-    error_apps = [f for f in open(definitions.FAIL_LOG_PATH).read().splitlines()]
-    ignored_apps = set(explored_apps).union(set(error_apps))
     if apk is None:
-        apks = filter(lambda entry: entry.name.endswith(".apk"), os.scandir(definitions.APK_DIR))
-        apks = filter(lambda entry: entry.name.removesuffix(".apk") not in ignored_apps, apks)
+        apks = unexplored_apks()
+        print(apks)
+        print(len(apks))
     else:
         apks = [apk]
-
-    for apk_entry in apks:
+    for apk_path in apks:
         try:
-            # if True:
-            apk_path = apk_entry.path
-            name = basename_no_ext(apk_path)
+            apk = APK(apk_path)
+            name = apk.package
             if not is_preprocessed(name):
                 repack_path = preprocess(apk_path)
             else:
                 repack_path = os.path.join(definitions.REPACKAGE_DIR, f"{name}.apk")
 
-            ans = explore(repack_path)
+            ans = explore(device, apk)
             if ans is False:
                 log_failure(basename_no_ext(apk_path))
         except KeyboardInterrupt:
             logging.info("KeyboardInterrupt, exiting")
             exit(0)
+        except RuntimeError as e:
+            if "is offline" in str(e):
+                logging.critical(f"device is probably offline, {e}")
+                input("===watting for reset connection manually===")
+            else:
+                logging.critical(f"error when processing {basename_no_ext(apk_path)}, {type(e).__name__}:{e}")
+                import traceback
+                logging.debug(traceback.format_exc())
+                log_failure(basename_no_ext(apk_path))
         except Exception as e:
             logging.critical(f"error when processing {basename_no_ext(apk_path)}, {type(e).__name__}:{e}")
             import traceback
-            logging.critical(traceback.format_exc())
+            logging.debug(traceback.format_exc())
             log_failure(basename_no_ext(apk_path))
-            continue
+        finally:
+            device.app_stop_all()
+            device.app_uninstall(name)
 
+
+def main():
+    apk = None
+    apk = os.path.join(definitions.APK_DIR, "com.twitter.android.apk")
+    # em = Device(definitions.EM_ID, False, True)
+    em = definitions.get_device()
+    run(em, apk)
 
 if __name__ == "__main__":
     # cli()
-    run()
-    # [print(f.name) for f in os.scandir(definitions.APK_DIR)]
+    main()
