@@ -1,93 +1,136 @@
-import os
-import re
+from PIL import Image, ImageDraw, ImageFont
 import definitions
-from itertools import groupby, chain, pairwise
-from utils.xml_helpers import *
-from xml.etree import ElementTree
-from utils.path import name_to_map
+from definitions import DATA_DIR
+from os.path import join
+from utils.xml_helpers import bounds2int, clickable_bounds, tree_to_list
 from pathlib import Path
-
-def act_name(f):
-    if type(f) is os.DirEntry:
-        f = f.name
-    return f.split('_')[2]
-
-# rate: 0.3714
-# rate: 0.0357
-
-def check_repeated(path, remove=False):
-    fs = os.scandir(path)
-    fs = [f for f in fs if 'phone' in f.name and f.name.endswith(".xml")]
-    fs = sorted(fs, key=act_name)
-    c = 0
-    cpx = 0
-    for i in range(0, len(fs)-1):
-        f1 = fs[i]
-        f2 = fs[i-1]
-    # for (f1, f2) in pairwise(fs):
-        s1 = Path(f1).read_text()
-        s2 = Path(f2).read_text()
-        if xml_complexity(f1) < 10:
-            cpx += 1
-            c += 1
-            continue
-        if is_same_activity(s1, s2, 0.8):
-            c +=1
-    print(f"""total: {len(fs)}
-            too simple: {cpx}
-            simple or repated: {c}, rate: {c / len(fs)},
-            usable: {len(fs) - c}
-            """
-    )
-
-def group_id(f):
-    if type(f) is os.DirEntry:
-        f = f.name
-    return f.split('_')[0]
-
-def complexity(lst):
-    xs = {i[0]: i for i in lst}.keys()
-    ys = {i[1]: i for i in lst}.keys()
-    print(xs)
-    print(ys)
-    return (len(xs), len(ys))
-
-def bounds2p(b):
-    (x1, y1, x2, y2) = bounds2int(b)
-    return x1, y1
-    x = (x1 + x2) / 2
-    y = (y1 + y2) / 2
-    return x, y
+from xml.etree import ElementTree
+from math import sin, cos
+import colorsys
 
 
-p = os.path.join(definitions.DATA_DIR, "test_complexity")
-groups = groupby(sorted(os.scandir(p), key=group_id), group_id)
-
-for group in groups:
-    print(group[0])
-    files = [f for f in group[1] if f.name.endswith('.xml')]
-    for f in files:
-        print(f)
-        tree = ElementTree.fromstring(Path(f).read_text())
-        tree = remove_sysui(tree)
-        nodes = [n for n in tree.iter('*') if len(n) == 0]
-        # nodes = tree_to_list(tree)
-        bounds = [n.attrib.get('bounds') for n in nodes]
-        # bounds = re.findall(r'\[.*\]', Path(f).read_text())
-        bounds = [bounds2p(b)for b in bounds]
-        a = complexity(bounds)
-        print(a,end='\n\n')
+def rgb(phi):
+    u = 255 / 4 * cos(phi)
+    v = 255 / 4 * sin(phi)
+    y = 255 / 2
+    r = int(y + v / 0.88)
+    g = int(y - 0.38 * u - 0.58 * v)
+    b = int(y + u / 0.49)
+    return (r, g, b)
 
 
-# p = os.path.join(definitions.DATA_DIR, 'com.twitter.android_clickables')
-# check_repeated(p)
-# p = os.path.join(definitions.DATA_DIR, 'com.twitter.android')
-# check_repeated(p)
-# fs = [f for f in os.scandir(os.path.join(definitions.DATA_DIR, 'com.twitter.android_clickables'))]
-# print(len(fs))
+def even_colors(n):
+    return ["blue", "red", "yellow", "orange", "purple"]
+    # return [rgb(n) for n in range(0, 360, 360//n)]
 
-# d = Device(definitions.TABLET_ID)
-# print(d.info)
-# d = Device(definitions.VM_ID)
-# print(d.info)
+
+def HSVToRGB(h, s, v):
+    (r, g, b) = colorsys.hsv_to_rgb(h, s, v)
+    return (int(255 * r), int(255 * g), int(255 * b))
+
+
+def getDistinctColors(n):
+    huePartition = 1.0 / (n + 1)
+    return (HSVToRGB(huePartition * value, 1.0, 1.0) for value in range(0, n))
+
+
+def draw_bounds(
+    image_path=join(
+        DATA_DIR, "test", "AboutActivity_1657966977_tablet_AboutActivity_a_a.png"
+    ),
+    xml_path=join(
+        DATA_DIR, "test", "AboutActivity_1657966977_tablet_AboutActivity_a_a.xml"
+    ),
+):
+    image = Image.open(image_path)
+    draw = ImageDraw.Draw(image)
+
+    s = Path(xml_path).read_text()
+    t = ElementTree.fromstring(s)
+    es = tree_to_list(t)
+    classes = set([e.attrib["class"] for e in es])
+    colors = even_colors(len(classes))
+    color_map = {c: color for (c, color) in zip(classes, colors)}
+    print(color_map)
+    # font = ImageFont.truetype("arial.ttf", 15)
+    font = ImageFont.truetype("SpaceMono-Regular.ttf", 24)
+
+    for element in tree_to_list(t):
+        bounds = bounds2int(element.attrib["bounds"])
+        cls = element.attrib["class"]
+        color = color_map[cls]
+
+        draw.rectangle(bounds, outline=color, width=3)
+        draw.text((bounds[0], bounds[1]), cls, font=font, fill=color)
+
+    image.save(join(DATA_DIR, "test.png"))
+
+
+COLOR_MAP = {
+    "android.view.MenuItem": (255, 0, 0),
+    "android.view.View": (255, 30, 0),
+    "android.widget.TextView": (255, 60, 0),
+    "android.widget.FrameLayout": (255, 89, 0),
+    "android.widget.LinearLayout": (255, 120, 0),
+    "android.widget.Button": (255, 150, 0),
+    "android.widget.ImageView": (255, 179, 0),
+    "android.widget.ImageButton": (255, 210, 0),
+    "android.view.ViewGroup": (255, 240, 0),
+    "android.widget.ScrollView": (240, 255, 0),
+    "android.widget.RelativeLayout": (210, 255, 0),
+    "android.widget.EditText": (179, 255, 0),
+    "androidx.recyclerview.widget.RecyclerView": (150, 255, 0),
+    "android.widget.ListView": (120, 255, 0),
+    "android.webkit.WebView": (89, 255, 0),
+    "android.widget.RadioButton": (60, 255, 0),
+    "android.widget.CheckBox": (30, 255, 0),
+    "android.widget.Image": (0, 255, 0),
+    "android.widget.Switch": (0, 255, 29),
+    "android.widget.ProgressBar": (0, 255, 60),
+    "android.widget.Spinner": (0, 255, 90),
+    "androidx.viewpager.widget.ViewPager": (0, 255, 120),
+    "android.widget.ToggleButton": (0, 255, 150),
+    "android.widget.HorizontalScrollView": (0, 255, 180),
+    "androidx.drawerlayout.widget.DrawerLayout": (0, 255, 209),
+    "android.widget.CheckedTextView": (0, 255, 239),
+    "androidx.appcompat.app.ActionBar$b": (0, 240, 255),
+    "androidx.appcompat.widget.LinearLayoutCompat": (0, 209, 255),
+    "androidx.appcompat.app.ActionBar$Tab": (0, 179, 255),
+    "androidx.cardview.widget.CardView": (0, 150, 255),
+    "android.widget.SeekBar": (0, 120, 255),
+    "s1.a": (0, 90, 255),
+    "android.widget.GridView": (0, 60, 255),
+    "msa.apps.podcastplayer.widget.slidingpanelayout.SlidingPaneLayout": (0, 29, 255),
+    "android.support.v7.widget.RecyclerView": (0, 0, 255),
+    "android.widget.TwoLineListItem": (29, 0, 255),
+    "android.widget.RatingBar": (59, 0, 255),
+    "android.app.ActionBar$Tab": (89, 0, 255),
+    "android.widget.CompoundButton": (120, 0, 255),
+    "android.widget.VideoView": (149, 0, 255),
+    "android.widget.SearchView": (180, 0, 255),
+    "android.widget.TabWidget": (210, 0, 255),
+    "android.widget.NumberPicker": (240, 0, 255),
+    "androidx.appcompat.app.a$c": (255, 0, 240),
+    "android.widget.DatePicker": (255, 0, 209),
+    "com.real.IMP.ui.view.TableView": (255, 0, 180),
+    "android.appwidget.AppWidgetHostView": (255, 0, 149),
+    "android.app.Dialog": (255, 0, 120),
+    "android.widget.TabHost": (255, 0, 90),
+    "com.android.internal.widget.ViewPager": (255, 0, 60),
+}
+
+
+def color_mapper(m=COLOR_MAP):
+    colors = getDistinctColors(len(m))
+    print({k: v for (k, v) in zip(m.keys(), colors)})
+
+
+
+if __name__ == "__main__":
+    # color_mapper()
+    import random
+    ks = list(COLOR_MAP)
+    random.shuffle(ks)
+    cls = list(ks)[:10]
+    print(" || ".join(cls))
 

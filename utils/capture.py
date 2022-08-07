@@ -1,5 +1,6 @@
-import definitions
 import os
+
+import definitions
 
 
 def capture(device, save_dir=definitions.APK_DIR):

@@ -1,10 +1,10 @@
 import collections
-
-import xmltodict
 import glob
 import json
 import os
 import sys
+
+import xmltodict
 
 
 def addLinkToDict(schemeName, activityName, linkCount, thisDict, pkName, action):

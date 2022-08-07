@@ -1,6 +1,6 @@
+import json
 import os
 import re
-import json
 
 
 def activity_mapping(abs_path, folders, available_activity_dict, save_dir):

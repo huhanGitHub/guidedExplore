@@ -1,12 +1,13 @@
 import logging
 import os
 import time
+from xml.etree import ElementTree
 
 import uiautomator2 as u2
-import definitions
-from xml.etree import ElementTree
-from .xml_helpers import exits_keyboard, exits_syserr
 
+import definitions
+
+from .xml_helpers import exits_keyboard, exits_syserr
 
 RES_WAIT = 2  # second(s), time to wait when changing resolution.
 
@@ -89,8 +90,10 @@ class Device(u2.Device):
         elif self.is_phone():
             return "phone"
         else:
-            raise ResolutionError(f"Not at a defined resolution or wrong orientation,\
-at {self.info['displaySizeDpX']}x{self.info['displaySizeDpY']}")
+            raise ResolutionError(
+                f"Not at a defined resolution or wrong orientation,\
+at {self.info['displaySizeDpX']}x{self.info['displaySizeDpY']}"
+            )
 
     def change_device_type(self):
         if self.is_tablet():
@@ -124,11 +127,11 @@ at {self.info['displaySizeDpX']}x{self.info['displaySizeDpY']}")
         """
         app = self.app_current()
 
-        activity = app['activity']
+        activity = app["activity"]
         if fullname:
-            return app['package'] + activity
+            return app["package"] + activity
         else:
-            return activity[activity.rindex(".") + 1:]
+            return activity[activity.rindex(".") + 1 :]
 
     def collect_cur_activity(self, hide_keyboard=True):
         activity = self.current_activity()
@@ -219,7 +222,7 @@ at {self.info['displaySizeDpX']}x{self.info['displaySizeDpY']}")
             root = self.get_view_root()
         exits = exits_syserr(root)
         if exits:
-            self.press('home')
+            self.press("home")
         return exits
 
     def is_running(self, activity: str):

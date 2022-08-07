@@ -1,6 +1,6 @@
-import subprocess
 import json
 import logging
+import subprocess
 
 intent_error_msg = "Error: Activity not started"
 intent_success_msg = "Status: ok"

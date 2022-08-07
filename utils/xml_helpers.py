@@ -1,6 +1,19 @@
+import os
 import re
 from pathlib import Path
 from xml.etree import ElementTree
+
+
+def path2tree(xml_path):
+    if type(xml_path) is os.DirEntry:
+        xml_path = xml_path.path
+    s = Path(xml_path).read_text()
+    t = ElementTree.fromstring(s)
+    return t
+
+
+def classes(tree, pkg_name):
+    return set(e.attrib.get("class") for e in tree.findall(f".//node[@package='{pkg_name}']"))
 
 
 def bounds2int(bounds):
@@ -10,10 +23,24 @@ def bounds2int(bounds):
     return bounds
 
 
+def bounds2p(b, center=False):
+    (x1, y1, x2, y2) = bounds2int(b)
+    if center:
+        x = (x1 + x2) / 2
+        y = (y1 + y2) / 2
+        return x, y
+    else:
+        return x1, y1
+
+
+def tree2list(tree, pkg_name):
+    return (e for e in tree.findall(f".//node[@package='{pkg_name}']"))
+
 def is_attr_nq(attr_name, expect_value):
     def func(element):
         value = element.attrib.get(attr_name)
         return value is not None and value != expect_value
+
     return func
 
 
@@ -21,6 +48,7 @@ def is_attr_eq(attr_name, expect_value):
     def func(element: ElementTree.Element):
         value = element.attrib.get(attr_name)
         return value is not None and value == expect_value
+
     return func
 
 
@@ -42,7 +70,7 @@ def purge_root(root: ElementTree.Element, pkg_name=None):
 
 
 def tree_to_list(tree: ElementTree):
-    filter_sys_ui = is_attr_nq('package', 'com.android.systemui')
+    filter_sys_ui = is_attr_nq("package", "com.android.systemui")
 
     elements = tree.iter()
 
@@ -58,36 +86,37 @@ def clickable_bounds(tree):
     if type(tree) is str:
         tree = ElementTree.fromstring(tree)
 
-    pass_clickable = is_attr_eq('clickable', 'true')
+    pass_clickable = is_attr_eq("clickable", "true")
     elements = tree_to_list(tree)
-    elements = filter(pass_clickable, elements)
+    # elements = filter(pass_clickable, elements)
 
     def to_bounds(element):
-        return bounds2int(element.attrib.get('bounds'))
+        return bounds2int(element.attrib.get("bounds"))
+
     bounds = map(to_bounds, elements)
     return bounds
 
 
 def is_same_activity(xml1: str, xml2: str, threshold=None):
-    bounds1 = re.findall(r'\[.*\]', xml1)
-    bounds2 = re.findall(r'\[.*\]', xml2)
+    bounds1 = re.findall(r"\[.*\]", xml1)
+    bounds2 = re.findall(r"\[.*\]", xml2)
     if threshold is None:
         for (a, b) in zip(bounds1, bounds2):
             if a != b:
                 return False
         return True
     else:
-        count = sum([1 for (a,b) in zip(bounds1, bounds2) if a == b])
-        rate = count / len(bounds1)
+        count = sum([1 for (a, b) in zip(bounds1, bounds2) if a == b])
+        rate = count / len(bounds1) if len(bounds1) != 0 else 0
         return rate > threshold
 
 
-def xml_complexity(xml_path, package_name=None):
+def node_num(xml_path, package_name=None):
     s = Path(xml_path).read_text()
     t = ElementTree.fromstring(s)
     lst = tree_to_list(t)
     if package_name is not None:
-        filter_sys_ui = is_attr_eq('package', package_name)
+        filter_sys_ui = is_attr_eq("package", package_name)
         lst = filter(filter_sys_ui, lst)
     length = sum(1 for _ in lst)
     return length
@@ -126,7 +155,7 @@ def find(tree, pairs, ne_pairs={}):
     if type(tree) is str:
         tree = ElementTree.fromstring(tree)
 
-    for e in tree.iter('node'):
+    for e in tree.iter("node"):
         if is_target(e):
             return e
     return None
@@ -135,32 +164,38 @@ def find(tree, pairs, ne_pairs={}):
 def get_pos_from_element(e: ElementTree.Element):
     if e is None:
         return None
-    (x1, y1, x2, y2) = bounds2int(e.attrib.get('bounds'))
-    return (x1+x2)/2, (y1+y2)/2
+    (x1, y1, x2, y2) = bounds2int(e.attrib.get("bounds"))
+    return (x1 + x2) / 2, (y1 + y2) / 2
 
 
 def find_google_login(xml: str):
     def is_google_btn(e):
-        return 'google' in e.attrib.get('text').lower() and e.attrib.get('clickable') == 'true'
+        return (
+            "google" in e.attrib.get("text").lower()
+            and e.attrib.get("clickable") == "true"
+        )
 
     root = ElementTree.fromstring(xml)
-    es = [e for e in root.iter('node') if is_google_btn(e)]
+    es = [e for e in root.iter("node") if is_google_btn(e)]
     if len(es) > 0:
-        (x1, y1, x2, y2) = bounds2int(es[0].attrib.get('bounds'))
-        return (x1+x2)/2, (y1+y2)/2
+        (x1, y1, x2, y2) = bounds2int(es[0].attrib.get("bounds"))
+        return (x1 + x2) / 2, (y1 + y2) / 2
     else:
         return None
 
 
 def find_x_login(xml: str, x):
     def is_login_btn(e):
-        return x.lower() in e.attrib.get('text').lower() and e.attrib.get('clickable') == 'true'
+        return (
+            x.lower() in e.attrib.get("text").lower()
+            and e.attrib.get("clickable") == "true"
+        )
 
     root = ElementTree.fromstring(xml)
-    es = [e for e in root.iter('node') if is_login_btn(e)]
+    es = [e for e in root.iter("node") if is_login_btn(e)]
     if len(es) > 0:
-        (x1, y1, x2, y2) = bounds2int(es[0].attrib.get('bounds'))
-        return (x1+x2)/2, (y1+y2)/2
+        (x1, y1, x2, y2) = bounds2int(es[0].attrib.get("bounds"))
+        return (x1 + x2) / 2, (y1 + y2) / 2
     else:
         return None
 
@@ -190,11 +225,22 @@ def type_if_find(d, pairs, text):
         d.send_keys(text)
 
 
+def xml_to_bounds(f):
+    tree = ElementTree.fromstring(Path(f).read_text())
+    tree = remove_sysui(tree)
+    nodes = [n for n in tree.iter("node") if len(n) == 0]  # leaf nodes
+    bounds = [n.attrib.get("bounds") for n in nodes]
+    bounds = [bounds2p(b) for b in bounds]
+    return bounds
+
+
 def _test():
-    path = 'data/outputs/com.alltrails.alltrails/1656998093_tablet_CreateListActivity.xml'
+    path = (
+        "data/outputs/com.alltrails.alltrails/1656998093_tablet_CreateListActivity.xml"
+    )
     root = ElementTree.parse(path).getroot()
     print(exits_keyboard(root))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _test()

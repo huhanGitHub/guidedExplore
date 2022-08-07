@@ -6,9 +6,8 @@ import time
 from difflib import SequenceMatcher
 
 import requests
-from pyaxmlparser import APK
-
 import uiautomator2 as u2
+from pyaxmlparser import APK
 
 
 def connectionAdaptor(phoneDevice, tabletDevice):

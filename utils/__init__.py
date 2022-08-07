@@ -7,9 +7,8 @@ from difflib import SequenceMatcher
 from webbrowser import get
 
 import requests
-from pyaxmlparser import APK
-
 import uiautomator2 as u2
+from pyaxmlparser import APK
 
 
 def connectionAdaptor(phoneDevice, tabletDevice):

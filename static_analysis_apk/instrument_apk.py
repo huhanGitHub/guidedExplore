@@ -1,5 +1,6 @@
-import os
 import logging
+import os
+
 from static_analysis_apk.inject_apk import injectApk
 
 
@@ -39,7 +40,7 @@ def unit_inject(app_save_dir, repackaged_apk, deeplinks_path):
     cmd2 = "apktool b " + app_save_dir + " --use-aapt2 -o " + repackaged_apk
     os.system(cmd2)
     if not os.path.exists(repackaged_apk):
-        raise RuntimeError(f'failed to recompile to {repackaged_apk}')
+        raise RuntimeError(f"failed to recompile to {repackaged_apk}")
 
     logging.info("sign apk")
     unit_sign_APK(repackaged_apk)

@@ -17,6 +17,7 @@ from utils.path import basename_no_ext
 
 from phone import collect_data
 
+
 def _apk_paths(dir=APK_DIR):
     apks = sorted(os.listdir(dir))
     apks = map(lambda x: os.path.join(dir, x), apks)
@@ -111,9 +112,7 @@ def is_preprocessed(package_name):
     ):
         logging.error(f"did not found deeplinks file for {package_name}")
         return False
-    if not os.path.exists(
-        os.path.join(definitions.ATG_DIR, f"{package_name}.json")
-    ):
+    if not os.path.exists(os.path.join(definitions.ATG_DIR, f"{package_name}.json")):
         logging.error(f"did not found atg file for {package_name}")
         return False
     if not os.path.exists(
@@ -141,16 +140,20 @@ def explore_cli():
     else:
         explore(apk_paths[i])
 
+
 def find_click():
     device = definitions.get_device()
     txt = input(":")
     click_if_find(device, {"text": txt})
 
+
 def change():
     definitions.get_device().change_device_type()
 
+
 def clear():
     definitions.get_device().app_uninstall_all()
+
 
 def cli():
     em = Device(definitions.EM_ID, False, False)
@@ -164,7 +167,7 @@ def cli():
         "find_click": find_click,
         "refresh": nothing,
         "change": change,
-        "clear": clear
+        "clear": clear,
     }
 
     while True:
@@ -199,22 +202,24 @@ def explore(device, apk):
         atg_json,
         deeplinks_json,
         log_file,
-        reinstall=True,
     )
 
 
 def log_failure(pkg):
     with open(definitions.FAIL_LOG_PATH, "a") as f:
         f.write(pkg)
-        f.write('\n')
+        f.write("\n")
 
 
 def unexplored_apks():
     explored_apps = [f.name for f in os.scandir(definitions.OUT_DIR) if f.is_dir()]
     failed_apps = [f for f in open(definitions.FAIL_LOG_PATH).read().splitlines()]
     ignored_apps = set(explored_apps).union(set(failed_apps))
-    apks = [f.path for f in os.scandir(definitions.APK_DIR)
-            if f.name.endswith(".apk") and f.name.removesuffix(".apk") not in ignored_apps]
+    apks = [
+        f.path
+        for f in os.scandir(definitions.APK_DIR)
+        if f.name.endswith(".apk") and f.name.removesuffix(".apk") not in ignored_apps
+    ]
     return apks
 
 
@@ -233,6 +238,7 @@ def multi_run(devices):
         apk = apks.pop()
         lock.release()
         return apk
+
     threads = [threading.Thread(run_one, (d, apks, pop_apk)) for d in devices]
     for i in threads:
         i.start()
@@ -249,8 +255,7 @@ def run(device, apk=None):
     # TODO check os.system commands if multi connected devices
     if apk is None:
         apks = unexplored_apks()
-        print(apks)
-        print(len(apks))
+        print(f"unexplored: {apks[:10]}\nlen:{len(apks)}")
     else:
         apks = [apk]
     for apk_path in apks:
@@ -262,6 +267,7 @@ def run(device, apk=None):
             else:
                 repack_path = os.path.join(definitions.REPACKAGE_DIR, f"{name}.apk")
 
+            apk = APK(repack_path)
             ans = explore(device, apk)
             if ans is False:
                 log_failure(basename_no_ext(apk_path))
@@ -273,13 +279,19 @@ def run(device, apk=None):
                 logging.critical(f"device is probably offline, {e}")
                 input("===watting for reset connection manually===")
             else:
-                logging.critical(f"error when processing {basename_no_ext(apk_path)}, {type(e).__name__}:{e}")
+                logging.critical(
+                    f"error when processing {basename_no_ext(apk_path)}, {type(e).__name__}:{e}"
+                )
                 import traceback
+
                 logging.debug(traceback.format_exc())
                 log_failure(basename_no_ext(apk_path))
         except Exception as e:
-            logging.critical(f"error when processing {basename_no_ext(apk_path)}, {type(e).__name__}:{e}")
+            logging.critical(
+                f"error when processing {basename_no_ext(apk_path)}, {type(e).__name__}:{e}"
+            )
             import traceback
+
             logging.debug(traceback.format_exc())
             log_failure(basename_no_ext(apk_path))
         finally:
@@ -288,11 +300,12 @@ def run(device, apk=None):
 
 
 def main():
-    apk = None
     apk = os.path.join(definitions.APK_DIR, "com.twitter.android.apk")
-    # em = Device(definitions.EM_ID, False, True)
-    em = definitions.get_device()
+    apk = None
+    # em = definitions.get_device()
+    em = Device(definitions.EM_ID, False, True)
     run(em, apk)
+
 
 if __name__ == "__main__":
     # cli()

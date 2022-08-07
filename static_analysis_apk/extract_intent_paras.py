@@ -1,23 +1,24 @@
-import os
 import json
 import logging
+import os
+
 try:
     import xml.etree.cElementTree as ET
 except ImportError:
     import xml.etree.ElementTree as ET
-intent_smali_fileds = 'Landroid/content/Intent;->get'
-intent_get_action = 'Landroid/content/Intent;->getAction()'
-const_string = 'const-string'
+intent_smali_fileds = "Landroid/content/Intent;->get"
+intent_get_action = "Landroid/content/Intent;->getAction()"
+const_string = "const-string"
 package_identifier = 'package="'
-equals_smali = 'Ljava/lang/String;->equals'
-contains_smali = 'Ljava/util/Set;->contains'
+equals_smali = "Ljava/lang/String;->equals"
+contains_smali = "Ljava/util/Set;->contains"
 
 
 # first check the field contains_smali and equals_smali to judge if equals or contains is existed
 def check_equals_contains(smali_file):
     equals = False
     contains = False
-    with open(smali_file, 'r', encoding='utf8') as f:
+    with open(smali_file, "r", encoding="utf8") as f:
         lines = f.readlines()
         for line in lines:
             if equals_smali in line:
@@ -33,19 +34,19 @@ def extract_force_test_strings(smali_file):
     equals, contains = check_equals_contains(smali_file)
     if equals or contains:
         # extract all strings
-        with open(smali_file, 'r+', encoding='utf8') as f:
+        with open(smali_file, "r+", encoding="utf8") as f:
             lines = f.readlines()
             for line in lines:
                 if const_string in line:
                     tag = line.strip()
-                    tag = tag[tag.index('"') + 1: tag.rindex('"')]
-                    tag = tag.replace('\n', '')
-                    if tag != '':
+                    tag = tag[tag.index('"') + 1 : tag.rindex('"')]
+                    tag = tag.replace("\n", "")
+                    if tag != "":
                         strings.append(tag)
 
         if len(strings) != 0:
             if contains and not equals:
-                strings = [' '.join(strings)]
+                strings = [" ".join(strings)]
 
             return strings
 
@@ -54,29 +55,29 @@ def extract_force_test_strings(smali_file):
 
 # statistics intent paras
 def intent_field_extractor(path):
-    log = r'intent_smali_analysis.txt'
+    log = r"intent_smali_analysis.txt"
     fields = {}
-    with open(log, 'a+', encoding='utf8') as log:
+    with open(log, "a+", encoding="utf8") as log:
         for root, dirs, files in os.walk(path):
             for file in files:
-                if str(file).endswith('smali'):
+                if str(file).endswith("smali"):
                     file_path = os.path.join(root, file)
-                    with open(file_path, 'r+', encoding='utf8') as f:
+                    with open(file_path, "r+", encoding="utf8") as f:
                         lines = f.readlines()
                         for line in lines:
                             if intent_smali_fileds in line:
                                 index = line.index(intent_smali_fileds)
-                                end = line.index('(', index)
+                                end = line.index("(", index)
                                 field = line[index:end]
-                                field = field.replace(';\n', '')
-                                field = field.replace('Landroid/content/Intent;->', '')
+                                field = field.replace(";\n", "")
+                                field = field.replace("Landroid/content/Intent;->", "")
                                 counts = fields.setdefault(field, 0)
                                 counts += 1
                                 fields[field] = counts
 
         fields = sorted(fields.items(), key=lambda d: d[1], reverse=True)
         for k, v in fields:
-            log.write(k + ' ' + str(v) + '\n')
+            log.write(k + " " + str(v) + "\n")
 
 
 def smali_intent_para_extractor(path, save_path):
@@ -92,19 +93,26 @@ def smali_intent_para_extractor(path, save_path):
             continue
         activities = []
         for file in os.listdir(app_path):
-            if 'AndroidManifest.xml' in file:
+            if "AndroidManifest.xml" in file:
                 file_path = os.path.join(app_path, file)
-                if 'original' in file_path:
+                if "original" in file_path:
                     continue
                 try:
                     tree = ET.parse(file_path)
                     root = tree.getroot()
-                    package = root.attrib.get('package', None)
+                    package = root.attrib.get("package", None)
                     if package is None:
                         continue
-                    for node in root.iter('activity'):
-                        name = node.attrib.get('{http://schemas.android.com/apk/res/android}name')
-                        print('name ' + node.attrib.get('{http://schemas.android.com/apk/res/android}name'))
+                    for node in root.iter("activity"):
+                        name = node.attrib.get(
+                            "{http://schemas.android.com/apk/res/android}name"
+                        )
+                        print(
+                            "name "
+                            + node.attrib.get(
+                                "{http://schemas.android.com/apk/res/android}name"
+                            )
+                        )
                         activities.append(name)
                 except ET.ParseError as e:
                     print(str(e))
@@ -115,7 +123,7 @@ def smali_intent_para_extractor(path, save_path):
                 apps_activities[package] = activities
 
     for app in apps:
-        if ('.DS_Store' in app) or ('R.smali' in app):
+        if (".DS_Store" in app) or ("R.smali" in app):
             apps.remove(app)
 
     for subscript, app in enumerate(apps):
@@ -125,19 +133,21 @@ def smali_intent_para_extractor(path, save_path):
         for root, dirs, files in os.walk(app_path):
             for file in files:
                 # use suffix 'activity' to judge
-                if 'activity' in file or 'Activity' in file:
-                    if file.endswith('.smali'):
+                if "activity" in file or "Activity" in file:
+                    if file.endswith(".smali"):
                         file_path = os.path.join(root, file)
                         pairs = []
-                        with open(file_path, 'r+', encoding='utf8') as f:
+                        with open(file_path, "r+", encoding="utf8") as f:
                             lines = f.readlines()
                             for i, line in enumerate(lines):
                                 if intent_smali_fileds in line:
                                     index = line.index(intent_smali_fileds)
-                                    end = line.index('(', index)
+                                    end = line.index("(", index)
                                     field = line[index:end]
-                                    field = field.replace(';\n', '')
-                                    field = field.replace('Landroid/content/Intent;->', '')
+                                    field = field.replace(";\n", "")
+                                    field = field.replace(
+                                        "Landroid/content/Intent;->", ""
+                                    )
 
                                     # find const string in the previous lines
                                     pre_index = i - 1
@@ -145,8 +155,10 @@ def smali_intent_para_extractor(path, save_path):
                                         temp = lines[pre_index]
                                         if const_string in lines[pre_index]:
                                             tag = lines[pre_index].strip()
-                                            tag = tag[tag.index('"') + 1: tag.rindex('"')]
-                                            tag = tag.replace('\n', '')
+                                            tag = tag[
+                                                tag.index('"') + 1 : tag.rindex('"')
+                                            ]
+                                            tag = tag.replace("\n", "")
                                             pair = [tag, field]
                                             pairs.append(pair)
                                             # print(temp)
@@ -156,10 +168,10 @@ def smali_intent_para_extractor(path, save_path):
 
                             if len(pairs) != 0:
                                 # handle anonymous functions in an activity
-                                if '$' in file:
-                                    file = file.split('$')[0]
+                                if "$" in file:
+                                    file = file.split("$")[0]
 
-                                file = file.replace('.smali', '')
+                                file = file.replace(".smali", "")
 
                                 # find the full name of activity
                                 full_name_activities = apps_activities.get(package)
@@ -173,7 +185,7 @@ def smali_intent_para_extractor(path, save_path):
 
         apps_intent_para[package] = intent_para
     save_json = json.dumps(apps_intent_para, indent=4)
-    with open(save_path, 'w', encoding='utf8') as f2:
+    with open(save_path, "w", encoding="utf8") as f2:
         f2.write(save_json)
 
 
@@ -236,18 +248,14 @@ def smali_intent_para_extractor_one(decom_folder, save_path):
                                 end = line.index("(", index)
                                 field = line[index:end]
                                 field = field.replace(";\n", "")
-                                field = field.replace(
-                                    "Landroid/content/Intent;->", ""
-                                )
+                                field = field.replace("Landroid/content/Intent;->", "")
 
                                 # find const string in the previous lines
                                 pre_index = i - 1
                                 while pre_index >= 0:
                                     if const_string in lines[pre_index]:
                                         tag = lines[pre_index].strip()
-                                        tag = tag[
-                                            tag.index('"') + 1:tag.rindex('"')
-                                        ]
+                                        tag = tag[tag.index('"') + 1 : tag.rindex('"')]
                                         tag = tag.replace("\n", "")
                                         pair = [tag, field]
                                         pairs.append(pair)
@@ -278,9 +286,9 @@ def smali_intent_para_extractor_one(decom_folder, save_path):
         f2.write(save_json)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # path = r'/Users/xxx/PycharmProjects/uiautomator2/activityMining/recompile samples'
     # intent_field_extractor(path)
-    path = r'../data/recompiled_apks'
-    save_path = r'../data/intent_para.json'
+    path = r"../data/recompiled_apks"
+    save_path = r"../data/intent_para.json"
     smali_intent_para_extractor(path, save_path)

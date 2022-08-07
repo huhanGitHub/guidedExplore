@@ -1,10 +1,11 @@
 import logging
-import requests
 import random
 from datetime import datetime
 
+import requests
 import uiautomator2.exceptions
 from uiautomator2 import Direction
+
 from utils.device import Device
 from utils.util import *
 

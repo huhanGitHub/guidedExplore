@@ -1,5 +1,7 @@
 import logging
 import os
+import shutil
+import threading
 import time
 from datetime import datetime
 from functools import reduce
@@ -12,14 +14,18 @@ from pyaxmlparser import APK
 from uiautomator2.exceptions import GatewayError
 
 import definitions
+from decompile_apk import unit_decompile
+from definitions import APK_DIR, DATA_DIR, DECOMPILE_DIR, REPACKAGE_DIR
 from dynamic_testing.activity_launcher import (
     launch_activity_by_deeplink,
     launch_activity_by_deeplinks,
 )
 from dynamic_testing.grantPermissonDetector import dialogSolver
 from dynamic_testing.testing_path_planner import PathPlanner
+from run_preprocess import unit_run_preprocess_one
 from utils.device import Device
-from utils.util import getActivityPackage
+from utils.path import basename_no_ext
+from utils.util import getActivityPackage, installApk
 from utils.xml_helpers import (
     click_if_find,
     clickable_bounds,
@@ -35,56 +41,37 @@ BLUE = "\033[1;34m"
 NC = "\033[0m"  # Clear Color
 
 
+def collect_data(device, save_dir=None):
+    cur_pkg = device.current_package()
+    if save_dir is None:
+        save_dir = os.path.join(definitions.DATA_DIR, "compare", "click", cur_pkg)
+        if not os.path.exists(save_dir):
+            logging.info(f"Creating directory: {save_dir}")
+            os.mkdir(save_dir)
+
+    p_act, p_xml, p_img = device.collect_cur_activity()
+
+    if p_img is None:
+        logging.error("none img, save fail, return")
+        return False
+
+    t = int(time.time())
+
+    def get_path(device, filetype):
+        act = p_act if device == "phone" else t_act
+        return os.path.join(save_dir, f"{t}_{device}_{act}.{filetype}")
+
+    xml2Path = get_path("phone", "xml")
+    img2Path = get_path("phone", "png")
+    with open(xml2Path, "a", encoding="utf8") as f2:
+        f2.write(p_xml)
+        p_img.save(img2Path)
+    return True
+
+
 def desktop_notification():
     # NOTE: only works on linux
     os.system("notify-send -u critical -t 3000 error when collecting")
-
-
-def left_bound(bounds):
-    (x1, y1, x2, y2) = bounds
-    return x1, y1
-    x = (x1 + x2) / 2
-    y = (y1 + y2) / 2
-    return x, y
-
-
-def one_at_a_level(bs, nb):
-    x, y = nb
-    for (a, b) in bs:
-        if a == x or y == b:
-            return bs
-    return bs + [nb]
-
-
-def click_clickables(d: Device, succeed_link):
-    # TODO not use deeplink
-    return
-    xml = d.dump_hierarchy(compressed=True)
-    root = ElementTree.fromstring(xml)
-    bounds = clickable_bounds(root)
-    # bounds = map(left_bound, clickable_bounds(root))
-
-    # maxy = max(map(lambda b: b[1], bounds), default=-1)
-    # bottoms = filter(lambda b: b[1] == maxy, bounds)
-    # rest = filter(lambda b: b[1] != maxy, bounds)
-
-    # bounds = chain(reduce(one_at_a_level, rest, []), bottoms)
-    for (x1, y1, x2, y2) in bounds:
-        x = (x1 + x2) / 2
-        y = (y1 + y2) / 2
-        logging.info(f"click: {x},{y}")
-        d.click(x, y)
-        # TODO check if is changed
-        try:
-            d.hide_keyboard(root)
-            if not is_same_activity(xml, d.dump_hierarchy(compressed=True), 0.9):
-                d.collect_data()
-                logging.info("collected a pair")
-        except Exception as e:
-            logging.error(f"{RED}fail to collect data{NC}, {type(e).__name__}: {e}")
-        d.press("back")
-
-        launch_activity_by_deeplink(*succeed_link)
 
 
 def explore_cur_activity(d, path_planner, succeed_link, timeout=60):
@@ -93,11 +80,9 @@ def explore_cur_activity(d, path_planner, succeed_link, timeout=60):
     # collect data of current activity
     try:
         d.hide_keyboard()
-        d.collect_data()
-        logging.info(f"{GREEN}collected a pair{NC}")
+        collect_data(d)
+        logging.info(f"{GREEN}collected{NC}")
         path_planner.set_visited(d_activity)
-        if d.device_type():
-            click_clickables(d, succeed_link)
     except Exception as e:
         logging.error(f"{RED}fail to collect data{NC}, {type(e).__name__}: {e}")
         import traceback
@@ -165,10 +150,10 @@ def login_with_google(d, login_options):
             time.sleep(3)
             first_acc = "com.google.android.gms:id/account_display_name"
             d(resourceId=first_acc).click()
-        return True
     except Exception as e:
         print("Failed to start {} because {}".format(login_options["activityName"], e))
         return False
+    return True
 
 
 def login_with_facebook(d, login_options):
@@ -198,11 +183,11 @@ def login_with_facebook(d, login_options):
 
         logging.debug(traceback.format_exc())
         return False
+    return True
 
 
 def try_login(d, login_options):
     try:
-        time.sleep(15)
         if login_with_facebook(d, login_options):
             return True
 
@@ -243,10 +228,11 @@ def try_login(d, login_options):
         if elementId is not None:
             d.implicitly_wait(20.0)
             d(resourceId=elementId).click()
-        return True
     except Exception as e:
         print("Failed to start {} because {}".format(login_options["activityName"], e))
         return False
+
+    return True
 
 
 def grant_all_permissions(d, apk):
@@ -260,6 +246,8 @@ def unit_dynamic_testing(
     atg_json,
     deeplinks_json,
     log_save_path,
+    test_time=1200,
+    reinstall=True,
 ):
     pkg_name = apk.package
     apk_path = apk.filename
@@ -270,20 +258,19 @@ def unit_dynamic_testing(
     grant_all_permissions(d, apk)
 
     d.app_start(pkg_name)
-    try_login(d, login_options)
+    time.sleep(15)
 
+    dialogSolver(d)
+    try_login(d, login_options)
     path_planner = PathPlanner(pkg_name, atg_json, deeplinks_json)
     unvisited = path_planner.get_unvisited_activity_deeplinks()
     unvisited = [] if unvisited is None else unvisited
-    visited_rates = []
-    visited_rates.append(path_planner.get_visited_rate())
+
     save_dir = os.path.join(definitions.OUT_DIR, pkg_name)
     if not os.path.exists(save_dir):
         logging.info(f"Creating directory: {save_dir}")
         os.mkdir(save_dir)
 
-    d.app_start(pkg_name)
-    explore_cur_activity(d, path_planner, None)
     start_time = datetime.now()
     for (activity, deeplinks, actions, params) in unvisited:
         logging.info(f"{YELLOW}trying to open{NC} {activity}")
@@ -327,7 +314,7 @@ def unit_dynamic_testing(
                     d = definitions.get_device()
                     break
                 except GatewayError:
-                    time.sleep(5)
+                    time.sleep(10)
         # others
         except Exception as e:
             logging.critical(f"something wrong, {type(e).__name__}: {e}")
@@ -336,42 +323,172 @@ def unit_dynamic_testing(
 
             logging.debug(traceback.format_exc())
             logging.critical(f"skip {activity}, trying next activity")
-            try:
-                d.collect_data(definitions.ERROR_DIR)
-            except Exception:
-                logging.critical("unable to collect error data")
 
     delta = datetime.now() - start_time
     logging.info(f"visited rate:{path_planner.get_visited_rate()} in {delta}")
-    path_planner.log_visited_rate(visited_rates, path=log_save_path)
     d.app_stop_all()
     d.app_uninstall(pkg_name)
     return True
 
 
-if __name__ == "__main__":
-    # com.google.android.gms:id/account_display_name
-    # deviceId = '192.168.57.105'
-    deviceId = "192.168.57.101:5555"
-    # deviceId = 'cb8c90f4'
-    # deviceId = 'VEG0220B17010232'
-    d = Device(definitions.EM_ID)
-    # login_with_facebook(d, login_options)
-    try_login(d, login_options)
-    # d.app_start("com.alltrails.alltrails")
-    # login_with_google(d, login_options)
-    # d.collect_data(definitions.DATA_DIR)
-    # d.app_start("com.twitter.android")
-    # print(d.current_activity())
-    # login_with_facebook(d, login_options)
-    # print(find_google_login(d.dump_hierarchy(compressed=True)))
-    # d.xpath("//*[contains(@text, 'Google')]").click()
+def explore(device, apk):
+    """
+    :param apk_path: recompiled apk path
+    """
+    name = apk.package
+    logging.info(f"exploring {name}")
 
-    # name = "Lightroom"
-    # apk_path = os.path.join(definitions.REPACKAGE_DIR, f"{name}.apk")
-    # atg_json = os.path.join(definitions.ATG_DIR, f"{name}.json")
-    # deeplinks_json = definitions.DEEPLINKS_PATH
-    # log = os.path.join(definitions.VISIT_RATE_DIR, f"{name}.txt")
-    # unit_dynamic_testing(
-    #     Device(deviceId), APK(apk_path), atg_json, deeplinks_json, log, reinstall=False
-    # )
+    atg_json = os.path.join(definitions.ATG_DIR, f"{name}.json")
+    deeplinks_json = os.path.join(definitions.DEEPLINKS_DIR, f"{name}.json")
+    log_file = os.path.join(definitions.VISIT_RATE_DIR, f"{name}.txt")
+
+    if not is_preprocessed(name):
+        raise RuntimeError("failed to to preprocess or didn't preprocess")
+
+    unit_dynamic_testing(
+        device,
+        apk,
+        atg_json,
+        deeplinks_json,
+        log_file,
+        reinstall=True,
+    )
+
+
+def log_failure(pkg):
+    with open(definitions.FAIL_LOG_PATH, "a") as f:
+        f.write(pkg)
+        f.write("\n")
+
+
+def unexplored_apks():
+    explored_apps = [
+        f.name
+        for f in os.scandir(os.path.join(definitions.OUT_DIR, "deer"))
+        if f.is_dir()
+    ]
+    failed_apps = [f for f in open(definitions.FAIL_LOG_PATH).read().splitlines()]
+    ignored_apps = set(explored_apps).union(set(failed_apps))
+    apks = [
+        f.path
+        for f in os.scandir(definitions.APK_DIR)
+        if f.name.endswith(".apk") and f.name.removesuffix(".apk") not in ignored_apps
+    ]
+    return apks
+
+
+def preprocess(apk_path):
+    pkg_name = APK(apk_path).package
+    decom_path = os.path.join(DECOMPILE_DIR, pkg_name)
+    deeplinks_path = os.path.join(definitions.DEEPLINKS_DIR, f"{pkg_name}.json")
+
+    if os.path.exists(decom_path):
+        shutil.rmtree(decom_path)
+    os.mkdir(decom_path)
+
+    unit_decompile(apk_path, decom_path)
+
+    repackaged_path = unit_run_preprocess_one(decom_path, REPACKAGE_DIR, deeplinks_path)
+    return repackaged_path
+
+
+def run(device, apk=None):
+    """
+    explore one apk or apks under `definitions.APK_DIR`
+    example: apk=os.path.join(definitions.APK_DIR, "com.duolingo.apk")
+    """
+    # TODO check os.system commands if multi connected devices
+    if apk is None:
+        apks = unexplored_apks()
+    else:
+        apks = [apk]
+    for apk_path in apks:
+        try:
+            apk = APK(apk_path)
+            name = apk.package
+            if not is_preprocessed(name):
+                repack_path = preprocess(apk_path)
+            else:
+                repack_path = os.path.join(definitions.REPACKAGE_DIR, f"{name}.apk")
+
+            ans = explore(device, apk)
+            if ans is False:
+                log_failure(basename_no_ext(apk_path))
+        except KeyboardInterrupt:
+            logging.info("KeyboardInterrupt, exiting")
+            exit(0)
+        except RuntimeError as e:
+            if "is offline" in str(e):
+                logging.critical(f"device is probably offline, {e}")
+                input("===watting for reset connection manually===")
+        except Exception as e:
+            logging.critical(
+                f"error when processing {basename_no_ext(apk_path)}, {type(e).__name__}:{e}"
+            )
+            import traceback
+
+            logging.debug(traceback.format_exc())
+            log_failure(basename_no_ext(apk_path))
+        finally:
+            device.app_stop_all()
+            device.app_uninstall(name)
+
+
+def run(device, apk=None):
+    """
+    explore one apk or apks under `definitions.APK_DIR`
+    example: apk=os.path.join(definitions.APK_DIR, "com.duolingo.apk")
+    """
+    # TODO check os.system commands if multi connected devices
+    if apk is None:
+        apks = unexplored_apks()
+    else:
+        apks = [apk]
+    for apk_path in apks:
+        try:
+            apk = APK(apk_path)
+            name = apk.package
+            if not is_preprocessed(name):
+                repack_path = preprocess(apk_path)
+            else:
+                repack_path = os.path.join(definitions.REPACKAGE_DIR, f"{name}.apk")
+
+            ans = explore(device, apk)
+            if ans is False:
+                log_failure(basename_no_ext(apk_path))
+        except KeyboardInterrupt:
+            logging.info("KeyboardInterrupt, exiting")
+            exit(0)
+        except RuntimeError as e:
+            if "is offline" in str(e):
+                logging.critical(f"device is probably offline, {e}")
+                input("===watting for reset connection manually===")
+        except Exception as e:
+            logging.critical(
+                f"error when processing {basename_no_ext(apk_path)}, {type(e).__name__}:{e}"
+            )
+            import traceback
+
+            logging.debug(traceback.format_exc())
+            log_failure(basename_no_ext(apk_path))
+        finally:
+            device.app_stop_all()
+            device.app_uninstall(name)
+
+
+def main():
+    apk = os.path.join(definitions.APK_DIR, "com.duckduckgo.mobile.android.apk")
+    # em = Device(definitions.EM_ID, True, False)
+    apk = None
+    apk = os.path.join(
+        "~",
+        "Download",
+        "Amazon Prime Video by Amazon Mobile LLC - com.amazon.avod.thirdpartyclient.apk",
+    )
+    em = Device(definitions.VM_ID, False, True)
+    em.to_phone()
+    run(em, apk)
+
+
+if __name__ == "__main__":
+    main()
