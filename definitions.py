@@ -1,7 +1,7 @@
 import logging
 import os
 
-from utils.device import Device
+# from utils.device import Device
 
 
 _log_format = f"[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d] %(message)s"
@@ -46,11 +46,11 @@ EM_ID = "emulator-5554"
 
 
 # lazy initialize
-_device = None
-
-
-def get_device():
-    global _device
-    if _device is None:
-        _device = Device(VM_ID, False, True)
-    return _device
+# _device = None
+#
+#
+# def get_device():
+#     global _device
+#     if _device is None:
+#         _device = Device(VM_ID, False, True)
+#     return _device

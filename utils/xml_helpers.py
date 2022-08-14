@@ -16,7 +16,7 @@ def classes(tree, pkg_name):
     return set(e.attrib.get("class") for e in tree.findall(f".//node[@package='{pkg_name}']"))
 
 
-def bounds2int(bounds):
+def bounds2int(bounds: str):
     bounds = bounds.replace("][", ",")
     bounds = bounds[1:-1]
     bounds = [int(i) for i in bounds.split(",")]
@@ -232,15 +232,3 @@ def xml_to_bounds(f):
     bounds = [n.attrib.get("bounds") for n in nodes]
     bounds = [bounds2p(b) for b in bounds]
     return bounds
-
-
-def _test():
-    path = (
-        "data/outputs/com.alltrails.alltrails/1656998093_tablet_CreateListActivity.xml"
-    )
-    root = ElementTree.parse(path).getroot()
-    print(exits_keyboard(root))
-
-
-if __name__ == "__main__":
-    _test()

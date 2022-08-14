@@ -8,17 +8,8 @@ import definitions
 
 from utils.path import basename_no_ext
 from utils.xml_helpers import *
-from test import COLOR_MAP
+from color_map import COLOR_MAP
  
-def HSVToRGB(h, s, v): 
- (r, g, b) = colorsys.hsv_to_rgb(h, s, v) 
- return (int(255*r), int(255*g), int(255*b)) 
- 
-
-def getDistinctColors(n): 
- huePartition = 1.0 / (n + 1) 
- return (HSVToRGB(huePartition * value, 1.0, 1.0) for value in range(0, n))
-
 
 def bounds2xy(bounds):
     xs = {i[0]: i for i in bounds}.keys()
@@ -47,10 +38,10 @@ class Groups:
         groups = [Group(g, pkg) for g in groups]
         return groups
 
-    def from_out_dir():
+    def from_out_dir(out_dir=definitions.OUT_DIR):
         return [
             g
-            for app in os.scandir(definitions.OUT_DIR)
+            for app in os.scandir(out_dir)
             for g in Groups.from_folder(app.path, app.name)
         ]
 
@@ -121,14 +112,13 @@ class Group:
         return pn >= target and tn >= target
 
     def xy_complexity(self):
-        p = xml_to_bounds(self.pxml.path)
-        t = xml_to_bounds(self.txml.path)
-        return bounds2xy(p), bounds2xy(t)
+        (px, py) = bounds2xy(xml_to_bounds(self.pxml.path))
+        (tx, ty) = bounds2xy(xml_to_bounds(self.txml.path))
+        return list(map(len, (px, py, tx, ty)))
 
     def xy_complex_enough(self, target=5):
-        ((px, py), (tx, ty)) = self.xy_complexity()
-        for b in [px, py, tx, ty]:
-            if len(b) < target:
+        for b in self.xy_complexity():
+            if b < target:
                 return False
         return True
 
@@ -145,8 +135,15 @@ class Group:
         d = self.diversity()
         return d[0] >= target and d[1] >= target
 
+    def complexity(self):
+        d = self.diversity()
+        c = sum(self.xy_complexity())
+        return min(d[0],d[1]), c
+
     def is_legit(self):
-        return len(self.files) == 4 and self.is_paired() and self.complex_enough() and self.diverse_enough()
+
+        return (len(self.files) == 4
+                and self.is_paired() and self.complex_enough() and self.diverse_enough())
 
     def is_paired(self):
         # NOTE: naive
@@ -155,26 +152,37 @@ class Group:
     def complex_enough(self):
         return self.enough_nodes(10)
 
-    def draw(self, out):
+    def draw(self, out, elements="all"):
         assert os.path.isdir(out)
         for png, tree in [(self.ppng, self.ptree()), (self.tpng, self.ttree())]:
             drawed = set()
             image = Image.open(png.path)
             draw = ImageDraw.Draw(image)
             font = ImageFont.truetype("SpaceMono-Regular.ttf", 20)
-            # es = (e for e in t.findall(f".//node[@package='{self.pkg}']") if len(e) == 0)
-            es = (e for e in tree.findall(f".//node[@package='{self.pkg}']"))
+
+            if elements == "all":
+                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']"))
+            elif elements == "leaf":
+                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']") if len(e) == 0)
+            elif elements == "nonleaf":
+                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']") if len(e) != 0)
+            else:
+                es = elements.pop(0)
+
             for element in es:
                 bounds = bounds2int(element.attrib["bounds"])
                 cls = element.attrib["class"]
                 color = COLOR_MAP[cls]
                 draw.rectangle(bounds, outline=color, width=3)
-                if cls not in drawed:
-                    draw.text((bounds[0], bounds[1]), cls, font=font, fill=color)
-                    drawed.add(cls)
+                # if cls not in drawed:
+                draw.text((bounds[0], bounds[1]), cls, font=font, fill=color)
+                drawed.add(cls)
             # TODO
             out_png = os.path.join(out, png.name)
             image.save(out_png)
+
+    def group_element(self):
+        pass
 
 
 if __name__ == "__main__":

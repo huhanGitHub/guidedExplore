@@ -59,6 +59,15 @@ def plot(nums):
     plt.show()
 
 
+def print_each_len():
+    apps = [d for d in os.scandir(definitions.OUT_DIR) if d.is_dir()]
+    for entry in apps:
+        gs = Groups.from_folder(entry.path)
+        if len(gs) > 40:
+            print(entry.name)
+            print(len(gs))
+
+
 def test():
     groups = Groups.from_folder(os.scandir(os.path.join(definitions.DATA_DIR, "com.twitter.android")))
     groups = [g for g in remove_repated(groups) if g.enough_nodes(5)]
@@ -68,6 +77,17 @@ def test():
     for g in groups:
         g.copy_to(dest)
         print(f"copy {g} to {dest}")
+
+
+def remove():
+    for entry in os.scandir(definitions.OUT_DIR):
+        path = entry.path
+        groups = sorted(Groups.from_folder(path), key=lambda g:g.complexity())
+        left = {g.act: g for g in groups}.values()
+        if len(left) > 0:
+            out = definitions._create(os.path.join(definitions.DATA_DIR, "unique", entry.name))
+        for g in left:
+            g.copy_to(out)
 
 
 def class_distribution(groups):
@@ -83,26 +103,21 @@ def class_distribution(groups):
 
 
 def test_diversity():
-    gs = (g for g in Groups.from_out_dir() if g.is_legit())
-    mapper = {}
-    for g in gs:
-        div = min(g.diversity())
-        prev = mapper.get(div)
-        if prev is not None:
-            if sum(g.node_num()) < sum(prev.node_num()):
-                mapper[div] = g
-        else:
-            mapper[div] = g
-    print(mapper)
-    gs = mapper.values()
+    def total_div(g):
+        d = g.diversity()
+        c = sum(g.xy_complexity())
+        return min(d[0],d[1]), c
+    out = os.path.join(definitions.DATA_DIR, "unique")
+    gs = sorted((g for g in Groups.from_out_dir(out) if g.is_legit()), key=total_div, reverse=True)
     out = os.path.join(definitions.DATA_DIR, "test")
     i = 0
     for g in gs:
+        print(g)
         i += 1
-        # if i == 100:
-            # exit()
+        if i == 100:
+            exit()
         g.copy_to(out)
-        g.draw(out)
+        g.draw(out, "leaf")
 
 
 if __name__ == "__main__":
@@ -111,6 +126,7 @@ if __name__ == "__main__":
         # how to map?
     # TODO xml complexity by class type
     test_diversity()
-    print_statistics()
+    # print_statistics()
+    # remove()
 
 

@@ -298,6 +298,13 @@ def run(device, apk=None):
             device.app_stop_all()
             device.app_uninstall(name)
 
+def onetime():
+    # em = Device(definitions.EM_ID, False, True)
+    em = definitions.get_device()
+    for app in apps:
+        apk = os.path.join(definitions.APK_DIR, f"{app}.apk")
+        run(em, apk)
+
 
 def main():
     apk = os.path.join(definitions.APK_DIR, "com.twitter.android.apk")
@@ -309,4 +316,5 @@ def main():
 
 if __name__ == "__main__":
     # cli()
-    main()
+    # main()
+    onetime()
