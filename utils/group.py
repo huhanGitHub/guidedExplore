@@ -47,7 +47,7 @@ class Groups:
 
 
 class Group:
-    def __init__(self, group, pkg):
+    def __init__(self, group, pkg=None):
         self.id = group[0]
         self.pkg = pkg
         self.files = list(group[1])

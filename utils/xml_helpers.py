@@ -137,8 +137,8 @@ def exits_keyboard(root):
     samboard = "com.samsung.android.honeyboard"
     gboard = "com.google.android.inputmethod.latin"
     board = "com.android.inputmethod.latin"
-    ans = root.find(f"./node[@package='{board}']")
-    # ans = ans is not None or root.find(f"./node[@package='{gboard}']")
+    ans = root.find(f"./node[@package='{gboard}']")
+    ans = ans is not None or root.find(f"./node[@package='{board}']")
     return ans is not None
 
 

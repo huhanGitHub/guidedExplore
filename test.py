@@ -1,5 +1,5 @@
 import definitions
-from utils.xml_helpers import bounds2int,path2tree
+from utils.xml_helpers import bounds2int,path2tree, bounds2p
 from xml.etree import ElementTree
 import os
 from utils.group import Groups
@@ -17,10 +17,15 @@ def too_small(element):
 
 def list2element(g):
     if type(g) is list:
-        return ElementTree.Element("node", {"class":"my.group",
-            "bounds":f"{merge_elements(g)}"})
-    else:
+        if len(g) == 1:
+            return g[0]
+        else:
+            return ElementTree.Element("node", {"class":"my.group",
+                "bounds":f"{merge_elements(g)}"})
+    elif type(g) is ElementTree.Element:
         return g
+    else:
+        raise RuntimeError(type(g))
 
 
 def group_to_str(g):
@@ -41,8 +46,55 @@ def merge_elements(es):
     return f"[{x},{y}][{a},{b}]"
 
 
+def _group_leaves(elements):
+    groups = []
+    temp = []
+    for e in elements:
+        if len(temp) == 0:
+            temp.append(e)
+        else:
+            (x, y) = bounds2p(temp[-1].attrib["bounds"], center=True)
+            _x, _y = bounds2p(e.attrib["bounds"], center=True)
+            if abs(x - _x) <= 10 or abs(_y - y) <= 10:
+                temp.append(e)
+            else:
+                groups.append(list2element(temp))
+                temp = [e]
+    if len(temp) != 0:
+        groups.append(list2element(temp))
+    return groups
+
+
+def _squeeze_single(element):
+    while True:
+        if len(element) == 1:
+            element = element.find("./")
+            print("squeezed: ", element.attrib["class"], element.attrib["bounds"])
+        else:
+            return element
+
+def _squeeze_tree(tree):
+    """
+    replace elements with one child to its child
+    """
+    tree = _squeeze_single(tree)
+    queue = [tree]
+    while len(queue) != 0:
+        e = queue.pop()
+        children = list(e.findall("./"))
+        for child in children:
+            e.remove(child)
+            after = _squeeze_single(child)
+            # after.attrib["bounds"] = child.attrib["bounds"]
+            e.append(after)
+        for child in e:
+            if len(child) != 0:
+                queue.append(child)
+    return tree
+
 def _split_element(element):
     assert len(element) != 0, "spliting a leaf node"
+    print("spliting: ", element.attrib["class"], element.attrib["bounds"])
     groups = []
     temp = []
     for child in element:
@@ -50,18 +102,19 @@ def _split_element(element):
             temp.append(child)
         else:
             if len(temp) != 0:
-                groups.append(deepcopy(temp))
+                # groups.append(deepcopy(temp))
+                groups.extend(_group_leaves(temp))
                 temp = []
             groups.append(child)
 
     if len(temp) != 0:
-        groups.append(temp)
+        groups.extend(_group_leaves(temp))
+        # groups.append(temp)
     groups = map(list2element, groups)
     groups = filter(too_small, groups)
-    groups = filter(lambda e: e.attrib.get("package") != "com.android.systemui",groups)
     return groups
 
-def group_elements(tree):
+def group_elements(tree, pkg):
     def str_g(g):
         if type(g) is list:
             return f"L: {len(g)}"
@@ -73,9 +126,20 @@ def group_elements(tree):
             print(i, str_g(g)) 
         print()
 
-    queue = [tree]
+    tree = tree.find(f"./node[@package='{pkg}']")
+    try:
+        queue = _split_element(tree)
+    except AssertionError:
+        queue = [tree]
+    queue = list(queue)
     ans = []
+    print("start")
+    print_q(queue)
+    # pre: queue are groups, ans are grouped leaves
     while len(queue) + len(ans) <= 4:
+        queue = sorted(queue, key=area, reverse=True)
+        queue = list(filter(too_small, queue)
+        print("filtered")
         print_q(queue)
         try:
             e = queue.pop(0)
@@ -89,22 +153,26 @@ def group_elements(tree):
                 queue.append(e)
                 break
             else:
-                queue.extend(_split_element(e))
+                queue.extend(split)
         except AssertionError:
             # my.group
             ans.append(e)
-        queue = sorted(queue, key=area, reverse=True)
+        print("filtering")
+        print_q(queue)
         # queue = sorted(queue, key=area)
+    # end: queue are groups, ans are grouped leaves
+    print("done:")
+    print_q(ans +queue)
     return ans + queue
 
 
 def _test():
     out = os.path.join(definitions.DATA_DIR, "test")
-    for g in Groups.from_folder(os.path.join(definitions.DATA_DIR, "example"))[:10]:
-        # if g.id != "1658671534":
-        #     continue
-        pes = group_elements(g.ptree())
-        tes = group_elements(g.ttree())
+    for g in Groups.from_out_dir(os.path.join(definitions.DATA_DIR, "example")):
+        # if g.pkg != "com.alltrails.alltrails":
+            # continue
+        pes = group_elements(_squeeze_tree(g.ptree()), g.pkg)
+        tes = group_elements(_squeeze_tree(g.ttree()), g.pkg)
         g.copy_to(out)
         g.draw(out, [pes, tes])
 

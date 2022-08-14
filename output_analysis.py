@@ -7,6 +7,7 @@ import definitions
 from dynamic_testing.hierachySolver import bounds2int
 from utils.xml_helpers import *
 from utils.group import Groups
+from utils.path import create
 
 
 def remove_repated(groups):
@@ -109,15 +110,15 @@ def test_diversity():
         return min(d[0],d[1]), c
     out = os.path.join(definitions.DATA_DIR, "unique")
     gs = sorted((g for g in Groups.from_out_dir(out) if g.is_legit()), key=total_div, reverse=True)
-    out = os.path.join(definitions.DATA_DIR, "test")
     i = 0
     for g in gs:
+        out = create(os.path.join(definitions.DATA_DIR, "example", g.pkg))
         print(g)
         i += 1
         if i == 100:
             exit()
         g.copy_to(out)
-        g.draw(out, "leaf")
+        # g.draw(out, "leaf")
 
 
 if __name__ == "__main__":

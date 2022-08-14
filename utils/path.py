@@ -1,4 +1,11 @@
 import os
+import logging
+
+def create(dir):
+    if not os.path.exists(dir):
+        logging.info(f"Creating directory: {dir}")
+        os.mkdir(dir)
+    return dir
 
 
 def basename_no_ext(path):
