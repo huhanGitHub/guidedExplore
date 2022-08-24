@@ -37,6 +37,7 @@ VISIT_RATE_DIR = _create(os.path.join(DATA_DIR, "visited_rate"))
 OUT_DIR = _create(os.path.join(DATA_DIR, "outputs"))
 ERROR_DIR = _create(os.path.join(DATA_DIR, "error"))
 
+FILTERED_DIR = os.path.join(DATA_DIR, "unique")
 # Android identifiers (serial number or ip address)
 # get by $> adb devices
 PHONE_ID = "LMK420TSUKR8PVTG7P"

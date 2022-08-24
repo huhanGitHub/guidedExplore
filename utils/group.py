@@ -1,6 +1,7 @@
 import os
+import csv
 import shutil
-from itertools import groupby
+from itertools import groupby,tee
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -17,42 +18,57 @@ def bounds2xy(bounds):
     return xs, ys
 
 
-def group_id(f):
-    if type(f) is os.DirEntry:
-        f = f.name
-    return f.split("_")[0]
+def group_id(f_name):
+    if type(f_name) is os.DirEntry:
+        f_name = f_name.name
+    return f_name.split("_")[0]
 
 
-def get_act(f):
-    if type(f) is os.DirEntry:
-        f = basename_no_ext(f.name)
-    return f.split("_")[2]
+def get_act(f_name):
+    if type(f_name) is os.DirEntry:
+        f_name = basename_no_ext(f_name.name)
+    return f_name.split("_")[2]
 
 
 class Groups:
-    def from_folder(f, pkg=None):
+    def from_folder(f, pkg):
         files = os.scandir(f)
-        if pkg is None:
-            pkg = os.path.basename(f)
+
+        def from_groupby(g):
+            id = g[0]
+            entries, c = tee(g[1], 2)
+            act = get_act(next(c))
+            return Group(id, pkg, act, list(entries))
         groups = groupby(sorted(files, key=group_id), group_id)
-        groups = [Group(g, pkg) for g in groups]
+        groups = [from_groupby(g) for g in groups]
         return groups
 
     def from_out_dir(out_dir=definitions.OUT_DIR):
+        """folder of folders"""
         return [
             g
             for app in os.scandir(out_dir)
             for g in Groups.from_folder(app.path, app.name)
         ]
 
+    def from_scv(csv_path):
+        with open(csv_path) as f:
+            reader = csv.reader(f)
+            next(reader)
+            lines = list(reader)
+            base = os.path.dirname(csv_path)
+            files = lambda p : os.scandir(os.path.join(base, p))
+            return [Group(l[3], l[0], l[1], files(l[3])) for l in lines]
+
 
 class Group:
-    def __init__(self, group, pkg=None):
-        self.id = group[0]
+    def __init__(self, id, pkg, act, files):
         self.pkg = pkg
-        self.files = list(group[1])
-        self.act = get_act(self.files[0])
-        for f in self.files:
+        self.act = act
+        self.id = id
+        # entries
+        self.files = files
+        for f in files:
             if f.name.endswith(".xml"):
                 if "phone" in f.name:
                     self.pxml = f
@@ -63,11 +79,27 @@ class Group:
                     self.ppng = f
                 else:
                     self.tpng = f
+    # def __init__(self, group, pkg=None):
+    #     self.id = group[0]
+    #     self.pkg = pkg
+    #     self.files = list(group[1])
+    #     self.act = get_act(self.files[0])
+    #     for f in self.files:
+    #         if f.name.endswith(".xml"):
+    #             if "phone" in f.name:
+    #                 self.pxml = f
+    #             else:
+    #                 self.txml = f
+    #         else:
+    #             if "phone" in f.name:
+    #                 self.ppng = f
+    #             else:
+    #                 self.tpng = f
 
     def __repr__(self):
-        return self.id + self.act
+        return f"{self.id} {self.act} {self.pkg}"
 
-    def is_same(self, other):
+    def is_same(self, other, rate=0.9):
         if other is None:
             return False
         if self.act != other.act:
@@ -77,8 +109,8 @@ class Group:
             return Path(entry.path).read_text()
 
         return is_same_activity(
-            content(self.txml), content(other.txml), 0.9
-        ) and is_same_activity(content(self.pxml), content(other.pxml), 0.9)
+            content(self.txml), content(other.txml), rate
+        ) and is_same_activity(content(self.pxml), content(other.pxml), rate)
 
     def copy_to(self, dest):
         for f in self.files:
@@ -140,10 +172,15 @@ class Group:
         c = sum(self.xy_complexity())
         return min(d[0],d[1]), c
 
-    def is_legit(self):
+    def has_keyboard(self):
+        return exits_keyboard(self.ttree()) or exits_keyboard(self.ptree())
 
+    def is_legit(self):
         return (len(self.files) == 4
-                and self.is_paired() and self.complex_enough() and self.diverse_enough())
+                and self.is_paired()
+                and self.complex_enough()
+                and self.diverse_enough()
+                and not self.has_keyboard())
 
     def is_paired(self):
         # NOTE: naive
@@ -180,6 +217,55 @@ class Group:
             # TODO
             out_png = os.path.join(out, png.name)
             image.save(out_png)
+
+    def wireframe(self, elements, ret):
+        def draw_wireframe(image, tree, xbase, color_map=COLOR_MAP):
+            draw = ImageDraw.Draw(image)
+            if elements == "all":
+                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']"))
+            elif elements == "leaf":
+                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']") if len(e) == 0)
+            elif elements == "nonleaf":
+                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']") if len(e) != 0)
+            else:
+                es = elements
+
+            for element in es:
+                bounds = bounds2int(element.attrib["bounds"])
+                bounds[0] += xbase
+                bounds[2] += xbase
+                cls = element.attrib["class"]
+                color = color_map[cls]
+                draw.rectangle(bounds, outline=color, width=3)
+
+        pimage = Image.open(self.ppng.path)
+        timage = Image.open(self.tpng.path)
+        # tsize = timage.size
+        size = timage.size
+        if ret == "join":
+            new_image = Image.new('RGB',(2*size[0], size[1]), (255,255,255))
+            draw_wireframe(new_image, self.ttree(), size[0])
+            # phone
+            pimage = Image.new('RGB', pimage.size, (255,255,255))
+            draw_wireframe(pimage, self.ptree(), 0)
+            pimage.thumbnail(size, Image.ANTIALIAS)
+            # pimage.resize(size)
+            new_image.paste(pimage, (0, 0))
+            # screen bounds
+            draw = ImageDraw.Draw(new_image)
+            x, y = pimage.size
+            draw.line((x, 0, x, y), fill=(0,0,0), width=2)
+            x, y = timage.size
+            draw.line((x, 0, x, y), fill=(0,0,0), width=2)
+            return new_image
+        elif ret == "split":
+            pimage = Image.new('RGB', pimage.size, (250,250,250))
+            draw_wireframe(pimage, self.ptree(), 0)
+            timage = Image.new('RGB',timage.size, (250,250,250))
+            draw_wireframe(timage, self.ttree(), 0)
+            return pimage, timage
+        else:
+            raise RuntimeError("unknown ret argument")
 
     def group_element(self):
         pass

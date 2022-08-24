@@ -41,6 +41,7 @@ COLOR_MAP = {
     "android.widget.MultiAutoCompleteTextView": (219, 255, 0),
     "android.widget.HorizontalScrollView": (193, 255, 0),
     "androidx.drawerlayout.widget.DrawerLayout": (167, 255, 0),
+    "android.support.v4.widget.DrawerLayout": (167, 255, 0),
     "android.widget.LinearLayout": (140, 255, 0),
     "android.app.ActionBar$Tab": (114, 255, 0),
     "android.widget.ToggleButton": (87, 255, 0),
@@ -49,6 +50,7 @@ COLOR_MAP = {
     "android.widget.CheckedTextView": (8, 255, 0),
     "android.widget.RelativeLayout": (0, 255, 17),
     "android.widget.ImageView": (0, 255, 43),
+    'com.google.android.material.chip.Chip':  (0, 255, 43),
     "com.android.internal.widget.ViewPager": (0, 255, 70),
     "android.widget.EditText": (0, 255, 96),
     "s1.a": (0, 255, 123),
@@ -86,6 +88,8 @@ COLOR_MAP = {
     "android.widget.TwoLineListItem": (255, 0, 52),
     "my.group": (255, 0, 52),
 }
+
+
 
 
 def color_mapper(m=COLOR_MAP):

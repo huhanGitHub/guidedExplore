@@ -13,13 +13,13 @@ from utils.path import create
 def remove_repated(groups):
     ans = [None]
     for group in sorted(groups, key=lambda g: g.act):
-        if not group.is_same(ans[-1]):
+        if not group.is_same(ans[-1], 0.7):
             ans.append(group)
     return ans[1:]
 
 
-def print_statistics():
-    apps = [d for d in os.scandir(definitions.OUT_DIR) if d.is_dir()]
+def print_statistics(data_dir = definitions.OUT_DIR):
+    apps = [d for d in os.scandir(data_dir) if d.is_dir()]
     group_nums = []
     unique_nums = []
     no_groups = 0
@@ -80,15 +80,26 @@ def test():
         print(f"copy {g} to {dest}")
 
 
-def remove():
+def move_to_unique():
     for entry in os.scandir(definitions.OUT_DIR):
         path = entry.path
-        groups = sorted(Groups.from_folder(path), key=lambda g:g.complexity())
-        left = {g.act: g for g in groups}.values()
-        if len(left) > 0:
+        gs = filter(lambda g: g.is_legit(), Groups.from_folder(path, entry.name))
+        gs = sorted(gs, key=lambda g:g.complexity())
+        gs = list({g.act: g for g in gs}.values())[:40]
+        for g in gs:
             out = definitions._create(os.path.join(definitions.DATA_DIR, "unique", entry.name))
-        for g in left:
+            # print(out)
             g.copy_to(out)
+
+
+def move_to_unique2():
+    gs = filter(lambda g: g.is_legit(), Groups.from_out_dir())
+    gs = sorted(gs, key=lambda g: (g.act, g.id))
+    prev = None
+    out = lambda pkg: definitions._create(os.path.join(definitions.DATA_DIR, "unique2", pkg))
+    for g in gs:
+        if not g.is_same(prev, 0.7):
+            g.copy_to(out(g.pkg))
 
 
 def class_distribution(groups):
@@ -126,8 +137,10 @@ if __name__ == "__main__":
         # know classes
         # how to map?
     # TODO xml complexity by class type
-    test_diversity()
-    # print_statistics()
+    # test_diversity()
+    print_statistics()
+    # print_statistics(definitions.DATA_DIR+"/unique")
     # remove()
+    # move_to_unique()
 
 

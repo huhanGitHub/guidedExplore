@@ -255,7 +255,7 @@ def run(device, apk=None):
     # TODO check os.system commands if multi connected devices
     if apk is None:
         apks = unexplored_apks()
-        print(f"unexplored: {apks[:10]}\nlen:{len(apks)}")
+        print(f"unexplored: {apks[:10]}...\nlen:{len(apks)}")
     else:
         apks = [apk]
     for apk_path in apks:
@@ -316,5 +316,5 @@ def main():
 
 if __name__ == "__main__":
     # cli()
-    # main()
-    onetime()
+    main()
+    # onetime()
