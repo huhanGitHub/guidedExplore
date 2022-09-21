@@ -32,15 +32,15 @@ def print_statistics(data_dir = definitions.OUT_DIR):
             no_groups += 1
             continue
         group_nums.append(len(groups))
-        groups = [g for g in remove_repated(groups) if g.enough_nodes(5)]
+        groups = [g for g in groups if g.is_legit()]
         # unique_nums.append(len(groups))
-        unique_nums.append(min(40, len(groups)))
+        unique_nums.append(min(100, len(groups)))
 
         if len(groups) > 100:
             print(f"{app} has {len(groups)} groups")
             # print(min([g for g in groups], key=minfunc))
     print(f"total pairs: {sum(group_nums)}")
-    print(f"unique pairs: {sum(unique_nums)}")
+    print(f"useful pairs: {sum(unique_nums)}")
 
     with open(definitions.FAIL_LOG_PATH) as f:
         lines = f.readlines()
@@ -52,7 +52,6 @@ def print_statistics(data_dir = definitions.OUT_DIR):
 
 
 def plot(nums):
-    print(nums)
     import seaborn as sns
     # plot = sns.lineplot(x=range(0, len(unique_nums)), y=unique_nums)
     sns.histplot(nums, binwidth=1)

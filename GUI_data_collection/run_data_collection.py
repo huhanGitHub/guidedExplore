@@ -57,8 +57,7 @@ def one_at_a_level(bs, nb):
 
 
 def click_clickables(d: Device, succeed_link):
-    # TODO not use deeplink
-    return
+    # return
     xml = d.dump_hierarchy(compressed=True)
     root = ElementTree.fromstring(xml)
     bounds = clickable_bounds(root)

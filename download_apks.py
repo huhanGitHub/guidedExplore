@@ -30,7 +30,8 @@ def downloaded_apks():
 
 def download_with_apkeep():
     with open("apps.json", "r") as f:
-        apps = [line.split("'")[1] for line in f.readlines() if "appId" in line]
+        # apps = [line.split("'")[1] for line in f.readlines() if "appId" in line]
+        apps = [l.strip() for l in f.readlines()]
         downloaded = downloaded_apks()
         print(f"total: {len(apps)}, downloaded: {len(downloaded)}")
         apps = [a for a in apps if a not in downloaded]
@@ -38,7 +39,7 @@ def download_with_apkeep():
             app = random.choice(list(apps))
             download(app, definitions.APK_DIR, x86_tablet)
             apps = [a for a in apps if a not in downloaded_apks()]
-            time.sleep(30)
+            time.sleep(10)
 
 
 if __name__ == "__main__":

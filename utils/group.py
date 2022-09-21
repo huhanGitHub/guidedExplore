@@ -1,7 +1,7 @@
 import os
 import csv
 import shutil
-from itertools import groupby,tee
+from itertools import groupby, tee
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -10,7 +10,7 @@ import definitions
 from utils.path import basename_no_ext
 from utils.xml_helpers import *
 from color_map import COLOR_MAP
- 
+
 
 def bounds2xy(bounds):
     xs = {i[0]: i for i in bounds}.keys()
@@ -31,6 +31,7 @@ def get_act(f_name):
 
 
 class Groups:
+    @staticmethod
     def from_folder(f, pkg):
         files = os.scandir(f)
 
@@ -39,10 +40,12 @@ class Groups:
             entries, c = tee(g[1], 2)
             act = get_act(next(c))
             return Group(id, pkg, act, list(entries))
+
         groups = groupby(sorted(files, key=group_id), group_id)
         groups = [from_groupby(g) for g in groups]
         return groups
 
+    @staticmethod
     def from_out_dir(out_dir=definitions.OUT_DIR):
         """folder of folders"""
         return [
@@ -51,13 +54,14 @@ class Groups:
             for g in Groups.from_folder(app.path, app.name)
         ]
 
+    @staticmethod
     def from_scv(csv_path):
         with open(csv_path) as f:
             reader = csv.reader(f)
-            next(reader)
+            next(reader)  # skip header
             lines = list(reader)
             base = os.path.dirname(csv_path)
-            files = lambda p : os.scandir(os.path.join(base, p))
+            files = lambda p: os.scandir(os.path.join(base, p))
             return [Group(l[3], l[0], l[1], files(l[3])) for l in lines]
 
 
@@ -79,6 +83,7 @@ class Group:
                     self.ppng = f
                 else:
                     self.tpng = f
+
     # def __init__(self, group, pkg=None):
     #     self.id = group[0]
     #     self.pkg = pkg
@@ -170,17 +175,19 @@ class Group:
     def complexity(self):
         d = self.diversity()
         c = sum(self.xy_complexity())
-        return min(d[0],d[1]), c
+        return min(d[0], d[1]), c
 
     def has_keyboard(self):
         return exits_keyboard(self.ttree()) or exits_keyboard(self.ptree())
 
     def is_legit(self):
-        return (len(self.files) == 4
-                and self.is_paired()
-                and self.complex_enough()
-                and self.diverse_enough()
-                and not self.has_keyboard())
+        return (
+            len(self.files) == 4
+            and self.is_paired()
+            and self.complex_enough()
+            and self.diverse_enough()
+            and not self.has_keyboard()
+        )
 
     def is_paired(self):
         # NOTE: naive
@@ -200,16 +207,25 @@ class Group:
             if elements == "all":
                 es = (e for e in tree.findall(f".//node[@package='{self.pkg}']"))
             elif elements == "leaf":
-                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']") if len(e) == 0)
+                es = (
+                    e
+                    for e in tree.findall(f".//node[@package='{self.pkg}']")
+                    if len(e) == 0
+                )
             elif elements == "nonleaf":
-                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']") if len(e) != 0)
+                es = (
+                    e
+                    for e in tree.findall(f".//node[@package='{self.pkg}']")
+                    if len(e) != 0
+                )
             else:
                 es = elements.pop(0)
 
             for element in es:
                 bounds = bounds2int(element.attrib["bounds"])
                 cls = element.attrib["class"]
-                color = COLOR_MAP[cls]
+                color = COLOR_MAP.get(cls)
+                color = "red" if color is None else color
                 draw.rectangle(bounds, outline=color, width=3)
                 # if cls not in drawed:
                 draw.text((bounds[0], bounds[1]), cls, font=font, fill=color)
@@ -220,13 +236,22 @@ class Group:
 
     def wireframe(self, elements, ret):
         def draw_wireframe(image, tree, xbase, color_map=COLOR_MAP):
+            font = ImageFont.truetype("SpaceMono-Regular.ttf", 20)
             draw = ImageDraw.Draw(image)
             if elements == "all":
                 es = (e for e in tree.findall(f".//node[@package='{self.pkg}']"))
             elif elements == "leaf":
-                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']") if len(e) == 0)
+                es = (
+                    e
+                    for e in tree.findall(f".//node[@package='{self.pkg}']")
+                    if len(e) == 0
+                )
             elif elements == "nonleaf":
-                es = (e for e in tree.findall(f".//node[@package='{self.pkg}']") if len(e) != 0)
+                es = (
+                    e
+                    for e in tree.findall(f".//node[@package='{self.pkg}']")
+                    if len(e) != 0
+                )
             else:
                 es = elements
 
@@ -236,17 +261,21 @@ class Group:
                 bounds[2] += xbase
                 cls = element.attrib["class"]
                 color = color_map[cls]
-                draw.rectangle(bounds, outline=color, width=3)
+                # draw.rectangle(bounds, fill=color, outline=color, width=2)
+                draw.rectangle(bounds, fill=color, outline="black", width=1)
+                # debug
+                if color == "white":
+                    draw.text((bounds[0], bounds[1]), cls, font=font, fill="black")
 
         pimage = Image.open(self.ppng.path)
         timage = Image.open(self.tpng.path)
         # tsize = timage.size
         size = timage.size
         if ret == "join":
-            new_image = Image.new('RGB',(2*size[0], size[1]), (255,255,255))
+            new_image = Image.new("RGB", (2 * size[0], size[1]), (255, 255, 255))
             draw_wireframe(new_image, self.ttree(), size[0])
             # phone
-            pimage = Image.new('RGB', pimage.size, (255,255,255))
+            pimage = Image.new("RGB", pimage.size, (255, 255, 255))
             draw_wireframe(pimage, self.ptree(), 0)
             pimage.thumbnail(size, Image.ANTIALIAS)
             # pimage.resize(size)
@@ -254,14 +283,14 @@ class Group:
             # screen bounds
             draw = ImageDraw.Draw(new_image)
             x, y = pimage.size
-            draw.line((x, 0, x, y), fill=(0,0,0), width=2)
+            draw.line((x, 0, x, y), fill=(0, 0, 0), width=2)
             x, y = timage.size
-            draw.line((x, 0, x, y), fill=(0,0,0), width=2)
+            draw.line((x, 0, x, y), fill=(0, 0, 0), width=2)
             return new_image
         elif ret == "split":
-            pimage = Image.new('RGB', pimage.size, (250,250,250))
+            pimage = Image.new("RGB", pimage.size, (250, 250, 250))
             draw_wireframe(pimage, self.ptree(), 0)
-            timage = Image.new('RGB',timage.size, (250,250,250))
+            timage = Image.new("RGB", timage.size, (250, 250, 250))
             draw_wireframe(timage, self.ttree(), 0)
             return pimage, timage
         else:

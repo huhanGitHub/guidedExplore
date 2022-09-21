@@ -2,6 +2,7 @@ import os
 import re
 from pathlib import Path
 from xml.etree import ElementTree
+from typing import List
 
 
 def path2tree(xml_path):
@@ -19,7 +20,7 @@ def classes(tree, pkg_name):
 def bounds2int(bounds: str):
     bounds = bounds.replace("][", ",")
     bounds = bounds[1:-1]
-    bounds = [int(i) for i in bounds.split(",")]
+    bounds: List[int] = [int(i) for i in bounds.split(",")]
     return bounds
 
 
