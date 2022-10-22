@@ -1,14 +1,17 @@
 import os
 import random
+from typing import Counter
+
+from uiautomator2 import shutil
 from utils.group import Groups
 import definitions
 import threading
 
 
-def remove_files(dir):
+def clear_folder(dir):
     for entry in os.scandir(dir):
         if entry.is_dir():
-            remove_files(entry)
+            clear_folder(entry)
         else:
             os.remove(entry)
 
@@ -53,11 +56,40 @@ def merge(g, i, len_gs, out):
         with open(test_list, "a+") as f:
             f.write(f"{path_a}\t{path_b}\n")
 
+
+def clean_outputs():
+    for g in Groups.from_out_dir(definitions.OUT_DIR):
+        if not g.is_legit():
+            for f in g.files:
+                os.remove(f.path)
+                print(f"remove {f.path}")
+
+
+def grouping_sample_prepare():
+    out = os.path.join(definitions.DATA_DIR, "sample")
+    clear_folder(out)
+    total = 0
+    for folder in os.scandir(definitions.OUT_DIR):
+        id = folder.name
+        gs = Groups.from_folder(folder.path, id)
+        c = Counter(g.act for g in gs).items()
+        common_acts = list(g[0] for g in c if g[1] > 10)
+        dest = os.path.join(out, id)
+        for act in common_acts:
+            for g in gs:
+                if g.act == act:
+                    definitions._create(dest)
+                    g.copy_to(dest)
+                    total += 1
+                    break
+    print(total)
+
+
 def main():
     csv_path = "/run/media/di/HHD0/codes/UIAutomation/uiautomator2/results/results.csv"
     # out = "/home/di/Documents/FIT4441/pytorch-CycleGAN-and-pix2pix/datasets/androidui/"
     out = "/home/di/Documents/FIT4441/guidedExplore/data/uiauto/"
-    remove_files(out)
+    clear_folder(out)
     gs = Groups.from_scv(csv_path)
     gs.extend(Groups.from_out_dir(definitions.FILTERED_DIR))
     # gs = gs[:10]
@@ -74,4 +106,6 @@ def main():
 
 if __name__ == "__main__":
     # asyncio.run(main())
-    main()
+    # main()
+    # grouping_sample_prepare()
+    # clean_outputs()

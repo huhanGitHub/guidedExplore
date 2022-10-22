@@ -24,8 +24,17 @@ def bounds2int(bounds: str):
     return bounds
 
 
+def bounds_of(e):
+    bounds = e.attrib.get("bounds")
+    assert bounds is not None
+    return bounds2int(bounds)
+
+
 def bounds2p(b, center=False):
-    (x1, y1, x2, y2) = bounds2int(b)
+    if type(b) is str:
+        (x1, y1, x2, y2) = bounds2int(b)
+    else:
+        (x1, y1, x2, y2) = b
     if center:
         x = (x1 + x2) / 2
         y = (y1 + y2) / 2

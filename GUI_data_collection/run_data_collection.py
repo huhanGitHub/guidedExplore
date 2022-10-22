@@ -57,7 +57,7 @@ def one_at_a_level(bs, nb):
 
 
 def click_clickables(d: Device, succeed_link):
-    # return
+    return
     xml = d.dump_hierarchy(compressed=True)
     root = ElementTree.fromstring(xml)
     bounds = clickable_bounds(root)
@@ -76,7 +76,10 @@ def click_clickables(d: Device, succeed_link):
         # TODO check if is changed
         try:
             d.hide_keyboard(root)
-            if not is_same_activity(xml, d.dump_hierarchy(compressed=True), 0.9):
+            if (
+                not is_same_activity(xml, d.dump_hierarchy(compressed=True), 0.7)
+                or "Launcher" not in d.current_activity()
+            ):
                 d.collect_data()
                 logging.info("collected a pair")
         except Exception as e:

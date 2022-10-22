@@ -3,6 +3,8 @@ import csv
 import shutil
 from itertools import groupby, tee
 from pathlib import Path
+from xml.dom.minidom import Element
+from xml.etree import ElementTree
 
 from PIL import Image, ImageDraw, ImageFont
 import definitions
@@ -122,6 +124,8 @@ class Group:
             # dest = os.path.join(dest, f.name)
             shutil.copy(f.path, dest)
 
+    # def copy_and_process(self, dest, )
+
     def ptree(self):
         try:
             return self._ptree
@@ -136,12 +140,16 @@ class Group:
             self._ttree = path2tree(self.txml)
             return self._ttree
 
-    def node_num(self):
+    def node_num(self, only_child=False):
         try:
             return self._pn, self._tn
         except AttributeError:
-            self._pn = len(self.ptree().findall(f".//node[@package='{self.pkg}']"))
-            self._tn = len(self.ttree().findall(f".//node[@package='{self.pkg}']"))
+            if only_child:
+                self._pn = len(self.ptree())
+                self._tn = len(self.ttree())
+            else:
+                self._pn = len(self.ptree().findall(f".//node[@package='{self.pkg}']"))
+                self._tn = len(self.ttree().findall(f".//node[@package='{self.pkg}']"))
             return self._pn, self._tn
 
     def enough_nodes(self, target=5):
@@ -196,6 +204,37 @@ class Group:
     def complex_enough(self):
         return self.enough_nodes(10)
 
+    def xml_copy_to(self, out, pes, tes):
+        for path, es in [
+            (os.path.join(out, self.pxml.name), pes),
+            (os.path.join(out, self.txml.name), tes),
+        ]:
+
+            ele = ElementTree.Element(
+                "node",
+                {"pkg": self.pkg, "act": self.act},
+            )
+            for e in es:
+                bounds = e.attrib.get("bounds")
+                bounds = bounds.replace("][", ",")
+                bounds = bounds[1:-1]
+                [x1, y1, x2, y2] = bounds.split(",")
+                ele.append(
+                    ElementTree.Element(
+                        "node",
+                        {
+                            "class": e.attrib["class"],
+                            "x1": x1,
+                            "y1": y1,
+                            "x2": x2,
+                            "y2": y2,
+                        },
+                    )
+                )
+            with open(path, "wb") as f:
+                ElementTree.indent(ele)
+                ElementTree.ElementTree(ele).write(f)
+
     def draw(self, out, elements="all"):
         assert os.path.isdir(out)
         for png, tree in [(self.ppng, self.ptree()), (self.tpng, self.ttree())]:
@@ -223,7 +262,7 @@ class Group:
 
             for element in es:
                 bounds = bounds2int(element.attrib["bounds"])
-                cls = element.attrib["class"]
+                cls = f"{element.attrib['class']} {element.attrib['index']}"
                 color = COLOR_MAP.get(cls)
                 color = "red" if color is None else color
                 draw.rectangle(bounds, outline=color, width=3)

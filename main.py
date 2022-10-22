@@ -247,6 +247,19 @@ def multi_run(devices):
         i.join()
 
 
+def cleanup(app_name):
+    try:
+        os.remove(os.path.join(definitions.APK_DIR, f"{app_name}.apk"))
+        os.remove(os.path.join(definitions.REPACKAGE_DIR, f"{app_name}.apk"))
+        os.remove(os.path.join(definitions.REPACKAGE_DIR, f"{app_name}.apk.idsig"))
+        shutil.rmtree(
+            os.path.join(definitions.DECOMPILE_DIR, f"{app_name}"), ignore_errors=True
+        )
+        print(f"remove {app_name}")
+    except FileNotFoundError:
+        pass
+
+
 def run(device, apk=None):
     """
     explore one apk or apks under `definitions.APK_DIR`
@@ -296,14 +309,11 @@ def run(device, apk=None):
             log_failure(basename_no_ext(apk_path))
         finally:
             device.app_stop_all()
-            device.app_uninstall(name)
-
-def onetime():
-    # em = Device(definitions.EM_ID, False, True)
-    em = definitions.get_device()
-    for app in apps:
-        apk = os.path.join(definitions.APK_DIR, f"{app}.apk")
-        run(em, apk)
+            try:
+                device.app_uninstall(name)
+                cleanup([name])
+            except NameError:
+                pass
 
 
 def main():
@@ -311,10 +321,10 @@ def main():
     apk = None
     # em = definitions.get_device()
     em = Device(definitions.EM_ID, True, False)
-    run(em, apk)
+    while True:
+        run(em, apk)
 
 
 if __name__ == "__main__":
     # cli()
     main()
-    # onetime()

@@ -24,6 +24,10 @@ class Device(u2.Device):
     Change density-independent pixels(dp)
     https://developer.android.com/training/multiscreen/screendensities
     """
+    TABLET_W = 1300
+    TABLET_H = 800
+    PHONE_W = 400
+    PHONE_H = 900
 
     def __init__(self, id, flip_res=True, tablet_natural=False):
         # TODO disable animations
@@ -50,9 +54,6 @@ class Device(u2.Device):
             self._flip_res = False
         return self
 
-    TABLET_W = 1300
-    TABLET_H = 800
-
     def to_tablet(self):
         logging.debug("changing to tablet resolution")
         return self.res(Device.TABLET_W, Device.TABLET_H)
@@ -62,9 +63,6 @@ class Device(u2.Device):
             self.info["displaySizeDpX"] == Device.TABLET_W
             and self.info["displaySizeDpY"] == Device.TABLET_H
         )
-
-    PHONE_W = 400
-    PHONE_H = 900
 
     def to_phone(self):
         logging.debug("changing to phone resolution")

@@ -1,6 +1,4 @@
 import threading
-
-from pandas.io.formats.format import buffer_put_lines
 from color_map import CLASS_MAP
 import definitions
 from utils.xml_helpers import bounds2int, bounds2p, bounds_of
@@ -13,16 +11,6 @@ from utils.group import Groups
 def big_enough(element):
     (a, b, c, d) = bounds2int(element.attrib["bounds"])
     return (d - b) >= 25 and (c - a) >= 25
-
-
-def class_of_image(element):
-    (a, b, c, d) = bounds2int(element.attrib["bounds"])
-    x = c - a
-    y = d - b
-    if x <= 150 or y <= 150:
-        return "icon"
-    else:
-        return "image"
 
 
 def group_to_str(g):
@@ -43,8 +31,44 @@ def merge_bounds(es):
     return f"[{x},{y}][{a},{b}]"
 
 
-def atomic_class(group, x1, y1, x2, y2, type):
-    classes = set(c for e in group for c in e.attrib.get("class").split(","))
+def guess_class(group, x1, y1, x2, y2, type):
+    if type == 'tablet':
+        H = Device.TABLET_H
+        W = Device.TABLET_W
+    elif type == 'phone':
+        H = Device.PHONE_H
+        W = Device.PHONE_W
+
+    if y2 < H * 0.2 and y1 == 48:
+        return "TopBar"
+    # elif y1 > H * 0.9:
+        # return "BottomBar"
+
+    allbounds = (bounds2int(e.attrib.get("bounds")) for e in group)
+    classes = set(e.attrib.get("class").split(".")[-1] for e in group)
+    x1s = set((b[0], b[1] - b[3]) for b in allbounds)
+    y1s = set(b[1] for b in allbounds)
+    if len(x1s) == 1:
+        return "List"
+    elif len(y1s) == 1:
+        return "HorList"
+    # search
+    # top tab layout
+    # list view
+    # pic side info
+    # big pic
+    # side nav
+    # bottom tab layout
+    elif "tab" in classes:
+        return "Tab"
+    elif classes == set(["text"]):
+        return "TextInfo"
+    # icon + info
+    elif classes == set(["text", "control"]):
+        return "TextControl"
+    elif "image" in classes:
+        if classes == set(["text", "image"]):
+            return "IconInfo"
     return ",".join(classes)
 
 
@@ -57,7 +81,7 @@ def list2element(g, device):
             ele = ElementTree.Element(
                 "node",
                 {
-                    "class": atomic_class(g, *bounds2int(bounds), device),
+                    "class": guess_class(g, *bounds2int(bounds), device),
                     "bounds": f"{bounds}",
                     "index": g[0].attrib["index"],
                 },
@@ -69,7 +93,7 @@ def list2element(g, device):
         raise RuntimeError(type(g), " is not tree element")
 
 
-def _group_by_position(elements, device):
+def _group_by_position(elements, type):
     "group elements by bounds"
     groups = []
     buffer = []
@@ -87,116 +111,13 @@ def _group_by_position(elements, device):
                 buffer.append(e)
             else:
                 if len(buffer) != 0:
-                    groups.append(list2element(buffer, device))
+                    groups.append(list2element(buffer, type))
                     buffer = []
                 buffer.append(e)
     if len(buffer) != 0:
         # TODO keep child while merging
-        groups.append(list2element(buffer, device))
+        groups.append(list2element(buffer, type))
     return groups
-
-
-def guess_group_class(group, x1, y1, x2, y2, type):
-    classes = set(c for e in group for c in e.attrib.get("class").split(","))
-    allbounds = list(bounds_of(e) for e in group)
-    same_y = (
-        len(set(b[1] for b in allbounds)) == 1 or len(set(b[3] for b in allbounds)) == 1
-    )
-    same_x = (
-        len(set(b[0] for b in allbounds)) == 1 or len(set(b[2] for b in allbounds)) == 1
-    )
-    add = ""
-    if len(classes) == 1 or ("horlist" in classes and len(classes) == 2):
-        if same_y:
-            add += "horlist,"
-        if same_x:
-            add += "list,"
-    cls = add + ",".join(classes)
-    return cls
-
-
-def component_group_name(comp, first, last, type):
-    if type == "tablet":
-        H = 1600
-        W = 2600
-    else:
-        H = 1800
-        W = 800
-
-    classes = set(c for c in comp.attrib.get("class").split(","))
-    (x1, y1, x2, y2) = bounds_of(comp)
-    x, y = x2 - x1, y2 - y1
-    # elif y1 > H * 0.9:
-    # return "BottomBar"
-    # search
-    # if cls == 'text' and 'search' in text_field.lower():
-    # cls = 'Search'
-    # top tab layout
-    # list view
-    # pic side info
-    # big pic
-    # side nav
-    # bottom tab layout
-    cls = ""
-
-    if first and y2 < H * 0.2 and y <= 200:
-        cls = "ToolBar"
-    elif last and y1 > H * 0.8 and x > W * 0.9 and y <= 200:
-        cls = "BottomTabLayout"
-    elif "horlist" in classes and "list" in classes:
-        cls = "GridLayout"
-    elif set(["horlist", "text"]) == classes and y2 < H * 0.5:
-        cls = "TopTabLayout"
-    elif "tab" in classes:  # normal at top
-        cls = "TopTabLayout"
-    elif "list" in classes:
-        cls = "ListView"
-    elif "control" in classes:
-        cls = "ControlItem"
-    elif "icon" in classes:
-        if "text" in classes:
-            cls = "IconInfo"
-        else:
-            # maybe ignore?
-            cls = "IconInfo"
-    elif "image" in classes:
-        # image size
-        if "text" in classes:
-            cls = "PicInfo"
-        else:
-            cls = "PicInfo"
-    elif "text" in classes:
-        text = comp.attrib.get("text")
-        if text is not None and "search" in text:
-            cls = "Search"
-        else:
-            cls = "TextInfo"
-    else:
-        if type == "phone":
-            cls = "Others"
-        else:
-            cls = "GridLayout"
-
-    cls = cls + ":" + ",".join(classes)
-    comp.attrib["class"] = cls
-    return cls
-
-
-def grouping_atomic(g, device):
-    assert type(g) is list
-    if len(g) == 1:
-        return g[0]
-
-    bounds = merge_bounds(g)
-    ele = ElementTree.Element(
-        "node",
-        {
-            "class": guess_group_class(g, *bounds2int(bounds), device),
-            "bounds": f"{bounds}",
-            "index": g[0].attrib["index"],
-        },
-    )
-    return ele
 
 
 def _group_by_pos_cls(elements, type, dir="hor"):
@@ -232,11 +153,11 @@ def _group_by_pos_cls(elements, type, dir="hor"):
                 buffer.append(e)
             else:
                 if len(buffer) != 0:
-                    groups.append(grouping_atomic(buffer, type))
+                    groups.append(list2element(buffer, type))
                     buffer = []
                 buffer.append(e)
     if len(buffer) != 0:
-        groups.append(grouping_atomic(buffer, type))
+        groups.append(list2element(buffer, type))
     return groups
 
 
@@ -259,48 +180,43 @@ def _group_by_structure(element, type):
 
     def group_by_type(g):
         return list2element(g, type)
-
     grouped = list(map(group_by_type, grouped))
     return ungrouped, grouped
-
-
-def print_g(g):
-    for e in g:
-        e = e.attrib
-        print(
-            f"{e['index']} {e['class']} {e['bounds']} {e.get('text')} {e.get('resource-id')}"
-        )
 
 
 def group_elements(tree, pkg, type):
     # preprocess tree
     tree = tree.find(f"./node[@package='{pkg}']")
     for i, e in enumerate(tree.iter()):
-        if len(e) == 1:  # one child
+        if len(e) == 1:
             e[0].attrib["bounds"] = e.attrib["bounds"]
-
         e.attrib["index"] = str(i)
         text_field = e.attrib.get("text")
         cls = CLASS_MAP.get(e.attrib.get("class"))
-        if cls is None:
-            if len(text_field) > 0:
-                cls = "text"
+        if cls is not None and len(cls) > 0:
+            e.attrib["class"] = cls
+        else:
+            if cls is None and len(text_field) > 0:
+                e.attrib["class"] = "text"
             else:
-                cls = e.attrib["class"].split(".")[-1]
-                # common errors
-                if cls == "View":
-                    cls = "text"
-                elif cls == "LinearLayout" and len(e) == 0:
+                short = e.attrib["class"].split(".")[-1]
+                e.attrib["class"] = short
+                if "LinearLayout" == short and len(e) == 0:
                     (x1, y1, x2, y2) = bounds_of(e)
                     if (y2 - y1) / (x2 - x1) < 1.5:
-                        cls = "image"
-        if cls == "image":
-            cls = class_of_image(e)
-        e.attrib["class"] = cls
+                        e.attrib["class"] = "image"
+
+    def print_g(g):
+        for e in g:
+            e = e.attrib
+            print(f"{e['index']} {e['class']} {e['bounds']} {e.get('text')} {e.get('resource-id')}")
 
     queue = [tree]
     grouped = []
     while True:
+        # print("===>>> grouped")
+        # print_g(grouped)
+        # input("next?")
         try:
             e = queue.pop(0)
         except IndexError:
@@ -321,14 +237,6 @@ def group_elements(tree, pkg, type):
     res = sorted(res, key=by_index)
     res = _group_by_pos_cls(res, type, "hor")
     res = _group_by_pos_cls(res, type, "ver")
-    # res = _group_by_pos_cls(res, type, "hor")
-    for i, e in enumerate(res):
-        first, last = False, False
-        if i == 0:
-            first = True
-        if i == len(res) - 1:
-            last = True
-        component_group_name(e, first, last, type)
 
     # newtree = ElementTree.Element("node")
     # for e in pes:
@@ -339,32 +247,28 @@ def group_elements(tree, pkg, type):
 
 
 def _test():
-    base = definitions._create(os.path.join(definitions.DATA_DIR, "test-grouping1"))
-    source = os.path.join(definitions.DATA_DIR, "unique")
+    base = definitions._create(os.path.join(definitions.DATA_DIR, "test-grouping2"))
 
-    gid = "1664012114"
-    gid = None
-    pkg = "com.google.android.youtube"
+    pkg = "cn.wps.moffice_eng"
     pkg = None
     if pkg is None:
-        for folder in os.scandir(source):
-            definitions._create(os.path.join(base, folder.name))
+        source = os.path.join(definitions.DATA_DIR, "sample")
         groups = (g for g in Groups.from_out_dir(source) if g.is_legit())
     else:
-        source = os.path.join(source, pkg)
+        source = os.path.join(definitions.DATA_DIR, "sample", pkg)
         groups = (g for g in Groups.from_folder(source, pkg) if g.is_legit())
 
     def _grouping_one(g):
         print(g)
-        out = os.path.join(base, g.pkg)
         pt = g.ptree()
         pes = group_elements(pt, g.pkg, "phone")
         tt = g.ttree()
         tes = group_elements(tt, g.pkg, "tablet")
-        g.xml_copy_to(out, pes, tes)
+        out = definitions._create(os.path.join(base, g.pkg))
+        g.copy_to(out)
         g.draw(out, [pes, tes])
 
-    if pkg is None:
+    if PAL:
         threads = [
             threading.Thread(target=_grouping_one, args=[g])
             for i, g in enumerate(groups)
@@ -375,12 +279,10 @@ def _test():
             thread.join()
     else:
         for g in groups:
-            if gid:
-                if g.id == gid:
-                    _grouping_one(g)
-            else:
-                _grouping_one(g)
+            # if g.id == "1663772752":
+            _grouping_one(g)
 
 
 if __name__ == "__main__":
+    PAL = True
     _test()
