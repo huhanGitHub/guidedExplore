@@ -2,7 +2,7 @@
 Step 1: install required packages in the requirement.txt
 
 Step 2:
-set the following configuration of this test in the dynamic_testing/dynamic_GUI_testing.py：
+set your configuration of this test in the dynamic_testing/dynamic_GUI_testing.py：
 
     deviceId = '192.168.57.105'
     # deviceId = 'cb8c90f4'
