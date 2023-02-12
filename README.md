@@ -28,3 +28,20 @@ log = r'../data/visited_rate/youtube.txt'
 - resolution and orientation
     - if device x-axis is at longer side (i.e Device().infoand some at shorter side
 2. larger numer of apks
+
+
+## About Our dataset
+Please cite our paper if you use the dataset:
+....
+
+The dataset includes UI object type labels (e.g., BUTTON, IMAGE, CHECKBOX) that describe a UI object's semantic type on Android app screenshots. It is used to ...
+
+Each screenshot has four files (png and XML for both phone and tablet), which are located at `data/<app_id>/` with file name pattern `<pair_id>_<device_type>_<activiey_name>.<file_type>`.
+
+XML files contain the entire UI object captured by `uiautomator2` at runtime. Each node in the object contained necessary attributes such as `class` and `bounds`. PNG files are also provided for visual comparison and debugging purposes.
+
+The entire data collection pipeline is the following:
+1. Using `scraper.js` to scrap apps from the google app store and save it to file `apps.json` (mainly to get'add_id` for downloading).
+2. Use `download_apks.py` to download. Note (apkeep)[https://github.com/EFForg/apkeep] is required.
+3. Update necessary variables inside `definitions.py`.
+4. Run `main.py` to collect the data.
