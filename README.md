@@ -42,6 +42,6 @@ XML files contain the entire UI object captured by `uiautomator2` at runtime. Ea
 
 The entire data collection pipeline is the following:
 1. Using `scraper.js` to scrap apps from the google app store and save it to file `apps.json` (mainly to get'add_id` for downloading).
-2. Use `download_apks.py` to download. Note (apkeep)[https://github.com/EFForg/apkeep] is required.
+2. Use `download_apks.py` to download. Note [apkeep](https://github.com/EFForg/apkeep) is required.
 3. Update necessary variables inside `definitions.py`.
 4. Run `main.py` to collect the data.
