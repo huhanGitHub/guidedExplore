@@ -1,3 +1,12 @@
+# News
+We are pleased to note that our tool, along with its variants, have been utilized and contributed to the following works:
+
+[Papt dataset](https://github.com/huhanGitHub/papt) (accepted by NeurIPS 2023). [Paper](https://arxiv.org/abs/2310.04755)
+
+[Voicify](https://github.com/vuminhduc796/Voicify) (accepted by Ubicomp 2023). [Paper](https://arxiv.org/pdf/2305.05198.pdf)
+
+
+
 # guidedExplore
 Step 1: install required packages in the requirement.txt
 
