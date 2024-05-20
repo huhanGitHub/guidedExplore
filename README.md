@@ -20,6 +20,18 @@ Delm is now primarily used as a GUI collection tool in my later works, not as a 
 
 I will find a slot to release a version that corresponds to the TOSEM paper after finishing my phd thesis. 
 
+If this tool benifits your work, we hope you cite our paper.
+
+
+@article{hu2024enhancing,
+  title={Enhancing GUI Exploration Coverage of Android Apps with Deep Link-Integrated Monkey},
+  author={Hu, Han and Wang, Han and Dong, Ruiqi and Chen, Xiao and Chen, Chunyang},
+  journal={ACM Transactions on Software Engineering and Methodology},
+  year={2024},
+  publisher={ACM New York, NY}
+}
+
+
 
 # Guided Explore
 Step 1: install required packages in the requirement.txt
