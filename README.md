@@ -24,11 +24,17 @@ If this tool benifits your work, we hope you cite our paper.
 
 
 @article{hu2024enhancing,
+
   title={Enhancing GUI Exploration Coverage of Android Apps with Deep Link-Integrated Monkey},
+  
   author={Hu, Han and Wang, Han and Dong, Ruiqi and Chen, Xiao and Chen, Chunyang},
+  
   journal={ACM Transactions on Software Engineering and Methodology},
+  
   year={2024},
+  
   publisher={ACM New York, NY}
+  
 }
 
 
