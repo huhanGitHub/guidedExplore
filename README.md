@@ -7,15 +7,16 @@ We are pleased to note that our tool, along with its variants, have been utilize
 
 
 # Delm (Enhancing GUI Exploration Coverage of Android Apps with Deep Link-Integrated Monkey, TOSEM 2024)
-The paper of the tool Delm has experienced many resubmissions and revisions. Initially, this project was launched at the start of my PhD and formed the basis for all my subsequent PhD projects. Interestingly, it was the last piece to be accepted by a top-tier venue during my PhD. There were times we even considered abandoning the paper, leading to adjustments in the tool's features to better serve other aspects of my PhD work.
+The paper of the tool Delm has experienced many resubmissions and revisions. Initially, this project was launched at the start of my PhD and formed the basis for all my subsequent PhD projects. Interestingly, it was the last piece to be accepted by a top-tier venue during my PhD. There were times we even considered abandoning the paper, leading to adjustments in the tool's features to better serve my other my PhD works.
 
 The current version of the code primarily differs from the one discussed in the paper in two key aspects:
 
-(1) To maximize the exploration of GUI pages across various Android activities, we have relaxed the requirements for activity context accuracy. We now manually simulate activity contexts with the necessary types and numbers to initiate more activities and thus collect more GUI pages.
-(2) We have disabled the dynamic guided exploration component because it was too time-consuming. Currently, we use the ATG to simulate the context and sequentially launch activities.
+(1) To maximize the exploration of GUI pages across various Android activities, we have relaxed the requirements for activity context accuracy. We now manually simulate activity contexts with the required types and numbers to launch more activities and thus collect more GUI pages.
+
+(2) We have disabled the dynamic guided exploration component because it was too time-consuming. Currently, we use the ATG to sequentially launch activities.
 
 
-Delm is now primarily used as a GUI collection tool in my later work, not as a testing tool. We have modified the configuration to enable the exploration of as many GUI pages as possible. If you intend to use it for GUI page collection, this version of the tool is recommended. However, if you plan to use it as a GUI testing tool, be aware that its current activity coverage may not accurately since the possible false positive crashes.
+Delm is now primarily used as a GUI collection tool in my later works, not as a testing tool. We have modified the configuration to enable the exploration of as many GUI pages as possible. If you intend to use it for GUI page collection, this version of the tool is recommended. However, if you plan to use it as a GUI testing tool, be aware that its current activity coverage may not be accurate since the possible false positive crashes.
 
 I will find a slot to release a version that corresponds to the TOSEM paper after finishing my phd thesis. 
 
