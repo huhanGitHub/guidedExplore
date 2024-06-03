@@ -6,7 +6,9 @@ We are pleased to note that our tool, along with its variants, have been utilize
 [Voicify](https://github.com/vuminhduc796/Voicify) (accepted by Ubicomp 2023). [Paper](https://arxiv.org/pdf/2305.05198.pdf)
 
 
-# Delm (Enhancing GUI Exploration Coverage of Android Apps with Deep Link-Integrated Monkey, TOSEM 2024)
+# Delm
+Enhancing GUI Exploration Coverage of Android Apps with Deep Link-Integrated Monkey, TOSEM 2024
+
 The paper of the tool Delm has experienced many resubmissions and revisions. Initially, this project was launched at the start of my PhD and formed the basis for all my subsequent PhD projects. Interestingly, it was the last piece to be accepted by a top-tier venue during my PhD. There were times we even considered abandoning the paper, leading to adjustments in the tool's features to better serve my other my PhD works.
 
 The current version of the code primarily differs from the one discussed in the paper in two key aspects:
